@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+
+  <title>Code It - Day 2</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.15.0/css/uikit.almost-flat.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.15.0/js/uikit.min.js"></script>
+
+</head>
+<body>
+  <div class="uk-container uk-container-center uk-margin-top uk-margin-bottom">
+    <div class="uk-panel uk-panel-box">
+      <h1>Code It - Day 2</h1>
+
+      <ul class="uk-tab" data-uk-tab="{connect:'#my-id'}">
+        <li><a href="#">Musical Art</a></li>
+        <li><a href="#">Racing Game</a></li>
+        <li><a href="#">Launcher Game</a></li>
+      </ul>
+
+      <div id="my-id" class="uk-switcher uk-margin">
+
+<!--Musical Art-->
+        <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+          <div class="uk-panel uk-margin-bottom">
+            <h3>Example Project</h3>
+              <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/83046924/?autostart=false" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+          <a href="http://scratch.mit.edu/projects/19176469/#editor" target="_blank" class="uk-button uk-button-success uk-button-large">Starter Project</a>
+          <div class="uk-margin-top"><a href="https://docs.google.com/document/d/1j3ifYdCyZrUKB7-WCB9XtWoJrToOB1JHXxRUMcDw-cY/" target="_blank" class="uk-button uk-button-large">Hint Sheet</a></div>
+
+    <!--Part A-->
+          <div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin-top">
+            <h2>A. Fill the Stage With Color</h2>
+            <div>
+              <ol>
+                <li>Use the "go to" block to make the sprite go to a specific spot.</li>
+                <li>Make the sprite go to a random spot. (<i>hint: The x-coordinates of the canvas go from -240 to 240, and the y-coordinates go from -180 to 180.</i>)</li>
+                <li>Make the sprite leave a stamp of itself.</li>
+                <li>Make the sprite repeat going to a random spot and stamping itself.</li>
+                <li>Start with a clear screen when the green flag is clicked.</li>
+              </ol>
+            </div>
+          </div>
+
+    <!--Part B-->
+          <div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin-top">
+            <h2>B. Color Me Musical</h2>
+            <div>
+              <ol>
+                <li>Make the X sprite go to the mouse.</li>
+                <li>Make the X sprite follow the mouse FOREVER.</li>
+                <li>Add an "if" block.</li>
+                <li>Make the "if" block say "if touching color."</li>
+                <li>Make the X sprite play a note if it is touching green.</li>
+                <li>Copy the if statement, then change it to make each color in your project play a different note.</li>
+                <li>Add a "when green flag is clicked" event to start the program.</li>
+              </ol>
+            </div>
+          </div>
+
+    <!--Add-ons-->
+          <div class="uk-panel uk-panel-box uk-margin-top">
+            <h2>Add-ons</h2>
+            <div>
+              <ul>
+                <li>Change instruments and tempo in your musical art piece when the yellow X sprite touches different colors.</li>
+                <li>Make your project play chords, not just individual notes.</li>
+                <li>Add a surprise color to your art piece that plays an unexpected sound when touched.</li>
+                <li>Add a graphic effect that makes the yellow X sprite leave a color-changing trail across the screen. <i>(hint: use "create clone of myself" and "when I start as a clone" blocks)</i></li>
+                <li>Create another yellow X sprite that moves around your art piece and plays random notes.</li>
+                <li>Make the yellow X sprite change colors, depending on which color it is touching.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+<!--Racing Game-->
+        <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+          <div class="uk-panel uk-margin-bottom">
+            <h3>Example Project</h3>
+            <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/83060744/?autostart=false" frameborder="0" allowfullscreen></iframe>
+            <p>Player 1: up arrow, left arrow, right arrow</p>
+            <p>Player 2: s key, a key, d key</p>
+          </div>
+
+          <a href="https://scratch.mit.edu/projects/17753064/#editor" target="_blank" class="uk-button uk-button-success uk-button-large">Starter Project</a>
+          <div class="uk-margin-top"><a href="https://docs.google.com/document/d/14tT50KHJGrn1y__9CEgjwPUF-N9shsrimvwnOlqtb_8/" target="_blank" class="uk-button uk-button-large">Hint Sheet</a></div>
+
+    <!--Part A-->
+          <div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin-top">
+            <h2>A. Moving the Sprite</h2>
+            <div>
+              <ol>
+                <li>Create an event for the three arrow presses.</li>
+                <li>Add a "move" block to each arrow-press event.</li>
+              </ol>
+            </div>
+          </div>
+
+    <!--Part B-->
+          <div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin-top">
+            <h2>B. Moving More Smoothly with "Repeat Until"</h2>
+            <div>
+              <ol>
+                <li>Add a "repeat until" block to each event to make the sprite move smoothly around the track.</li>
+              </ol>
+            </div>
+          </div>
+
+    <!--Part C-->
+          <div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin-top">
+            <h2>C. Slow Down on Grass</h2>
+            <div>
+              <ol>
+                <li>Set the speed to different values based on the color the sprite is touching.</li>
+              </ol>
+            </div>
+          </div>
+
+    <!--Add-ons-->
+          <div class="uk-panel uk-panel-box uk-margin-top">
+            <h2>Add-ons</h2>
+            <div>
+              <ul>
+                <li>Add a button that changes the racetrack backdrop.</li>
+                <li>Change what the racers look like when a key is pressed.</li>
+                <li>Play a crashing sound each time the racers hit each other.</li>
+                <li>Program a sprite to count down to the start of the race and cheer.</li>
+                <li>Add a colorful trail effect to the racers.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+<!-- Launcher Game -->
+                <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+                  <div class="uk-panel uk-margin-bottom">
+                    <h3>Example Project</h3>
+                    <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/19411325/?autostart=false" frameborder="0" allowfullscreen></iframe>
+                    <p>Use the arrow keys to point the fish in a specific direction, then use the space bar to launch the fish. Get to the finish line!</p>
+                  </div>
+
+                  <a href="https://scratch.mit.edu/projects/19411371/#editor" target="_blank" class="uk-button uk-button-success uk-button-large">Starter Project</a>
+                  <div class="uk-margin-top"><a href="https://docs.google.com/document/d/1-roUq_xe00oWzwzseAZh4g6jK59b52JkFeBcwnqswr0/" target="_blank" class="uk-button uk-button-large">Hint Sheet</a></div>
+
+            <!--Part A-->
+                  <div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin-top">
+                    <h2>A. Launch a Sprite</h2>
+                    <div>
+                      <ol>
+                        <li>Select a Player 1 sprite and create an event that will happen when the spacebar is pressed.</li>
+                        <li>Add a "move" block to make the sprite move forward.</li>
+                        <li>Add a "repeat until" block to the stack.</li>
+                        <li>Add a "touching Finishline" block as a condition.</li>
+                        <li>Set a starting position for your sprite with a "go-to" block.</li>
+                      </ol>
+                    </div>
+                  </div>
+
+            <!--Part B-->
+                  <div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin-top">
+                    <h2>B. Turn the Sprite Left and Right</h2>
+                    <div>
+                      <ol>
+                        <li>Select the player 1 sprite and create events for the left and right arrow keys.</li>
+                        <li>Add two "turn" blocks to make the sprite turn left and right.</li>
+                        <li>Make the player 1 sprite turn smoothly by adding a "repeat until" block, a "not" block, and a "key pressed" block to each "turn" stack.</li>
+                      </ol>
+                    </div>
+                  </div>
+
+            <!--Part C-->
+                  <div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin-top">
+                    <h2>C. Spawning Enemies</h2>
+                    <div>
+                      <ol>
+                        <li>Add a sprite and resize it.</li>
+                        <li>Make the new sprite bounce around the stage.</li>
+                        <li>Make the enemy sprite clone itself.</li>
+                        <li>Make each enemy sprite clone start off pointing in a random direction.</li>
+                        <li>Add "hide" and "show" blocks. <i>(hint: Hide the original sprite and show each clone upon creation.)</i></li>
+                      </ol>
+                    </div>
+                  </div>
+
+            <!--Part D-->
+                  <div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin-top">
+                    <h2>D. Keeping Score</h2>
+                    <div>
+                      <ol>
+                        <li>Create a "score" variable for the player sprite.</li>
+                        <li>Use an if statement to add to the "score" variable when the player reaches the finish line.</li>
+                        <li>Add a "set score to 0" block when the player clicks on the green flag.</li>
+                        <li>Create an enemy clone every time a point is scored.</li>
+                      </ol>
+                    </div>
+                  </div>
+
+            <!--Add-ons-->
+                  <div class="uk-panel uk-panel-box uk-margin-top">
+                    <h2>Add-ons</h2>
+                    <div>
+                      <ul>
+                        <li>Program a sound to play if the player touches the finish line.</li>
+                        <li>Add a second player to the game.</li>
+                        <li>Challenge a friend by having them control the enemy.</li>
+                        <li>Create a sprite that, when touched, gives the player extra points.</li>
+                        <li>Program the finish line to get smaller as the player scores more points.</li>
+                        <li>Program the backdrop to change every time the player scores 5 points.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+      </div>
+    </div>
+  </div>
+</body>
