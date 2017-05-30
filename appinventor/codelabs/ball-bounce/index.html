@@ -1,0 +1,194 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Ball Bounce Codelab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Ball Bounce Codelab">
+
+      <google-codelab-step label="Overview">
+        <p>In this codelab, you&#39;ll learn how to use the Canvas and Ball components.
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Use the <b>Designer View</b> to create the user interface.</li>
+          <li>Use the <b>Blocks View</b> to add functionality to the app.</li>
+          <li>Use the <b>Canvas</b> and <b>Ball</b> components.</li>
+          <li>Use <b>Event Handlers</b>.</li>
+        </ul>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Create a new project">
+        <p>Create a <a href="http://ai2.appinventor.mit.edu/" target="_blank">new project</a> called
+          <code>BallBounce</code> (no spaces).</p>
+        <img src="img/new_project.png">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Add a canvas">
+        <p>The <b>Designer View</b> shows you what the app looks like to the user.</p>
+        <p>In the <b>Palette</b> section, open the <b>Drawing and Animation</b> drawer and drag a <b>Canvas</b> component onto the viewer.</p>
+        <img src="img/designer_canvas.png">
+        <h2>Challenges</h2>
+        <p><i>The following challenges will require you to modify the <b>Properties</b> section of the <b>Screen</b> and <b>Canvas</b> components.</i></p>
+        <ol>
+          <li>Turn off the Scrollable setting of the Screen.</li>
+          <li>Change the height and width of the canvas to fill parent.</li>
+        </ol>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #1">
+        <aside class="special">
+          <h2>ball-bounce-1</h2>
+          <p><b>To receive this checkoff, you must </b></p>
+          <ul class="checklist">
+            <li>Have a canvas that occupies the full screen</li>
+            <li>Describe each of the four panels on the Designer View</li>
+            <li>Explain what it means for a component width or height to "fill parent"</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Add a ball">
+        <h3>Designer View</h3>
+        <p>Open the <b>Drawing and Animation</b> drawer and drag a <b>Ball</b> component onto the viewer.
+        Adjust the <b>Radius property</b> to make the ball bigger.</p>
+        <h3>Blocks View</h3>
+        <img src="img/blocks_ball.png">
+        <p>Open the <b>Ball</b> drawer and drag the <code>when Ball1.Flung</code> block onto the workspace.</p>
+        <p>Click on the <b>Ball</b> drawer again and plug in the <code>set Ball1.Speed</code> and <code>set Ball1.Heading</code> blocks into the <code>when Ball1.Flung</code> <b>Event Handler</b>.</p>
+        <img style="max-width: 438.40px" src="img/blocks_ball_flung.png">
+        <p>Mouse over the <code>speed</code> parameter of the <code>when Ball1.Flung</code> block. Plug the <code>get speed</code> block into the <code>set Ball1.Speed</code> block.</p>
+        <img style="max-width: 438.40px" src="img/blocks_ball_flung2.png">
+        <h2>Challenges</h2>
+        <ol>
+          <li>Set the Ball's heading to the heading at which the ball was flung.</li>
+        </ol>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #2">
+        <aside class="special">
+          <h2>ball-bounce-2</h2>
+          <p><b>To receive this checkoff, you must </b></p>
+          <ul class="checklist">
+            <li>Have a ball that a user can fling across the screen</li>
+            <li>Describe the difference between the Designer and Blocks Views</li>
+            <li>Explain how you used an Event Handler for this part</li>
+            <li>Indicate what color Event Handler blocks are</li>
+            <li>Explain what the <code>get speed</code> and <code>get heading</code> blocks do</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Make the ball bounce">
+        <p>Notice that the ball stops moving when it hits the edge of the screen.</p>
+        <p>To make the ball bounce off the edge of the screen, drag the <code>when Ball1.Edge Reached do</code> event handler into the workspace.</p>
+        <img src="img/blocks_ball_bounce.png">
+        <p>Then add the <code>call Ball1.Bounce</code> block into the event handler.</p>
+        <h2>Challenges</h2>
+        <ol>
+          <li>Add the necessary block to make the ball bounce off the <b>edge</b> it reaches.</li>
+        </ol>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #3">
+        <aside class="special">
+          <h2>ball-bounce-3</h2>
+          <p><b>To receive this checkoff, you must</b></p>
+          <ul class="checklist">
+            <li>Have a ball that a user can fling across the screen and that bounces off the edge of the screen</li>
+            <li>Explain how you used an Event Handler for this part</li>
+            <li>Explain how you made the ball bounce off the correct edge</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Congratulations!">
+        <p>You have used App Inventor to create a Ball Bounce game.</p>
+        <h3 class="checklist"><strong>What we&#39;ve covered</strong></h3>
+        <ul class="checklist">
+          <li>Use the <b>Designer View</b> to create the user interface.</li>
+          <li>Use the <b>Blocks View</b> to add functionality to the app.</li>
+          <li>Use the <b>Canvas</b> and <b>Ball</b> components.</li>
+          <li>Use <b>Event Handlers</b>.</li>
+        </ul>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Bonus Features">
+        If you finish early, implement one or more of the following features for a bonus checkoff.
+        <aside class="special">
+          <h2>ball-bounce-bonus</h2>
+          <p><b>To receive this checkoff, you must implement one or more of the following</b></p>
+          <ul>
+            <li>Change the color of the ball based on how fast it is moving or which edge it reaches.</li>
+            <li>Make the ball slow down and stop after it is flung.</li>
+            <li>Give the ball obstacles or targets to hit.</li>
+            <li>Introduce a paddle for intercepting the ball, like a Pong game.</li>
+            <li>Make the ball say something based on which edge it reaches.</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
