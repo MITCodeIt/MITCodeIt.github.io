@@ -1,6 +1,5 @@
 # MITCodeIt.github.io
 Home of codelabs used for CodeIt
-![Logo](img/logo_blue.png =300x)
 
 ## App Inventor
  - [Ball Bounce](https://mitcodeit.github.io/appinventor/codelabs/ball-bounce/)
