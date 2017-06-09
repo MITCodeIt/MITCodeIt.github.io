@@ -1,4 +1,4 @@
-# MITCodeIt.github.io
+# MIT CodeIt Codelabs
 Home of codelabs used for CodeIt
 
 ## App Inventor
