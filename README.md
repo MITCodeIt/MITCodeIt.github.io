@@ -2,9 +2,11 @@
 Home of codelabs used for CodeIt
 
 ## App Inventor
-Day 1 | Day 2 | Day 3 | Day 4
------ | ----- | ----- | -----
-[Ball Bounce](https://mitcodeit.github.io/appinventor/codelabs/ball-bounce/) | --- | --- | [Amazon Books](https://mitcodeit.github.io/appinventor/codelabs/amazon-books/)
+**Day 1**
+ - [Ball Bounce](https://mitcodeit.github.io/appinventor/codelabs/ball-bounce/)
+
+**Day 4**
+ - [Amazon Books](https://mitcodeit.github.io/appinventor/codelabs/amazon-books/)
 
 ## Scratch
  - [Day 1](https://mitcodeit.github.io/scratch/day1/)
