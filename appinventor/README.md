@@ -1,5 +1,7 @@
 # CodeIt AI Codelabs
 
+The codelab template has been adopted from the [Google Developer Codelabs](https://codelabs.developers.google.com).
+
 ## Running the code locally
 
 ### Mac OSX

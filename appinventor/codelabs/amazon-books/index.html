@@ -1,0 +1,390 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Amazon Books Codelab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Amazon Books Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Overview">
+        <p>In this codelab, you&#39;ll make an app that allows you to look up the current lowest price of a book on Amazon.com.
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Use the <b>Barcode Scanner</b> component.</li>
+          <li>Access web services (Amazon's API) using the <b>TinyWebDB</b> component.</li>
+          <li>Process information in the form of <b>lists</b>.</li>
+        </ul>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Application Programming Interface (API)">
+        <p>An <b>application programming interface (API)</b> is the messenger that takes your requests,
+          tells a system what you want to do, and returns the response back to you.</p>
+        <p>If you have ever used the Facebook app on your phone, you are using a <b>client</b> program that
+        communicates with the Facebook API <b>server</b> program.</p>
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/s7wmiS2mSXY?rel=0" frameborder="0" allowfullscreen></iframe>
+        <p>In this codelab, you will create an Android client app that communicates with the Amazon API.
+        Your app will request book and ISBN information from the Amazon API, and the API will return the
+        list price of the book. Your app will then present the book data to the user.</p>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Amazon API">
+        <p>Just like people from different cultures have different customs (e.g. shaking hands when meeting
+        or kissing each other on the cheek), different APIs have different communication <b>protocols</b>.
+        In this step, you will learn how information is formatted when communicating with the Amazon API.</p>
+
+        <ol>
+          <li>Go to <a href="http://aiamazonapi2.appspot.com/">http://aiamazonapi2.appspot.com/</a>.
+            You should see something like the image below.
+            <img src="img/amazon_books.png"></li>
+          <li>Enter a topic (e.g. "dance") in the <b>Tag</b> field and then click <code>Get value</code>.
+          The web page will display the top five books returned from Amazon.</li>
+        </ol>
+
+        <h2>Challenge #1</h2>
+        <aside class="note">
+          <p>A list can be described as a series of items separated by commas and enclosed by square brackets.</p>
+          <p>For example, <code>['red', 'white', 'blue']</code> is a list of three colors.</p>
+        </aside>
+        <p><b>Can you explain the different parts of the output shown below?</b></p>
+        <pre><code>
+[['"Dance: Cinderella Retold (Romance a Medieval Fairytale series Book 3)"', '0.0', 'B01NCZ6T85'],
+['"Dance"', '$10.43', '1481487078'],
+['"Dance with Deception: Scandalous Secrets, Book 1 (Scandalous Secrets - Exclusive Edition)"', '0.0', 'B00NO2V0CS'],
+['"A Dance with Dragons (A Song of Ice and Fire)"', '$5.33', '0553582011'],
+['"Dance Mania Mad Libs"', '$2.09', '0843137126']]</code></pre>
+
+        <h2>Challenge #2</h2>
+        <aside class="note">
+          <p>Search for a book by entering an ISBN as the Tag. For example, enter <code>isbn:1449397484</code> as the Tag
+          to find the book with ISBN 1449397484.</p>
+        </aside>
+        <p><b>Which book has ISBN 0062363603?</b></p>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Create a new project">
+        <ol>
+          <li><p>Create a <a href="http://ai2.appinventor.mit.edu/" target="_blank">new project</a> called
+            <code>AmazonBooks</code> (no spaces).</p>
+          <img src="img/new_project.png"></li>
+          <li>Set the screen title to "Amazon in the Bookstore".</li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Design the User Interface">
+        <p>Design your user interface so that <i>at a minimum</i> it has the following elements:
+          <ul>
+            <li>a TextBox for entering keywords or ISBNs</li>
+            <li>a Button to search by keyword</li>
+            <li>a Button to search by ISBN</li>
+            <li>a Button to scan a barcode</li>
+            <li>a heading Label for Search Results</li>
+            <li>a Label to display actual search results</li>
+            <li>a TinyWebDB component</li>
+            <li>a BarcodeScanner component</li>
+          </ul>
+        </p>
+        <img src="img/books_interface.png">
+        <h2>Challenges</h2>
+        <ol>
+          <li>Give your components meaningful names.</li>
+          <li>Set the <i>Hint</i> of the TextBox to "Enter keywords or ISBN".</li>
+          <li>Set the <i>ServiceURL</i> property of the TinyWebDB component to <code>http://aiamazonapi2.appspot.com/</code>.</li>
+        </ol>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #1">
+        <aside class="special">
+          <h2>amazon-books-1</h2>
+          <p><b>To receive this checkoff, you must </b></p>
+          <ul class="checklist">
+            <li>Explain how we are using an application programming interface (API) in this app</li>
+            <li>Describe the value returned by the Amazon API</li>
+            <li>Identify the book with ISBN 0062363603</li>
+            <li>Have all the necessary components added to your app and named appropriately</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Search by Keyword">
+        <p>When the user enters a search term and clicks on the Keyword Search Button,
+          we want to invoke an Amazon search.</p>
+        <p>We can access the Amazon API by using our <b>TinyWebDB</b> component, which works
+          just like the <b>TinyDB</b> component we used in a previous codelab.</p>
+        <h2>Challenge #1</h2>
+        <p><b>Make the correct Amazon search when the user clicks on the Keyword Search Button.</b>
+        The following blocks may be useful for this part:
+          <ul>
+            <li><code>Button.Click</code> Event Handler block</li>
+            <li><code>TinyWebDB.GetValue</code> block</li>
+            <li><code>TextBox.Text</code> block</li>
+          </ul>
+        </p>
+        <h2>Challenge #2</h2>
+        <p><b>Make the ResultsLabel display the value returned by the Amazon search.</b></p>
+        <p>Make sure to check if the returned value is a list before displaying it.
+          It won't be a list if the Amazon API is offline, or if no results can be found.</p>
+        <aside class="note">
+          <p>Unlike <code>TinyDB.GetValue</code> requests, which are answered immediately,
+          calls to <code>TinyWebDB.GetValue</code> take time. When the data arrives from
+          the API, the <code>TinyWebDB.GotValue</code> <b>Event Handler</b> is triggered.</p>
+        </aside>
+        <p>The following blocks may be useful for this part:
+          <ul>
+            <li><code>TinyWebDB.GotValue</code> Event Handler block</li>
+            <li><code>if/then</code> conditional block</li>
+            <li><code>is a list?</code> block</li>
+            <li><code>set Label.Text</code> block</li>
+            <li><code>get valueFromWebDB</code> block</li>
+          </ul>
+        </p>
+        <aside class="callout">
+          <h2>Test your app</h2>
+          <p>Enter a term in the search box and click on the button to Search by Keyword.
+          Did you get the correct output?</p>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Search by ISBN">
+        <p>The code for searching by ISBN is similar to searching by keyword, but
+          in this case, the Amazon API expects the tag to be in the form of
+          <code>isbn:xxxxxxxxxxxxx</code>. Your user should not need to know this
+          protocol, so we want our app to add the "isbn:" prefix to the user's input.</p>
+        <h2>Challenge</h2>
+        <p><b>Make the correct Amazon search when the user clicks on the Search by ISBN button.</b>
+          The following blocks may be useful for this part:
+          <ul>
+            <li><code>Button.Click</code> Event Handler block</li>
+            <li><code>TinyWebDB.GetValue</code> block</li>
+            <li><code>TextBox.Text</code> block</li>
+            <li><code>join</code> block</li>
+            <li><code>""</code> (string) block</li>
+          </ul>
+        </p>
+        <aside class="note">
+          <p>The Amazon API sends back a list result for an ISBN search. The list
+          contains one item whose ISBN matches the user input. Because the
+          <code>TinyWebDB.GotValue</code> Event Handler is already set up to
+          process a list of books, you do not have to modify the event handler
+          code.</p>
+        </aside>
+        <aside class="callout">
+          <h2>Test your app</h2>
+          <p>Enter an ISBN (e.g. 0062363603) in the search box and click the
+            Search ISBN button. Does the book information appear?</p>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Search Result Placeholder">
+        <p>When you call a web service (API) with <code>TinyWebDB.GetValue</code>,
+          there may be a delay before the data arrives and <code>TinyWebDB.GotValue</code>
+          is triggered. It is generally good practice to notify users that the
+          request is being processed to reassure them that the app has not
+          simply frozen.</p>
+        <h2>Challenge</h2>
+        <p><b>When the user clicks on either the Keyword Search Button or the ISBN Search Button,
+          make the Results Label display "Searching Amazon...".</b> The following blocks
+          may be useful:
+        <ul>
+          <li><code>set Label.Text</code> block</li>
+          <li><code>""</code> (string) block</li>
+        </ul></p>
+        <aside class="note">
+          <p>Note that when <code>TinyWebDB.GotValue</code> is triggered, the
+          "Searching Amazon..." message is replaced by the actual results from Amazon.</p>
+        </aside>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #2">
+        <aside class="special">
+          <h2>amazon-books-2</h2>
+          <p><b>To receive this checkoff, you must </b></p>
+          <ul class="checklist">
+            <li>Explain how each of your event handlers works</li>
+            <li>Show the results for the keywords "Computer Science"</li>
+            <li>Show the results for the ISBN 0545392551</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Barcode Scanner">
+        <p>Typing on a cell phone can be difficult and time-consuming for some
+        people, so it would be nice if users could scan the barcode of a book
+        instead of typing in the ISBN. Fortunately, App Inventor's <b>Barcode
+        Scanner</b> component makes this feature easy to implement.</p>
+        <h2>Challenge #1</h2>
+        <p><b>Start up the scanner when the Scan Button is clicked.</b></p>
+        <aside class="note">
+          <p>The <code>BarcodeScanner.DoScan</code> block starts up the scanner.</p>
+        </aside>
+        <h2>Challenge #2</h2>
+        <p><b>Start an ISBN search once the barcode has been scanned.</b> The
+          following blocks may be useful:
+        <ul>
+          <li><code>when BarcodeScanner.AfterScan</code> Event Handler block</li>
+          <li><code>set Label.Text</code> block</li>
+          <li><code>set TextBox.Text</code> block</li>
+          <li><code>TextBox.Text</code> block</li>
+          <li><code>join</code> block</li>
+          <li><code>""</code> (string) block</li>
+          <li><code>get result</code></li>
+          <li><code>call TinyWebDB.GetValue</code></li>
+        </ul>
+        </p>
+        <aside class="note">
+          <p>The <code>result</code> argument of the <code>when BarcodeScanner.AfterScan</code>
+            event handler contains the information that was scanned. In this case,
+            <code>result</code> contains the scanned ISBN.</p>
+          <p>If you get stuck on this challenge, refer back to your code from the Search by ISBN step.</p>
+        </aside>
+        <aside class="callout">
+          <h2>Test your app</h2>
+          <p>Click the Scan Button and scan the barcode of a book. Does the app
+          display the correct information?</p>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Improve the Display">
+        <p>Right now, the Results Label simply displays the value returned by
+        the Amazon API. While this does provide the user with all the
+        information, it is a bit difficult for users to read. In this step, your
+        goal is to modify the <code>when TinyWebDB.GotValue</code> event handler
+        so that the app displays book information in an easy-to-read, organized
+        manner.</p>
+        <h2>Challenges</h2>
+        <ol>
+          <li>Initialize a global variable called <code>resultList</code> to be
+          an empty list. Hint: Use the <code>create an empty list</code> block.</li>
+          <li>Initialize three global variables to be empty strings (e.g. <code>""</code>).
+            Name the variables <code>title</code>, <code>cost</code>, and <code>isbn</code>.
+          <li>If the value returned by the WebDB is a list, then store the value
+            using the <code>resultList</code> variable.</li>
+          <li>Set the text in the Result Label to be an empty string (e.g. <code>""</code>).</li>
+          <li>Use the <code>for each...in list</code> block to loop through each
+            book result in <code>resultList</code>. For each book result, assign
+            the correct values to the <code>title</code>, <code>cost</code>, and
+            <code>isbn</code> variables. Hint: Use the <code>select list item</code>
+            block to select specific items from a list.</li>
+          <li>For each book result, you also want to update the Results label
+            text accordingly.</li>
+        </ol>
+        <p>Your code should look something like this.</p>
+        <img src="img/book_display.png">
+        <aside class="callout">
+          <h2>Test your app</h2>
+          <p>Try another search and see how the book results are displayed.</p>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #3">
+        <aside class="special">
+          <h2>amazon-books-3</h2>
+          <p><b>To receive this checkoff, you must </b></p>
+          <ul class="checklist">
+            <li>Explain how you used the <code>when BarcodeScanner.AfterScan</code> Event Handler</li>
+            <li>Search for a book by scanning its barcode</li>
+            <li>Explain how you used lists and the <code>for each</code> block to improve the user interface</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Congratulations!">
+        <p>You have used App Inventor to create the Amazon Books app.</p>
+        <h3 class="checklist"><strong>What we&#39;ve covered</strong></h3>
+        <ul class="checklist">
+          <li>Use the <b>Barcode Scanner</b> component.</li>
+          <li>Access web services (Amazon's API) using the <b>TinyWebDB</b> component.</li>
+          <li>Process information in the form of <b>lists</b>.</li>
+        </ul>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Bonus Features">
+        If you finish early, implement one or more of the following features for a bonus checkoff.
+        <aside class="special">
+          <h2>amazon-books-bonus</h2>
+          <p><b>To receive this checkoff, you must implement one or more of the following</b></p>
+          <ul>
+            <li>Report when there are no results.</li>
+            <li>After you scan a book, make the app speak aloud the lowest Amazon price.</li>
+            <li>Only display results under $10.</li>
+            <li>Implement your own bonus feature.</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
