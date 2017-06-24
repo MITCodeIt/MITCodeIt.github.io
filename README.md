@@ -5,6 +5,9 @@ Home of codelabs used for CodeIt
 **Day 1**
  - [Ball Bounce](https://mitcodeit.github.io/appinventor/codelabs/ball-bounce/)
 
+**Day 3**
+ - [Map It](https://mitcodeit.github.io/appinventor/codelabs/map-it/)
+
 **Day 4**
  - [Amazon Books](https://mitcodeit.github.io/appinventor/codelabs/amazon-books/)
 
