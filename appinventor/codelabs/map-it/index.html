@@ -1,0 +1,296 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Map It Codelab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Map It Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Overview">
+        <p>In this codelab, you&#39;ll make an app that allows you to choose from a list of addresses and view the location on Google Maps.
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Use <b>lists</b> to store data.</li>
+          <li>Use <b>ListPicker</b> to let users choose from a list.</li>
+          <li>Use <b>ActivityStarter</b> to start up Google Maps from your app.</li>
+          <li>Use <b>Notifier</b> to display messages on your app.</li>
+          <li>Use <b>TinyDB</b> to save data persistently.</li>
+        </ul>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Create New Project">
+        <ol>
+          <li><p>Create a <a href="http://ai2.appinventor.mit.edu/" target="_blank">new project</a> called
+            <code>MapIt</code> (no spaces).</p>
+            <img src="img/new_project.png"></li>
+          <li>Set the screen title to "Map It".</li>
+        </ol>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Create Starter Screen">
+        <p>The starting screen for this app will be the Map It logo. When the
+          user clicks on the logo, the app will move onto the next screen.</p>
+        <h2>Challenge</h2>
+        <p>Add a <b>Canvas</b> component and set the Background Image to
+          <a href="img/app_logo.png">app_logo.png</a>.</p>
+        <img src="img/starter_screen.png">
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Create Main Screen">
+        <p>We will need to create a new screen called <code>MainScreen</code>
+          for the main app functionality.</p>
+        <img src="img/new_screen.png">
+        <p>Design your user interface so that <i>at a minimum</i> it has the following elements:
+          <ul>
+            <li>a heading Label that says "Selected Address:"</li>
+            <li>a Label that displays the selected address</li>
+            <li>a ListPicker to select a location</li>
+            <li>a Button to view the selected location on a map</li>
+            <li>a TinyDB component</li>
+            <li>a Notifier component</li>
+            <li>an Activity Starter component</li>
+          </ul>
+        </p>
+        <p><i>Remember to give your components meaningful names!</i></p>
+        <img src="img/main_screen.png">
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Switch Between Screens">
+        <p>This next step will allow you to switch from the starter screen to
+          the main screen by clicking anywhere on the logo.</p>
+        <ol>
+          <li>Make sure you have selected <code>Screen1</code> (the starter screen).<br>
+            <img src="img/select_screen.png"></li>
+          <li>Switch to the Blocks view and add the following blocks.<br>
+            <img style="max-width: 438.40px" src="img/switch_screen_blocks.png"></li>
+        </ol>
+        <aside class="callout">
+          <h2>Test your app</h2>
+          <p>Make sure <code>Screen1</code> is selected in the App Inventor editor (and
+            showing on your device). Click anywhere on the logo and make sure your
+            app switches to the <code>MainScreen</code>.</p>
+          <p>Be ready to explain how the blocks work!</p>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Add Location List">
+        <p>We use lists all the time in real life. Think of grocery lists, top
+        songs lists, todo lists, etc. <b>Lists</b> are also super useful when
+        programming.</p>
+        <p>In this step, we will use a list to keep track of different locations
+          that the user can select.</p>
+        <h2>Challenges</h2>
+        <ol>
+          <li>Initialize a global variable called <code>locationList</code>.</li>
+          <li>Use a <code>make a list</code> block (from the "Lists" drawer) to
+            create a list. By default, the list will only contain two items, but
+            you can add more space to your list by clicking on the small gear
+            icon in the top left corner of the block. Drag as many
+            <code>item</code> blocks as you need into the <code>list</code>
+            block on the right.<br>
+            <img style="max-width: 300px" src="img/make_list.png"></li>
+          <li>Populate your list by adding text string blocks with names of
+            locations. Add at least 3 locations (e.g. Fenway Park, Disneyland,
+            Eiffel Tower).</li>
+          <li>Use the <code>when MainScreen.Initialize</code> event handler to
+            populate the <b>ListPicker</b> with the locations in
+            <code>locationsList</code>. Hint: Use the <code>set
+              ListPicker.Elements</code> block.</li>
+          <li>Use the <code>when ListPicker.AfterPicking</code> event handler to
+            set the text of the SelectedLocationLabel to
+            <code>ListPicker.Selection</code>. What do you think this does?
+        </ol>
+        <aside class="callout">
+          <h2>Test your app</h2>
+          <p>Click on the ListPicker (looks like a button) and select an item
+            from the list. Does the item you selected show up as the selected
+            location?</p>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #1">
+        <aside class="special">
+          <h2>map-it-1</h2>
+          <p><b>To receive this checkoff, you must </b></p>
+          <ul class="checklist">
+            <li>Explain which blocks you used to move from the starter screen
+              to the main screen</li>
+            <li>Demonstrate a functional <b>ListPicker</b> and explain the blocks
+              involved</li>
+            <li>Explain how you used a list in this section</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Use a Database">
+        <p>If you restart your app, you will notice that your selected location
+          is not saved. You have to click on the ListPicker again to reselect
+          your desired location.</p>
+        <p>Luckily for you, the <b><a href="http://ai2.appinventor.mit.edu/reference/components/storage.html#TinyDB">TinyDB</a></b>
+          component allows you to save your selected location so that the next
+          time you open your app, the location you selected will still be selected!</b>
+        <p>First, let's talk about what a <b>database</b> is. You can think of
+          it as a way to store information in an organized manner. The
+          data stored on a <b>TinyDB</b> component is available each time the
+          app is run.</p>
+        <h1>Storing Data</h1>
+        <p>We need to label the data we want to store using a <b>tag</b>.
+          In the example below, we use TinyDB to store someone's favorite
+          singer using the tag <code>favoriteSinger</code>.</p>
+          <img style="max-width: 400px" src="img/example_store.png" />
+        <h1>Retrieving Data</h1>
+        <p>To retrieve data we need to use the same <b>tag</b> to ask TinyDB
+          for the information we want. There is a possibility that the TinyDB
+          does not have any information stored for that tag, so we need to
+          specify what value to return for that scenario. It's okay to use an
+          empty text string for <code>valueIfTagNotThere</code>, but in the
+          example below, we return <code>Beyonce</code> if the TinyDB does not
+          have any information under the tag <code>favoriteSinger</code>.</p>
+          <img style="max-width: 400px" src="img/example_get.png" />
+        <h2>Challenge</h2>
+        <p>Display the previously selected location, even if the user restarts
+          the app. Hint: Use the <b>TinyDB</b> component.</p>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Show Location on Map">
+        <p>When the user clicks on the "View Location on Map" button, we want
+          to show the location using Google Maps.</p>
+        <h2>Challenge A</h2>
+        <ol>
+          <li>Create a procedure/method called <code>showMap</code>.</li>
+          <li>When the user clicks on the "View Location on Map" button, if the
+            user has <i>not</i> selected a location, then use the
+            <code>call Notifier.ShowMessageDialog</code>
+            block to show a message (e.g. "No location has been selected yet!").
+            Otherwise, if the user <i>has</i> selected a location, then call the
+            <code>showMap</code> method you made in the previous step.
+        </ol>
+        <h1>Activity Starter</h1>
+        <p>The <a href="http://ai2.appinventor.mit.edu/reference/other/activitystarter.html">
+          <b>Activity Starter</b></a> component is useful when we want to open
+          other applications on the phone from our own app. There are two
+          properties of the Activity Starter that we need to set: the <code>Action</code>
+          property and the <code>DataUri</code> property.</p>
+        <h2>Challenge B</h2>
+        <p>Fill in your <code>showMap</code> method as follows.</p>
+        <img style="max-width: 700px" src="img/show_map.png" />
+        <aside class="callout">
+          <h2>Test your app</h2>
+          <p>Before selecting a location, click on the "View Location on Map"
+            button. Does your message show up?</p>
+          <p>Select a location, and then click on the "View Location on Map"
+            button to display your location on the map.</p>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #2">
+        <aside class="special">
+          <h2>map-it-2</h2>
+          <p><b>To receive this checkoff, you must </b></p>
+          <ul class="checklist">
+            <li>Explain how you used the database to save the previously
+              selected location</li>
+            <li>Explain how you used the Activity Starter to show the selected
+              location on the map</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Congratulations!">
+        <p>You have used App Inventor to create an app that shows locations on
+          a map.</p>
+        <h3 class="checklist"><strong>What we&#39;ve covered</strong></h3>
+        <ul class="checklist">
+          <li>Use <b>lists</b> to store data.</li>
+          <li>Use <b>ListPicker</b> to let users choose from a list.</li>
+          <li>Use <b>ActivityStarter</b> to start up Google Maps from your app.</li>
+          <li>Use <b>Notifier</b> to display messages on your app.</li>
+          <li>Use <b>TinyDB</b> to save data persistently.</li>
+        </ul>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Bonus Features">
+        If you finish early, implement one or more of the following features for a bonus checkoff.
+        <aside class="special">
+          <h2>map-it-bonus</h2>
+          <p><b>To receive this checkoff, you must implement one or more of the following:</b></p>
+          <ul>
+            <li>Allow the user to add new locations to the location list.</li>
+            <li>Allow the user to show the current location on the map.</li>
+            <li>Implement your own bonus feature.</li>
+          </ul>
+        </aside>
+
+
+      </google-codelab-step>
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
