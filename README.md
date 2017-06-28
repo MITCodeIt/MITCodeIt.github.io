@@ -3,6 +3,7 @@ Home of codelabs used for CodeIt
 
 ## App Inventor
 **Day 1**
+ - [Talk To Me](https://mitcodeit.github.io/appinventor/codelabs/talk-to-me/)
  - [Ball Bounce](https://mitcodeit.github.io/appinventor/codelabs/ball-bounce/)
 
 **Day 3**
