@@ -23,12 +23,12 @@
   <google-codelab title="I Have A Dream Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
 
       <google-codelab-step label="Overview">
-        <p>In this codelab, you&#39;ll learn about event handling and if-conditionals.</p>
+        <p>In this codelab, you will create an app that plays speeches by Michelle Obama and Hillary Clinton.</p>
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
-          <li>Use Arrangement components.</li>
-          <li>Create more complex user interfaces.</li>
-          <li>Use if-else blocks to control what your app does.</li>
+          <li>Use <b>Arrangement</b> components to organize other components like buttons and labels on the screen.</li>
+          <li>Play media using the <b>Player</b> component.</li>
+          <li>Use if-else blocks to control what your app does in different situations.</li>
           <li>Check a component's properties using code.</li>
         </ul>
 
@@ -36,9 +36,9 @@
 
       <google-codelab-step label="Create a new project using a starter app">
         <p>You will use an App Inventor starter app to begin this app. The starter app has no code, just the image and sound files you will need.</p>
-        <p>Go to <a href="http://ai2.appinventor.mit.edu/?galleryId=5753789846913024" target="_blank">http://ai2.appinventor.mit.edu/?galleryId=5753789846913024</a> and click <b>Open the app</b>.</p>
+        <p>Go to <a href="ai2.appinventor.mit.edu/?galleryId=6442217004335104" target="_blank">ai2.appinventor.mit.edu/?galleryId=6442217004335104</a> and click <b>Open the app</b>.</p>
         <img src="img/starter_app.png">
-        <p>Name the new project <code>IHaveaDream</code>.</p>
+        <p>Name the new project <code>LeadingWomen</code>.</p>
         <img src="img/app_name.png">
 
       </google-codelab-step>
@@ -50,7 +50,7 @@
         <img src="img/button.png">
         <h2>Challenges</h2>
         <ol>
-          <li> Make the Button show a picture of Martin Luther King (use <i>mlk.jpg</i>).</li>
+          <li> Make the Button show a picture of Michelle Obama (use <i>michelle.jpg</i>).</li>
           <li>Remove the text from the Button.</li>
         </ol>
 
@@ -63,12 +63,12 @@
         <p>Open the <b>Media</b> drawer and drag a <b>Player</b> component into the app.</p>
         <h2>Challenges</h2>
         <ol>
-          <li>Set the source of the Player component to a sound clip of MLK's speech (use <i>king.mpg</i>).</li>
+          <li>Set the source of the Player component to a sound clip of Obama's speech (use <i>Michelle.mp3</i>).</li>
         </ol>
 
       </google-codelab-step>
 
-      <google-codelab-step label="Code your app">
+      <google-codelab-step label="Play Michelle Obama's speech">
         <p>Go to <b>Blocks View</b>. Drag a <code>when Button1.Click</code> event handler into the workspace.</p> 
         <img src="img/block1.png"
         <p>Then place a <code>call Player1.Start</code> block into the event handler.</p>
@@ -85,29 +85,28 @@
           <h2>i-have-a-dream-1</h2>
           <p><b>To recieve this checkoff, you must</b></p>
           <ul class-"checklist">
-            <li>Demonstrate your working app</li>
-            <li>Explain what the AlignHorizontal property of the screen component does</li>
+            <li>Play Obama's speech when the user clicks on the picture of Obama</li>
+            <li>Explain what the <b>AlignHorizontal</b> property of the screen component does</li>
             <li>Once the speech is playing, can you stop or pause it? Explain why or why not.</li>
           </ul>
         </aside>
 
       </google-codelab-step>
 
-      <google-codelab-step label="Add Malcolm X">
-        <p>Now, you will modify your app to include Malcom X, another civil rights leader.</p>
-        <p>First, replace the image for your button with a smaller image (use <i>mlk152x129.jpg</i>).</p>
-        <p>Next, drag another <b>Button</b> component onto your screen, and set it to a picture of Malcolm X (use <i>malcolm152x129.jpg</i>).</p>
+      <google-codelab-step label="Add Hillary">
+        <p>Now, you will modify your app to include Hillary Clinton.</p>
+        <p>Drag another <b>Button</b> component onto your screen, and set it to a picture of Clinton (use <i>hillary.jpg</i>).</p>
         <p>From the <b>Layout drawer</b>, drag a <b>HorizontalArrangment</b> into the workspace, and add the two buttons so that they appear side-by-side.</p>
         <img src="img/horizontal.png">
 
       </google-codelab-step>
 
       <google-codelab-step label="Add an image of both leaders">
-        <p>Drag an <b>Image</b> component above the two buttons. Set the image to one of both MLK and Malcolm X (use <i>228px-MLK_and_Malcolm_X_USNWR_cropped.jpg</i>).</p>
-        <p>Add a second <b>Player</b> component and set it to a sound clip of Malcolm X's speech (use <i>malcolmx.mp3</i>).</p>
+        <p>Drag an <b>Image</b> component above the two buttons. Set the image to one of both Clinton and Obama (use <i>hillary_and_michelle.png</i>).</p>
+        <p>Add a second <b>Player</b> component and set it to a sound clip of Clinton's speech (use <i>Hillary.mp3</i>).</p>
         <h2>Challenges</h2>
         <ol>
-          <li>Rename the Button and Player components as "MLKButton", "MalcolmButton", "MLKPlayer", and "MalcolmPlayer".</li>
+          <li>Rename the Button and Player components as "ObamaButton", "ClintonButton", "ObamaPlayer", and "ClintonPlayer".</li>
           <li>Make the user interface of your app look like this:</li>
           <img src="img/ui.png" style="max-width: 300px">
         </ol>
@@ -120,38 +119,39 @@
           <p><b>To recieve this checkoff, you must</b></p>
           <ul class-"checklist">
             <li>Show your completed user interface</li>
-            <li>Explain what the HorizontalArrangement component does</li>
-            <li>Explain the difference between an Image component and a Button component with an image</li>
-            <li>Give reasons why changing the name of the Player and Button components may be useful</li>
+            <li>Explain what the <b>HorizontalArrangement</b> component does</li>
+            <li>Explain the difference between an <b>Image</b> component and a <b>Button</b> component with an image</li>
+            <li>Give reasons why changing the name of the <b>Player</b> and <b>Button</b> components may be useful</li>
           </ul>
         </aside>
 
       </google-codelab-step>
 
-      <google-codelab-step label="Add code to pause MLK speech">
+      <google-codelab-step label="Pause Obama's speech">
         <p>Go to <b>Blocks View</b>. Let's add the ability to pause the speech if it is already playing. To do this, we will use an if-else block.</p>
-        <p>First, drag a <code>when MLKButton.Click</code> block. Then, drag an <code>if</code> block from the <b>Control</b> drawer. Click the blue modifier icon, and drag an <code>else</code> block into the picture of the <code>if</code> block. This modifies your <code>if</code> block to have two branches.</p>
+        <p>First, drag a <code>when ObamaButton.Click</code> block. Then, drag an <code>if</code> block from the <b>Control</b> drawer. Click the blue modifier icon, and drag an <code>else</code> block into the picture of the <code>if</code> block. This modifies your <code>if</code> block to have two branches.</p>
         <img src="img/if_else.png">
-        <p>Place the if-else block into the <code>when MLKButton.Click</code> event handler. Fill in the if-else block with the following blocks as shown.</p>
+        <p>Place the if-else block into the <code>when ObamaButton.Click</code> event handler. Fill in the if-else block with the following blocks as shown.</p>
         <img src="img/if_else_blocks.png">
         <aside class="note">
-          <p>Conditional statements are fundamental to programming. They allow the program to make decisions based on the current state of the program. Almost all "if" statements check the values of component properties or values. In this case, the Player component's IsPlaying property is checked, and the program chooses an action based on whether the Player is playing or not.</p>
+          <h2>Conditional statements using <code>if-else</code> blocks</h2>
+          <p>Conditional statements are fundamental to programming. They allow the program to make decisions based on the current state of the program. Almost all "if" statements check the values of component properties. In this case, the Player component's IsPlaying property is checked, and the program chooses an action based on whether the Player is playing or not.</p>
         </aside>
 
       </google-codelab-step>
 
-      <google-codelab-step label="Add code to pause the other speech">
-        <p>Now, we want to ensure that both speeches will never play at the same time. If the MLK speech is playing and we click the Malcolm X button, we want the MLK speech to pause.</p>
-        <p>To do this, all we need to do is add a <code>call MalcolmPlayer.Pause</code> block to the event handler as shown.</p>
+      <google-codelab-step label="One speech at a time">
+        <p>Now, we want to ensure that both speeches will never play at the same time. If the Clinton speech is playing, and we click on the Obama button, we want Clinton to pause.</p>
+        <p>To do this, all we need to do is add a <code>call ClintonPlayer.Pause</code> block to the event handler as shown.</p>
         <img src="img/pause_other.png">
         <h2>Challenges</h2>
         <ol>
-          <li>Code the Malcolm X button exactly like the MLK button. We want both buttons to behave the exact same way.</li>
+          <li>Make the Clinton button play/pause Clinton's speech. Make sure the Obama speech pauses if Clinton's speech begins playing.</li>
           <p><i>Hint: You can copy-paste blocks, as well as change the blocks to refer to different components using the arrow next to the component name.</i></p>
         </ol>
         <aside class="callout">
           <h2>Test your app</h2>
-          <p>Try playing the two speeches. Can you pause a speech once it's playing? If a speech is playing, will clicking the other button pause that speech and start the other speech?</p>
+          <p>Try playing and pausing the two speeches. Start Obama's speech. Before it ends, click on Clinton. What happens?</p>
         </aside>
 
       </google-codelab-step>
@@ -161,24 +161,23 @@
           <h2>i-have-a-dream-3</h2>
           <p><b>To recieve this checkoff, you must</b></p>
           <ul class-"checklist">
-            <li>Demonstrate your working app</li>
-            <li>Explain how you coded the Malcolm X button</li>
-            <li>Describe the similarities and differences between the code for the MLK button and the code for the Malcolm X button</li>
+            <li>Play Obama's speech and interrupt it with Clinton's speech</li>
+            <li>Explain how you made the Clinton button work</li>
+            <li>Describe the similarities and differences between the code for the Obama button and the code for the Clinton button</li>
             <li>Explain why we modified the <code>if</code> block to include an <code>else</code> block</li>
-            <li>Explain how the program knows a speech is playing</li>
-            <li>Name the different things that can happen when a Button is clicked</li>
+            <li>Explain how the program knows whether or not a speech is playing</li>
           </ul>
         </aside>
 
       </google-codelab-step>
 
       <google-codelab-step label="Congratulations!">
-        <p>You have used App Inventor to create an app that can play two different speeches without overlap.</p>
+        <p>You have used App Inventor to create an app that can play two different speeches!</p>
         <h3 class="checklist"><strong>What we&#39;ve covered</strong></h3>
         <ul class="checklist">
-          <li>Use Arrangement components.</li>
-          <li>Create more complex user interfaces.</li>
-          <li>Use if-else blocks to control what your app does.</li>
+          <li>Use <b>Arrangement</b> components to organize other components like buttons and labels on the screen.</li>
+          <li>Play media using the <b>Player</b> component.</li>
+          <li>Use if-else blocks to control what your app does in different situations.</li>
           <li>Check a component's properties using code.</li>
         </ul>
 
