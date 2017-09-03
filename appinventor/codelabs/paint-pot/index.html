@@ -24,11 +24,12 @@
 
       <google-codelab-step label="Overview">
         <p>In this codelab, you&#39;ll make an app to draw on your phone.</p>
+        <img src="img/final_app.png" style="max-width: 200px">
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
           <li>Use the <b>Canvas</b> component for drawing.</li>
-          <li>Learn how to use <b>local variables</b> and <b>global variables</b>.</li>
-          <li>Work with different <b>event handlers</b> and types of blocks.</li>
+          <li>Learn how to use <b>variables</b> to store information.</li>
+          <li>Use <b>touch</b> and <b>drag</b> event handlers with the Canvas component.</li>
         </ul>
 
       </google-codelab-step>
@@ -42,7 +43,7 @@
       </google-codelab-step>
 
       <google-codelab-step label="Add color buttons">
-      <p>Drag three <b>Button</b> components into your workspace. Name the button components "ButtonRed","ButtonBlue", and "ButtonGreen".</p>
+      <p>Drag three <b>Button</b> components into your workspace. Name the button components "ButtonRed", "ButtonBlue", and "ButtonGreen".</p>
       <img src="img/color_button_names.png" style="max-width: 600px">
       <h2>Challenges</h2>
         <ol>
@@ -54,7 +55,7 @@
 
       <google-codelab-step label="Add a canvas and wipe button">
       <p>From the <b>Drawing and Animation</b> drawer, drag a <b>Canvas</b> component onto the workspace. Change the <b>name</b> of the component to "DrawingCanvas", set the <b>Width</b> to "Fill Parent", and set the <b>Height</b> to 300 pixels.</p>
-      <p>Download kitty.png from <a href="http://examples.oreilly.com/0636920016632/" target="_blank">here</a>. Upload the file in the <b>Media</b> panel.</p>
+      <p>Download kitty.png from <a href="https://resources.oreilly.com/examples/0636920016632/raw/master/kitty.png" target="_blank">here</a>. Upload the file in the <b>Media</b> panel.</p>
       <p>Let's change the background image of the canvas to this picture so we can draw on it. In the <b>Properties</b> panel of the Canvas component, set the <b>BackgroundImage</b> to kitty.png.</p>
       <img src="img/canvas_background.png">
       <p>Drag a <b>Button</b> component below the Canvas. Name the component "ButtonWipe".</p>
@@ -63,9 +64,8 @@
 
       </google-codelab-step>
 
-      <google-codelab-step label="Add button event handlers">
-      <p>Now it's time to code our app. Go to <b>Blocks View</b>.</p>
-      <p>Open the <b>ButtonRed</b> drawer and drag out a <code>when ButtonRed.Click</code> block.</p>
+      <google-codelab-step label="Add button click event handlers">
+      <p>Go to <b>Blocks View</b>. Open the <b>ButtonRed</b> drawer and drag out a <code>when ButtonRed.Click</code> block.</p>
       <p>Open the <b>DrawingCanvas</b> drawer and drag out a <code>set DrawingCanvas.BackgroundColor to</code> block. From the drop down menu, change <code>BackgroundColor</code> to <code>PaintColor</code>. Place this block inside <code>when ButtonRed.Click</code>.</p>
       <p>Open the <b>Colors</b> drawer and drag out the block for the color Red. Place it into the <code>set DrawingCanvas.PaintColor to</code> block.</p>
       <p>Repeat these steps for the Blue and Green buttons.</p>
@@ -96,20 +96,24 @@
 
       <google-codelab-step label="Checkoff #1">
       <aside class="special">
-          <h2>paint-pot-1</h2>
+        <h2>paint-pot-1</h2>
           <p><b>To receive this checkoff, you must</b></p>
           <ul class="checklist">
-            <li>Demonstrate your working app</li>
-            <li>Explain what local variables are (the orange arguments built into some event handlers)</li>
-            <li>Explain the six local variables in the <code>when DrawingCanvas.Dragged</code> block (startX, startY, prevX, etc.)</li>
+            <li>Show that you can draw a point by touching the canvas and a line by dragging your finger across the canvas</li>
+            <li>Show that you can change the color of the paint by clicking on the different colored buttons</li>
             <li>Explain the difference between touching and dragging the screen</li>
           </ul>
         </aside>
 
       </google-codelab-step>
 
-      <google-codelab-step label="Creating variables">
+      <google-codelab-step label="Setting paint brush sizes">
       <p>Now we're going to create a way to change the size of the dot you draw when you touch the screen. To do this, we're going to use <i>variables</i>.</p>
+      <aside class="note">
+        <h2>Variables</h2>
+        <p>Variables are used in programming to store the value of something. They can be thought of as containers for storing values such as numbers or text.</p>
+        <p>For example, if you are making a game and want to keep track of the player's score, you can use a variable as a container to hold the current score. A variable's value is changable, and when the player gains a point, you can call the variable to know the current score, add the number of points the player gained, and then update the value of the variable to reflect the current score.</p>
+      </aside>
       <p>From the <b>Variables</b> drawer, drag out a <code>initialize global name to</code> block.</p>
       <p>We're going to create a variable named "small", and set it equal to 2. Type "small" where it says "name".</p>
       <img src="img/small_block1.png" style="max-width: 250px">
@@ -129,7 +133,7 @@
       </google-codelab-step>
 
       <google-codelab-step label="Add two more buttons">
-      <p>Go back to <b>Designer View</b>. Add a <b>Horizontal Arrangement</b> component to below the canvas component. Drag the Wipe button into the HorizontalArrangement.</p>
+      <p>Go back to <b>Designer View</b>. Add a <b>Horizontal Arrangement</b> component below the canvas component. Drag the Wipe button into the HorizontalArrangement.</p>
       <p>Add two more button components into the HorizontalArrangement, next to the Wipe button. Name the buttons "ButtonBig" and "ButtonSmall", and set their <b>Text</b> to read "Big dots" and "Small dots", respectively.</p>
       <img src="img/final_ui.png">
 
@@ -138,7 +142,7 @@
       <google-codelab-step label="Changing the values of variables">
       <p>Go to <b>Blocks View</b>. Find the <code>when DrawingCanvas.Touched</code> event handler and replace the number 5 with <code>get dotsize</code> from the <b>Variables</b> drawer.</p>
       <img src="img/touch_variable.png" style="max-width: 400px">
-      <p>Drag a <code>when ButtonSmall.Clicked</code> event handler into the workspace. Place a <code>get global dotsize to</code> block in the event handler, and plug in <code>get global small</code> into the block.</p>
+      <p>Drag a <code>when ButtonSmall.Clicked</code> event handler into the workspace. Place a <code>set global dotsize to</code> block in the event handler, and plug in <code>get global small</code> into the block.</p>
       <p>Repeat the same steps for the ButtonBig blocks. Your finished blocks to change the size of the dots shoud look like this:</p>
       <img src="img/size_blocks.png" style="max-width: 400px">
       <p>Your finished blocks should look something like this:</p>
@@ -148,13 +152,11 @@
 
       <google-codelab-step label="Checkoff #2">
       <aside class="special">
-          <h2>paint-pot-2</h2>
+        <h2>paint-pot-2</h2>
           <p><b>To receive this checkoff, you must</b></p>
           <ul class="checklist">
-            <li>Demonstrate your working app</li>
-            <li>Explain what variables are</li>
-            <li>Explain how variables were used to change dot size</li>
-            <li>Explain the difference between local variables and global variables</li>
+            <li>Show that you can change the size of the dots</li>
+            <li>Explain what variables are and how you used them to change the dot size</li>
           </ul>
         </aside>
 
@@ -165,8 +167,8 @@
         <h3 class="checklist"><strong>What we&#39;ve covered</strong></h3>
         <ul class="checklist">
           <li>Use the <b>Canvas</b> component for drawing.</li>
-          <li>Learn how to use <b>local variables</b> and <b>global variables</b>.</li>
-          <li>Work with different <b>event handlers</b> and types of blocks.</li>
+          <li>Learn how to use <b>variables</b> to store information.</li>
+          <li>Use <b>touch</b> and <b>drag</b> event handlers with the Canvas component.</li>
         </ul>
 
       </google-codelab-step>
@@ -174,10 +176,10 @@
       <google-codelab-step label="Bonus Features">
         If you finish early, implement one or more of the following features for a bonus checkoff.
         <aside class="special">
-          <h2>talk-to-me-bonus</h2>
+          <h2>paint-pot-bonus</h2>
           <p><b>To receive this checkoff, you must implement one or more of the following:</b></p>
           <ul>
-            <li>Implement a way for the user to imput the size of the dot.</li>
+            <li>Implement a way for the user to input the size of the dot.</li>
             <li>Add the ability to shake the phone to erase all the drawings on the screen.</li>
             <li>Let the user take a picture using the phone camera and then draw on the picture.</li>
             <li>Implement a way to change the canvas color using variables.</li>

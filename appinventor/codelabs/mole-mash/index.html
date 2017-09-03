@@ -23,12 +23,13 @@
   <google-codelab title="Mole Mash Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
 
       <google-codelab-step label="Overview">
-        <p>In this codelab, you&#39;ll create a game similar to Whack-a-Mole!
+        <p>In this codelab, you&#39;ll create a game similar to Whack-a-Mole!</p>
+        <img src="img/final_app.png" style="max-width: 250px">
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
-          <li>Use new components such as <b>image sprites</b> and the <b>Clock</b> component.</li>
+          <li>Use <b>image sprite</b> and the <b>Clock</b> components.</li>
           <li>Use <b>procedures</b> to simplify your code.</li>
-          <li>Use new blocks such as <b>random</b> and <b>text</b> blocks.</li>
+          <li>Use the <code>random fraction</code> block.</li>
         </ul>
 
       </google-codelab-step>
@@ -44,7 +45,7 @@
 
       </google-codelab-step>
 
-      <google-codelab-step label="The first components">
+      <google-codelab-step label="Create the user interface">
         <p>You should be familiar with adding various components in the <b>Designer View</b>. Add the following to your app:</p>
           <ul>
             <li>A <b>Canvas</b> named "MyCanvas". This is the area where the mole moves. Set its dimensions to 300 pixels wide by 300 pixels high.</li>
@@ -64,17 +65,17 @@
       </google-codelab-step>
 
       <google-codelab-step label="Add a mole">
-        <p>To add the moving mole, we'll use a <b>sprite</b>. Sprites are images that can move on the screen within a Canvas. For MoleMash, our sprite won't move by itself; instead, you'll be setting the mole's position each time the timer fires.</p>
-        <p>From the <b>Drawing and Animation</b> drawer, drag a <b>ImageSprite</b> into your workspace, within the area of <b>MyCanvas</b>. Name this component "Mole", and set these properties for your sprite:</p>
+        <p>To add the moving mole, we'll use a <b>sprite</b>. Sprites are images that can move on the screen within a Canvas. For MoleMash, you'll be setting the mole's position each time the timer fires.</p>
+        <p>From the <b>Drawing and Animation</b> drawer, drag an <b>ImageSprite</b> into your workspace, within the area of <b>MyCanvas</b>. Name this component "Mole", and set these properties for your sprite:</p>
           <ul>
-            <li>Picture: Use mole.png, which you downloaded to your computer at the beginning of this tutorial.</li>
-            <li>Enabled: checked</li>
-            <li>Interval: 500 (The interval doesn't matter here, because the mole's speed is zero: it's not moving by itself.)</li>
-            <li>Heading: 0 The heading doesn't matter here either, because the speed is 0.</li>
-            <li>Speed: 0.0</li>
-            <li>Visible: checked</li>
-            <li>Width: Automatic</li>
-            <li>Height: Automatic</li>
+            <li><b>Picture</b>: Use mole.png, which you downloaded to your computer at the beginning of this tutorial.</li>
+            <li><b>Enabled</b>: checked</li>
+            <li><b>Interval</b>: 500 (The interval doesn't matter here, because the mole's speed is zero: it's not moving by itself.)</li>
+            <li><b>Heading</b>: 0 The heading doesn't matter here either, because the speed is 0.</li>
+            <li><b>Speed</b>: 0.0</li>
+            <li><b>Visible</b>: checked</li>
+            <li><b>Width</b>: Automatic</li>
+            <li><b>Height</b>: Automatic</li>
           </ul>
         <aside class="callout">
           <h2>Test your app</h2>
@@ -99,7 +100,12 @@
       </google-codelab-step>
 
       <google-codelab-step label="Define a procedure to move the mole">
-        <p>Now it's time to code your app. To do that, we're going to need a new type of block: <i>procedures</i>. A procedure is a sequence of statements that you can refer to all at once as single command.</p>
+        <p>Now it's time to add functionality to your app. To do that, we're going to need a new type of block: <i>procedures</i>.</p>
+        <aside class="note">
+          <h2>Procedures</h2>
+          <p>When components in your app have similar behavior, you can end up with a lot of blocks almost doing the same thing. With procedures, you eliminate the need to repeat the same blocks over and over.</p>
+          <p>A procedure is a sequence of blocks or code that is stored under a name, the name of your procedure block. Instead of having to keep putting together the same long sequence of blocks, you can create a procedure and just call the procedure block whenever you want your sequence of blocks to run.</p>
+        </aside>
         <p>MoleMash requires 2 procedures. Go to <b>Blocks View</b>. Find the <b>Procedures</b> drawer under <b>Built-In</b>, and drag out a <b>to procedure</b> block. Change the label "procedure" to "MoveMole".</p>
         <p>MoveMole is a procedure that moves the Mole sprite to a new random position on the Canvas. To do this, you will set the Mole's x and y positions to be a random fraction, between 0 and 1, of the difference between the size of the canvas and the size of the mole.</p>
         <p>This is what the complete MoveMole procedure should look like:</p>
@@ -130,38 +136,47 @@
         <p>Next, define a procedure named "UpdateScore". This procedure will change the text of the the label <b>ScoreLabel</b> to show the score of the game.</p>
         <h2>Challenges</h2>
         <ol>
-          <li>Try to code this procedure by yourself.</li>
-          <p>Hint: The completed UpdateScore procedure should look something like this:</p>
-          <img src="img/updatescore.png" style="max-width: 400px">
+          <li><p>Implement the <code>UpdateScore</code> procedure, which should make the <b>ScoreLabel</b> show the game score. The following blocks might be helpful:</p>
+          <img src="img/updatescore.png" style="max-width: 270px">
         </ol>
 
       </google-codelab-step>
 
-      <google-codelab-step label="Add a Timer">
-        <p>The next step is to keep the mole moving. Every time MoleTimer goes off, the procedure MoveMole is called, meaning that the Mole has moved to a new, random position.</p>
+      <google-codelab-step label="Use the timer to move the mole">
+        <p>The next step is to keep the mole moving. Every time MoleTimer goes off, the procedure MoveMole is called, which moves the Mole to a new, random position.</p>
         <p>From the <b>MoleTimer</b> drawer, drag out a <code>when MoleTimer.Timer</code> block, and from the <b>Procedures</b> drawer, drag a <code>call MoveMole</code> block into the <code>when MoleTimer.Timer</code> block.</p>
         <img src="img/moletimer.png" style="max-width: 250px">
 
       </google-codelab-step>
 
-      <google-codelab-step label="Add a Mole Touch handler">
-        <p>The program should increment the score each time the mole is touched. Sprites, like canvases, respond to touch events.</p>
-        <p>Every time the Mole is touched, your program will increment the score, call the UpdateScore prodecure to show the new score, make the phone vibrate for 100 milliseconds, and call the MoveMole procedure so the mole moves right away.</p>
+      <google-codelab-step label="Whack the mole!">
+        <p>The player's score should go up by 1 every time the player successfully whacks the mole. Sprites, like canvases, respond to touch events.</p>
         <h2>Challenges</h2>
           <ol>
-            <li>Try to code this procedure by yourself.</li>
-            <p>Hint: The completed event handler should look something like this:</p>
-            <img src="img/mole_touch.png" style="max-width: 400px">
-            <li>Use typeblocking: typing to quickly create blocks.</li>
-            <p>To create a value block containing 100, just type 100 and press return</p>
-            <p>To create a MoveMole block, just type MoveMole and select the block you want from the list</p>
+            <li>Code your app so that every time the Mole is touched, your program will:</li>
+              <ol>
+                <li>Increment the score</li>
+                <li>Call the <code>UpdateScore</code> prodecure to show the new score</li> 
+                <li>Make the phone vibrate for 100 milliseconds</li>
+                <li>Call the <code>MoveMole</code> procedure so the mole moves right away</li>
+              </ol>
+            <p>The following blocks might be helpful:</p>
+            <img src="img/mole_touch.png" style="max-width: 200px">
           </ol>
+          <aside class="note">
+            <h2>Typeblocking</h2>
+            <p>You can use typeblocking to quickly create new blocks. For example:</p>
+            <ul>
+              <li>To create a value block containing 100, just type 100 and press return</li>
+              <li>To create a MoveMole block, just type MoveMole and select the block you want from the list</li>
+            </ul>
+          </aside>
 
       </google-codelab-step>
 
       <google-codelab-step label="Reset the score">
         <p>The last thing we need to do is reset the score every time the Reset button is pressed.</p>
-        <p>From the <b>ResetButton</b> drawer, drag a <code>when ResetButton.Click</code> block into the workspace. Place a <code>set global score to</code> block inside, and set the global score to 0. Next, update the score my placing a <code>call UpdateScore</code> block after the <code>set global score to</code> block.</p>
+        <p>From the <b>ResetButton</b> drawer, drag a <code>when ResetButton.Click</code> block into the workspace. Place a <code>set global score to</code> block inside, and set the global score to 0. Next, update the score label by placing a <code>call UpdateScore</code> block after the <code>set global score to</code> block.</p>
         <img src="img/reset_button.png" style="max-width: 250px">
         <p>Your complete MoleMash program should look like this:</p>
         <img src="img/final_blocks.png">
@@ -173,9 +188,10 @@
           <h2>mole-mash-2</h2>
           <p><b>To receive this checkoff, you must</b></p>
           <ul class="checklist">
-            <li>Demonstrate your working app</li>
-            <li>Describe what a procedure is, and the benefits of using procedures</li>
+            <li>Show that you can earn points by whacking the mole and reset the game by pressing the reset button</li>
+            <li>Describe what a procedure is and the benefits of using procedures</li>
             <li>Explain why the <code>when Mole.Touched</code> event handler calls the <code>MoveMole</code> procedure. What would happen if <code>MoveMole</code> wasn't called?</li>
+            <li>Explain how defining a procedure is different from calling a procedure</li>
           </ul>
         </aside>
 
@@ -185,9 +201,9 @@
         <p>You have made your first game using App Inventor.</p>
         <h3 class="checklist"><strong>What we&#39;ve covered</strong></h3>
         <ul class="checklist">
-          <li>Use new components such as <b>image sprites</b> and the <b>Clock</b> component.</li>
+          <li>Use <b>image sprite</b> and the <b>Clock</b> components.</li>
           <li>Use <b>procedures</b> to simplify your code.</li>
-          <li>Use new blocks such as <b>random</b> and <b>text</b> blocks.</li>
+          <li>Use the <code>random fraction</code> block.</li>
         </ul>
 
       </google-codelab-step>
@@ -201,7 +217,7 @@
             <li>Make the game vary the speed of the mole in response to how well the player is doing.</li>
             <li>Keep track of when the player hits the mole and when the player misses the mole, and show a score with both hits and misses.</li>
             <li>Add multiple moles.</li>
-            <li>Add obstacles that distract the player from hitting the mole and hinder the player when he or she accidentally hits an obstacle.</li>
+            <li>Add obstacles that decrease the player's score if the player hits the obstacle.</li>
             <li>Implement your own bonus feature.</li>
           </ul>
         </aside>
