@@ -1,0 +1,258 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Mole Mash Codelab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Mole Mash Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Overview">
+        <p>In this codelab, you&#39;ll create a game similar to Whack-a-Mole!</p>
+        <img src="img/final_app.png" style="max-width: 250px">
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Use <b>image sprite</b> and the <b>Clock</b> components.</li>
+          <li>Use <b>procedures</b> to simplify your code.</li>
+          <li>Use the <code>random fraction</code> block.</li>
+        </ul>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Create a new project">
+        <p>From the <b>Projects</b> drop down menu, click <b>Start a new project</b>.
+        <p>Create a <a href="http://ai2.appinventor.mit.edu/" target="_blank">new project</a> called
+          <code>MoleMash</code> (no spaces).</p>
+        <img src="img/new_project.png">
+        <p>Set the screen's <b>Title</b> to "MoleMash".</p>
+        <p>Download <a href="http://appinventor.mit.edu/explore/sites/all/files/ai2tutorials/moleMash/mole.png" target="_blank">this picture of a mole</a> and upload it in the <b>Media</b> panel.</p>
+        <img src="img/mole_pic.png" style="max-width: 400px">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Create the user interface">
+        <p>You should be familiar with adding various components in the <b>Designer View</b>. Add the following to your app:</p>
+          <ul>
+            <li>A <b>Canvas</b> named "MyCanvas". This is the area where the mole moves. Set its dimensions to 300 pixels wide by 300 pixels high.</li>
+            <li>A <b>Label</b> named "ScoreLabel" that shows the score, i.e., the number of times the player has hit the mole. Set the Text to "Score: ---".</li>
+            <li>A <b>Button</b> named "ResetButton".</li>
+            <li>A <b>Sound</b> component and name it "Noise". You'll use Noise to make the phone vibrate when the mole is hit.</li>
+          </ul>
+        <p>Your app should look something like this:</p>
+        <img src="img/ui1.png">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Add a timer">
+        <p>In order to make the mole jump periodically, you'll need a timer. Add a <b>Clock</b> component and name it "MoleTimer"; this component will go into the <b>non-visible components</b> area. Set the <b>TimeInterval</b> property to 500 milliseconds, and make sure that <b>TimerEnabled</b> is checked.</p>
+        <img src="img/timer.png">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Add a mole">
+        <p>To add the moving mole, we'll use a <b>sprite</b>. Sprites are images that can move on the screen within a Canvas. For MoleMash, you'll be setting the mole's position each time the timer fires.</p>
+        <p>From the <b>Drawing and Animation</b> drawer, drag an <b>ImageSprite</b> into your workspace, within the area of <b>MyCanvas</b>. Name this component "Mole", and set these properties for your sprite:</p>
+          <ul>
+            <li><b>Picture</b>: Use mole.png, which you downloaded to your computer at the beginning of this tutorial.</li>
+            <li><b>Enabled</b>: checked</li>
+            <li><b>Interval</b>: 500 (The interval doesn't matter here, because the mole's speed is zero: it's not moving by itself.)</li>
+            <li><b>Heading</b>: 0 The heading doesn't matter here either, because the speed is 0.</li>
+            <li><b>Speed</b>: 0.0</li>
+            <li><b>Visible</b>: checked</li>
+            <li><b>Width</b>: Automatic</li>
+            <li><b>Height</b>: Automatic</li>
+          </ul>
+        <aside class="callout">
+          <h2>Test your app</h2>
+          <p>You should see that the <b>x</b> and <b>y</b> properties of the Mole sprite are already filled in. Drag the Mole around on your Canvas some more. How have the <b>x</b> and <b>y</b> properties changed? How are these properties determined?</p>
+        </aside>
+        <p>Your user interface should look something like this:</p>
+        <img src="img/ui2.png">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff  #1">
+        <aside class="special">
+          <h2>mole-mash-1</h2>
+          <p><b>To receive this checkoff, you must</b></p>
+          <ul class="checklist">
+            <li>Show your finished User Interface</li>
+            <li>Explain what the TimerInterval property of the Clock component does</li>
+            <li>Describe what a sprite component is, and how it's used in your app</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Define a procedure to move the mole">
+        <p>Now it's time to add functionality to your app. To do that, we're going to need a new type of block: <i>procedures</i>.</p>
+        <aside class="note">
+          <h2>Procedures</h2>
+          <p>When components in your app have similar behavior, you can end up with a lot of blocks almost doing the same thing. With procedures, you eliminate the need to repeat the same blocks over and over.</p>
+          <p>A procedure is a sequence of blocks or code that is stored under a name, the name of your procedure block. Instead of having to keep putting together the same long sequence of blocks, you can create a procedure and just call the procedure block whenever you want your sequence of blocks to run.</p>
+        </aside>
+        <p>MoleMash requires 2 procedures. Go to <b>Blocks View</b>. Find the <b>Procedures</b> drawer under <b>Built-In</b>, and drag out a <b>to procedure</b> block. Change the label "procedure" to "MoveMole".</p>
+        <p>MoveMole is a procedure that moves the Mole sprite to a new random position on the Canvas. To do this, you will set the Mole's x and y positions to be a random fraction, between 0 and 1, of the difference between the size of the canvas and the size of the mole.</p>
+        <p>This is what the complete MoveMole procedure should look like:</p>
+        <img src="img/movemole.png">
+        <p>First, from the <b>Mole</b> drawer, drag a <code>set Mole.X to</code> block into the procedure.</p>
+        <img src="img/movemole1.png">
+        <p>From the <b>Math</b> drawer, drag a <i>multiplication</i> block into the <code>set Mole.X to</code> block.</p>
+        <img src="img/movemole2.png">
+        <p>From the <b>Math</b> drawer, drag a <code>random fraction</code> block into the first multiplication plug.</p>
+        <img src="img/movemole3.png">
+        <p>From the <b>Math</b> drawer, drag a <i>subtraction</i> block into the second multiplication plug.</p>
+        <img src="img/movemole4.png">
+        <p>From the <b>MyCanvas</b> drawer, drag a <code>MyCanvas.Width</code> block into the first subtraction plug.</p>
+        <img src="img/movemole5.png">
+        <p>From the <b>Mole</b> drawer, drag a <code>Mole.Width</code> block into the second subtraction plug.</p>
+        <img src="img/movemole6.png">
+        <h2>Challenges</h2>
+        <ol>
+          <li>Finish the MoveMole procedure by adding blocks to change the position of the Mole's y position.</li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Define a procedure to update the score">
+        <p>Our second prodecure will update the score of the game.</p>
+        <p>First, we need a variable to keep track of the score. Define a global variable named "score", and set the initial value to 0. This is what your block should look like:</p>
+        <img src="img/score_variable.png" style="max-width: 300px">
+        <p>Next, define a procedure named "UpdateScore". This procedure will change the text of the the label <b>ScoreLabel</b> to show the score of the game.</p>
+        <h2>Challenges</h2>
+        <ol>
+          <li><p>Implement the <code>UpdateScore</code> procedure, which should make the <b>ScoreLabel</b> show the game score. The following blocks might be helpful:</p>
+          <img src="img/updatescore.png" style="max-width: 270px">
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Use the timer to move the mole">
+        <p>The next step is to keep the mole moving. Every time MoleTimer goes off, the procedure MoveMole is called, which moves the Mole to a new, random position.</p>
+        <p>From the <b>MoleTimer</b> drawer, drag out a <code>when MoleTimer.Timer</code> block, and from the <b>Procedures</b> drawer, drag a <code>call MoveMole</code> block into the <code>when MoleTimer.Timer</code> block.</p>
+        <img src="img/moletimer.png" style="max-width: 250px">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Whack the mole!">
+        <p>The player's score should go up by 1 every time the player successfully whacks the mole. Sprites, like canvases, respond to touch events.</p>
+        <h2>Challenges</h2>
+          <ol>
+            <li>Code your app so that every time the Mole is touched, your program will:</li>
+              <ol>
+                <li>Increment the score</li>
+                <li>Call the <code>UpdateScore</code> prodecure to show the new score</li> 
+                <li>Make the phone vibrate for 100 milliseconds</li>
+                <li>Call the <code>MoveMole</code> procedure so the mole moves right away</li>
+              </ol>
+            <p>The following blocks might be helpful:</p>
+            <img src="img/mole_touch.png" style="max-width: 200px">
+          </ol>
+          <aside class="note">
+            <h2>Typeblocking</h2>
+            <p>You can use typeblocking to quickly create new blocks. For example:</p>
+            <ul>
+              <li>To create a value block containing 100, just type 100 and press return</li>
+              <li>To create a MoveMole block, just type MoveMole and select the block you want from the list</li>
+            </ul>
+          </aside>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Reset the score">
+        <p>The last thing we need to do is reset the score every time the Reset button is pressed.</p>
+        <p>From the <b>ResetButton</b> drawer, drag a <code>when ResetButton.Click</code> block into the workspace. Place a <code>set global score to</code> block inside, and set the global score to 0. Next, update the score label by placing a <code>call UpdateScore</code> block after the <code>set global score to</code> block.</p>
+        <img src="img/reset_button.png" style="max-width: 250px">
+        <p>Your complete MoleMash program should look like this:</p>
+        <img src="img/final_blocks.png">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff  #2">
+        <aside class="special">
+          <h2>mole-mash-2</h2>
+          <p><b>To receive this checkoff, you must</b></p>
+          <ul class="checklist">
+            <li>Show that you can earn points by whacking the mole and reset the game by pressing the reset button</li>
+            <li>Describe what a procedure is and the benefits of using procedures</li>
+            <li>Explain why the <code>when Mole.Touched</code> event handler calls the <code>MoveMole</code> procedure. What would happen if <code>MoveMole</code> wasn't called?</li>
+            <li>Explain how defining a procedure is different from calling a procedure</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+      
+      <google-codelab-step label="Congratulations!">
+        <p>You have made your first game using App Inventor.</p>
+        <h3 class="checklist"><strong>What we&#39;ve covered</strong></h3>
+        <ul class="checklist">
+          <li>Use <b>image sprite</b> and the <b>Clock</b> components.</li>
+          <li>Use <b>procedures</b> to simplify your code.</li>
+          <li>Use the <code>random fraction</code> block.</li>
+        </ul>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Bonus Features">
+        If you finish early, implement one or more of the following features for a bonus checkoff.
+        <aside class="special">
+          <h2>mole-mash-bonus</h2>
+          <p><b>To receive this checkoff, you must implement one or more of the following:</b></p>
+          <ul>
+            <li>Make the game vary the speed of the mole in response to how well the player is doing.</li>
+            <li>Keep track of when the player hits the mole and when the player misses the mole, and show a score with both hits and misses.</li>
+            <li>Add multiple moles.</li>
+            <li>Add obstacles that decrease the player's score if the player hits the obstacle.</li>
+            <li>Implement your own bonus feature.</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>

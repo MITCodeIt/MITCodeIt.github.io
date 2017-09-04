@@ -6,7 +6,12 @@ Home of codelabs used for CodeIt
  - [Talk To Me](https://mitcodeit.github.io/appinventor/codelabs/talk-to-me/)
  - [Ball Bounce](https://mitcodeit.github.io/appinventor/codelabs/ball-bounce/)
 
+**Day 2**
+ - [I Have A Dream](https://mitcodeit.github.io/appinventor/codelabs/i-have-a-dream/)
+ - [Paint Pot](https://mitcodeit.github.io/appinventor/codelabs/paint-pot/)
+
 **Day 3**
+ - [Mole Mash](https://mitcodeit.github.io/appinventor/codelabs/mole-mash/)
  - [Map It](https://mitcodeit.github.io/appinventor/codelabs/map-it/)
 
 **Day 4**
