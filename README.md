@@ -7,7 +7,7 @@ Home of codelabs used for CodeIt
  - [Ball Bounce](https://mitcodeit.github.io/appinventor/codelabs/ball-bounce/)
 
 **Day 2**
- - [I Have A Dream](https://mitcodeit.github.io/appinventor/codelabs/i-have-a-dream/)
+ - [Leading Women](https://mitcodeit.github.io/appinventor/codelabs/leading-women/)
  - [Paint Pot](https://mitcodeit.github.io/appinventor/codelabs/paint-pot/)
 
 **Day 3**
