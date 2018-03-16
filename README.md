@@ -18,6 +18,11 @@ Home of codelabs used for CodeIt
  - [Amazon Books](https://mitcodeit.github.io/appinventor/codelabs/amazon-books/)
 
 ## Scratch
+
+**Day 3**
+ - [Depict and Deduce](https://mitcodeit.github.io/scratch/codelabs/depict-and-deduce/)
+
+**Old Links**
  - [Day 1](https://mitcodeit.github.io/scratch/day1/)
  - [Day 2](https://mitcodeit.github.io/scratch/day2/)
  - [Day 3](https://mitcodeit.github.io/scratch/day3/)

@@ -1,0 +1,196 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Depict and Deduce Codelab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Depict and Deduce Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Overview">
+        <p>In this codelab, you&#39;ll learn how to make a pictionary-like game.</p>
+        <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/31054514/?autostart=false" frameborder="0" allowfullscreen></iframe>
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Use <b>pen</b> blocks to draw on the canvas.</li>
+          <li>Use <b>variables</b> to store information.</li>
+          <li>Use <b>ask</b> blocks to get user input.</li>
+          <li>Review <b>conditional (if/else)</b> blocks.</li>
+        </ul>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Remix the starter project">
+        <p>Open the <a href="https://scratch.mit.edu/projects/31053902/#editor" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+        <img src="img/starter_project.png">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Draw with the pencil">
+        <p>First, let's program the pencil to draw.</p>
+        <img style="max-width: 400px" src="img/pencil.png">
+        <h2>Challenges</h2>
+        <ol>
+          <li>Program the pencil to follow the mousepointer.<br>
+            <img style="max-width: 200px" src="img/mouse_pointer.png"></li>
+          <li>Make the pencil draw.<br>
+            <img style="max-width: 100px" src="img/pen_down.png"></li>
+          <li>Clear the canvas when the green flag is clicked.<br>
+            <img style="max-width: 75px" src="img/clear.png"></li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Draw when mouse clicked">
+        <p>You may have noticed that the pencil draws whenever it moves. Let's make the game more user-friendly by only drawing when the mouse is held down.</p>
+        <aside class="callout">
+          <h2>Conditionals</h2>
+          <p>We use <b>conditionals</b>, or if/else statements, whenever we want the computer to check a condition (e.g. mouse down?) and do something different based on whether the condition is true or false.</p>
+          <img style="max-width: 250px" src="img/mouse_down.png">
+        </aside>
+        <h2>Challenges</h2>
+        <ol>
+          <li>If the mouse button is pressed, make the pencil draw.<br>
+            <img style="max-width: 100px" src="img/pen_down.png"></li>
+          <li>If the mouse button is not pressed, make the pencil stop drawing.<br>
+            <img style="max-width: 100px" src="img/pen_up.png"></li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #1">
+        <aside class="special">
+          <h2>depict-and-deduce-1</h2>
+          <p><b>To receive this checkoff, you must answer the following questions:</b></p>
+          <ul class="checklist">
+            <li>How does the pencil follow the mouse?</li>
+            <li>How does your program know when to draw and when not to draw?</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Store the correct answer">
+        <p>Now, we want to ask Player 1 what she will draw. We are going to use a <b>variable</b> to store the correct answer.</p>
+        <aside class="callout">
+          <h2>Variable</h2>
+          <p>Just like variables in math, <b>variables</b> in programming are used to store values.</p>
+          <img style="max-width: 250px" src="img/variable.png">
+        </aside>
+        <h2>Challenges</h2>
+        <ol>
+          <li>When the green flag is clicked, make the monkey ask "What will you draw?"<br>
+            <img style="max-width: 400px; margin-bottom: 1em" src="img/monkey.png"><br>
+            <img style="max-width: 300px" src="img/ask_draw.png"></li>
+          <li>Create a <b>variable</b> called <code>Right Answer</code>.<br>
+            <img style="max-width: 300px" src="img/right_answer.png"></li>
+          <li>Save the user's <code>answer</code> using the <code>Right Answer</code> variable.<br>
+            <img style="max-width: 300px" src="img/set_answer_var.png"></li>
+          <li>Make the monkey send a confirmation message.<br>
+            <img style="max-width: 550px" src="img/confirmation.png"></li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Guess the answer">
+        <p>We want Player 2 to guess what Player 1 drew. If Player 2 guesses correctly, show a victory message!</p>
+        <h2>Challenges</h2>
+        <ol>
+          <li>When the monkey is clicked, make it ask "What do you think the drawing is?"<br>
+            <img style="max-width: 400px" src="img/ask_guess.png"></li>
+          <li>If the answer is correct, show a victory message. If the answer is wrong, show a Try Again message.<br>
+            <img style="max-width: 400px" src="img/check_answer.png"></li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #2">
+        <aside class="special">
+          <h2>depict-and-deduce-2</h2>
+          <p><b>To recieve this checkoff, you must answer the following questions:</b></p>
+          <ul class="checklist">
+            <li>How does the monkey know the correct answer to the drawing?</li>
+            <li>How does your program check if the player typed the correct answer or not?</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Congratulations!">
+        <p>You have made a pictionary game on Scratch.</p>
+        <h3 class="checklist"><strong>What we&#39;ve covered</strong></h3>
+        <ul class="checklist">
+          <li>Use <b>pen</b> blocks to draw on the canvas.</li>
+          <li>Use <b>variables</b> to store information.</li>
+          <li>Use <b>ask</b> blocks to get user input.</li>
+          <li>Review <b>conditional (if/else)</b> blocks.</li>
+        </ul>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Bonus Features">
+        If you finish early, implement one or more of the following features for a bonus checkoff.
+        <aside class="special">
+          <h2>depict-and-deduce-bonus</h2>
+          <p><b>To receive this checkoff, you must implement one or more of the following:</b></p>
+          <ul>
+            <li>Allow the user to change the pen color (use broadcasting).</li>
+            <li>Allow the user to change the pen size.</li>
+            <li>Make the monkey do a little dance and introduce the game.</li>
+            <li>Make it impossible to draw outside the white spaces.</li>
+            <li>Add sound to your game.</li>
+            <li>Implement your own bonus feature.</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
