@@ -3,9 +3,9 @@
 
 ## Scratch
 
-| Day 3 |
-| --- |
-| <ul><li>[Pictogram](https://mitcodeit.github.io/scratch/codelabs/pictogram/)</li><li>[Depict and Deduce](https://mitcodeit.github.io/scratch/codelabs/depict-and-deduce/)</li></ul> |
+| Day 3 | Day 4 |
+| --- | --- |
+| <ul><li>[Pictogram](https://mitcodeit.github.io/scratch/codelabs/pictogram/)</li><li>[Depict and Deduce](https://mitcodeit.github.io/scratch/codelabs/depict-and-deduce/)</li></ul> | <ul><li>[Cave Surfing](https://mitcodeit.github.io/scratch/codelabs/cave-surfing/)</li><li>[Monster Feelings](https://mitcodeit.github.io/scratch/codelabs/monster-feelings/)</li></ul>
 
 **Old Links**
  - [Day 1](https://mitcodeit.github.io/scratch/day1/)
