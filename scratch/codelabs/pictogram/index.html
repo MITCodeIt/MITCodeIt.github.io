@@ -20,7 +20,7 @@
 </head>
 <body unresolved class="fullbleed">
 
-  <google-codelab title="Depict and Deduce Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+  <google-codelab title="Pictogram Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
 
       <google-codelab-step label="Overview">
         <p>In this codelab, you&#39;ll learn how to make an instagram-like app.</p>
@@ -44,14 +44,25 @@
       <google-codelab-step label="Color and Reset">
         <p>First, we are going to program the color and reset functionalities.</p>
         <img style="max-width: 400px" src="img/color_and_reset.png">
+        <aside class="callout">
+          <h2>Broadcasting</h2>
+          <p>The stage and sprites can <b>broadcast</b> messages to each other. An example where this might be used is if the user clicks on Sprite A, you want Sprite B to move 10 steps.</p>
+          <h3>Send a message</h3>
+          <img style="max-width: 200px" src="img/broadcast_message.png">
+          <h3>Receive a message</h3>
+          <img style="max-width: 200px" src="img/receive_broadcast.png">
+        </aside>
         <h2>Steps</h2>
         <ol>
-          <li>Make the color sprite broadcast a message.<br>
+          <li>Make the color sprite broadcast a "color" message.<br>
             <img style="max-width: 200px" src="img/broadcast.png"></li>
           <li>Make the nature sprite change colors when it receives the message.<br>
-            <img style="max-width: 200px" src="img/receive.png"></li>
+            <img style="max-width: 200px" src="img/receive.png"><br>
+            <img style="max-width: 200px" src="img/change_color.png"></li>
           <li>Make the reset sprite broadcast a reset message.</li>
-          <li>Make the nature sprite clear graphic effects when it receives the reset message.</li>
+          <li>Make the nature sprite clear graphic effects when it receives the reset message.<br>
+            <img style="max-width: 200px" src="img/clear_graphic_effects.png">
+          </li>
         </ol>
 
       </google-codelab-step>
@@ -95,7 +106,7 @@
             <li>Program the category buttons to switch between image sprites.<br>
                 <img style="max-width: 200px" src="img/category_buttons.png"><br><br>
                 <img style="max-width: 200px" src="img/category_sprites.png"></li>
-            <li>Add code to the "people" and "things" sprites to change their graphic effects.</li>
+            <li>Add code to the "people" and "things" sprites to change their graphic effects.<br><i>Tip: Drag the code from the nature sprite to the people or things sprite.</i></li>
         </ol>
 
       </google-codelab-step>
