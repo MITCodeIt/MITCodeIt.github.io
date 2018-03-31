@@ -1,0 +1,158 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Cave Surfing Codelab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Cave Surfing Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Overview">
+        <p>In this codelab, you&#39;ll learn how to create a scrolling background.</p>
+        <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/17587338/?autostart=false" frameborder="0" allowfullscreen></iframe>
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Create a <b>scrolling background</b>.</li>
+          <li>Review <b>if/else conditional</b> blocks.</li>
+        </ul>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Remix the starter project">
+        <p>Open the <a href="https://scratch.mit.edu/projects/21490386/#editor" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+        <img src="img/click_remix.png">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Add the moving background">
+        <p>First, we are going to create the scrolling background to give the appearance of the bird moving.</p>
+        <p><br>The starting positions of each colored cave have been programmed for you.</p>
+        <p><br>Look at the code for each cave sprite and understand how the changing the <b>distance traveled</b> variable changes the cave location on screen.
+           <br>If you have questions, ask a mentor.</p>
+        <img style="max-width: 800px" src="img/cave_sprite_code.png">
+        <h2>Steps</h2>
+        <ol>
+          <li>Use the <b>distance traveled</b> variable in code to move the background across the screen.</li>
+          <li>Reset the background's position at the start of each game.</li>
+          <li>Add an <b>event</b> block to start the story by clicking the green flag.</li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #1">
+        <aside class="special">
+          <h2>cave-surfing-1</h2>
+          <p><b>To receive this checkoff, you must answer the following questions:</b></p>
+          <ul class="checklist">
+            <li>Demonstrate the background moving across the screen.</li>
+            <li>How would you change the speed of the moving background?</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Make the parrot go up and down">
+        <p>Next, we are going to control the parrot's motion.</p>
+        <h2>Steps</h2>
+          <ol>
+              <li>Program the parrot to go move up when the space bar is pressed.</li>
+              <li>Have the parrot go up by 5 when the space bar is pressed and go down by 5 otherwise.<br>
+                <img style="max-width: 200px" src="img/change_y_block.png"></li>
+              <li>Change the parrot's costume when it goes up and down to make the flying look more realistic.<br>
+                <img style="max-width: 200px" src="img/wings_down.png">&nbsp;&nbsp;&nbsp;<img style="max-width: 200px" src="img/wings_up.png"></li>
+          </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Winning and losing">
+        <p>Now, we are going to add winning and losing conditions.</p>
+        <h2>Steps</h2>
+        <ol>
+            <li>Use the finish line in the final cave background and an if statement to add the winning condition.<br>
+                <img style="max-width: 400px" src="img/finish_line.png"></li>
+            <li>Have the player lose when the parrot touches the cave walls.</li>
+            <li>Program the game to reset when the player wins or loses.</li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #2">
+        <aside class="special">
+          <h2>cave-surfing-2</h2>
+          <p><b>To recieve this checkoff, you must answer the following questions:</b></p>
+          <ul class="checklist">
+            <li>Have a mentor play your game.</li>
+            <li>How would you change how quickly the parrot moves up and down?</li>
+            <li>How do you use conditionals for the winning and losing conditions?</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Bonus Features">
+        If you finish early, implement one or more of the following features for a bonus checkoff.
+        <aside class="special">
+          <h2>cave-surfing-bonus</h2>
+          <p><b>Implement one or more of the following, and show it off to your mentor!</b></p>
+          <ul>
+            <li>Add music and/or sound effects to your game.</li>
+            <li>Design your own background cave sprite and add it to the program (use vector graphics).</li>
+            <li>Add a surprise feature to your program.</li>
+            <li>Make the parrot sprite explode when the player loses.</li>
+            <li>Program a key to allow the parrot to dive down quickly (faster than it normally falls).</li>
+            <li>Create a score variable. Decide when you want to increase the score and program that into your game.</li>
+            <li><b>Difficult:</b> Add levels to your game so the parrot moves faster and the gap in the caves gets smaller<br>
+                as the level progresses. (hint: use a variable to keep track of the level)</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
