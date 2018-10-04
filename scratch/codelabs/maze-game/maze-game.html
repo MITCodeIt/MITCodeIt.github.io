@@ -1,0 +1,149 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Pictogram Codelab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Code It Maze" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Overview">
+        <p>In this codelab, you&#39;ll make a maze game.</p>
+        <img src="img/title_photo.png">
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Use <b>arrow keys</b> to move a sprite.</li>
+          <li>Use <b>conditional (if) </b> blocks to check for game over and finishing the maze.</li>
+          <li>Edit <b>coustumes and stages (if) </b> to make the maze your own.</li>
+        </ul>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Remix the starter project">
+        <p>Open the <a href="https://scratch.mit.edu/projects/249293052/#editor" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+        <img src="img/click_remix.png">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Move with Arrow Keys">
+        <p>First, we are going to program the sprite to move when the arrow keys are pressed.</p>
+        <img style="max-width: 400px" src="img/movement_explain.png">
+        <aside class="callout">
+          <h2>Hat Blocks</h2>
+          <p><b>Hat blocks</b> are the blocks that start every script. They tell sprite when it is time to do the actions below them. They are shaped with a rounded top and a bump at the bottom — this is so you can only place blocks below them. </p>
+          <h3>Run code when flag is clicked </h3>
+          <img style="max-width: 200px" src="img/hat_flag.png">
+          <h3>Run code when space bar is clicked </h3>
+          <img style="max-width: 200px" src="img/hat_space.png">
+        </aside>
+        <h2>Steps</h2>
+        <ol>
+          <li>Make the superhero move up (the y direction is up and down) <br>
+            <img style="max-width: 200px" src="img/move-up.png"></li>
+          <li>Have this happen when the up arrow is pressed<br>
+            <img style="max-width: 200px" src="img/up-arrow.png"><br>
+          <li>Repeat this for the down direction (decrease y), and for moving right and left (change x) </li>
+         
+        </ol>
+
+      </google-codelab-step>
+
+
+      <google-codelab-step label="Check if She's Touching the Wall">
+        <p>Now we will check if the superhero is touching the wall and lose the game if she is</p> 
+        <img style="max-width: 400px" src="img/wall_sensor_explain.png">
+        <aside class="callout">
+          <h2>If blocks</h2>
+          <p> The code inside an <b>If block</b> only runs if the <b> condition </b> at the top of the block is true </p>
+          <h3>If block </h3>
+          <img style="max-width: 200px" src="img/hat_flag.png">
+          <h3>Conditions are always shaped like a hexagon </h3>
+          <img style="max-width: 200px" src="img/condition.png">
+        </aside>
+        <h2>Steps</h2>
+        <ol>
+          <li>Have the superhero check if she's touching the black wall, and say "game over" if she is <br>
+          <li>If the game ends, the superhero should also return home so the game can restart.<br>
+             <img style="max-width: 200px" src="img/go_to_house.png"><br>
+          <li>This check should happen over and over while you're playing the game (remember the forever loop!) <br>
+            <img style="max-width: 200px" src="img/forever.png"><br>
+          <li>She should start checking if she's touching the wall when the game begins (remember Hat blocks!) </li>
+            <img style="max-width: 200px" src="img/hat_flag.png"><br>
+         
+        </ol>
+
+      </google-codelab-step>
+
+
+      <google-codelab-step label="Check if She Reached MIT">
+        <p>Now we will check if the superhero is touching the wall and win the game if she is</p> 
+
+        <img style="max-width: 400px" src="img/win_explain.png">
+        <p> She can check if she's touching the MIT dome in a similar way to how she checked if she was touching a black wall </p>
+        <p> The MIT dome is a sprite, not a color, so be sure to use the right block! </p> 
+      </google-codelab-step>
+
+
+      <google-codelab-step label="Bonus Features">
+        Once you have a working maze game, choose one or more additional features to add!
+        <ol>
+          <li> Draw your own maze background! You can do this by changing the backdrop. If you want to make the superhero smaller, you can do that with a block in the Looks category
+          <li> Change the sprites for the player, home and goal of the maze
+          <li> Make something exciting happen when the game is lost or won
+          <li> Look at other scratch users' mazes <a href="https://scratch.mit.edu/studios/138299/"> here </a> for more inspiration, or think of your own additons!
+
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Finishing Up">
+        When you're finished, be sure to save and share your project, and then add it to the studio <a href="https://scratch.mit.edu/studios/5521131/"> here </a>. 
+      </google-codelab-step>
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
