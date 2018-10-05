@@ -5,7 +5,7 @@
 
 | Day 1 | Day 2 | Day 3 | Day 4 |
 | --- | --- |
-| <ul><li>[Maze Game](https://mitcodeit.github.io/scratch/codelabs/maze-game/)</li></ul>| --- | <ul><li>[Pictogram](https://mitcodeit.github.io/scratch/codelabs/pictogram/)</li><li>[Depict and Deduce](https://mitcodeit.github.io/scratch/codelabs/depict-and-deduce/)</li></ul> | <ul><li>[Cave Surfing](https://mitcodeit.github.io/scratch/codelabs/cave-surfing/)</li><li>[Monster Feelings](https://mitcodeit.github.io/scratch/codelabs/monster-feelings/)</li></ul>
+| <ul><li>[Maze Game](https://mitcodeit.github.io/scratch/codelabs/maze-game/)</li><li>[Dance Party](https://mitcodeit.github.io/scratch/codelabs/dance-party/)</li></ul>| --- | <ul><li>[Pictogram](https://mitcodeit.github.io/scratch/codelabs/pictogram/)</li><li>[Depict and Deduce](https://mitcodeit.github.io/scratch/codelabs/depict-and-deduce/)</li></ul> | <ul><li>[Cave Surfing](https://mitcodeit.github.io/scratch/codelabs/cave-surfing/)</li><li>[Monster Feelings](https://mitcodeit.github.io/scratch/codelabs/monster-feelings/)</li></ul>
 
 **Old Links**
  - [Day 1](https://mitcodeit.github.io/scratch/day1/)
