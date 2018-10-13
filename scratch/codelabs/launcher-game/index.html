@@ -1,0 +1,186 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Launcher Game Codelab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Launcher Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Overview">
+        <p>In this codelab, you&#39;ll learn how to create a launcher game and keep score.
+            <br><br>Use the arrow keys to point the fish in a specific direction, then use the space bar to launch the fish. Get to the finish line!</p>
+        <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/19411325/?autostart=false" frameborder="0" allowfullscreen></iframe>
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Review <b>loops</b>.</li>
+          <li>Practice using <b>if/else conditional</b> blocks.</li>
+          <li>Practice using <b>variables</b>.</li>
+          <li>Learn about <b>cloning</b>.</li>
+        </ul>
+
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Remix the starter project">
+        <p>Open the <a href="https://scratch.mit.edu/projects/19411371/#editor" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+        <img src="img/click_remix.png">
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Launch a sprite">
+        <p>First, we are going to get a sprite moving across the screen until it reaches the finish line.
+           <br><br>Useful blocks:
+           <br><img style="max-width: 200px" src="img/touching_sprite_block.png">
+           <br><img style="max-width: 200px" src="img/go_to_block.png"></p>
+        <h2>Steps</h2>
+        <ol>
+          <li>Select a sprite from the sprite library to be player 1.
+              <br><img style="max-width: 300px" src="img/choose_sprite.png"></li>
+          <li>Make the sprite move continuously across the screen.</li>
+          <li>Have the sprite stop once it reaches the finish line.</li>
+          <li>Set a starting position for your sprite. Your sprite should also return here after touching the finish line.</li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Turn player 1">
+        <p>Next, we are going to control player 1's motion.
+            <br><br>Useful block:
+            <br><img style="max-width: 200px" src="img/arrow_key_event_block.png"></p>
+        <h2>Steps</h2>
+          <ol>
+              <li>Have your sprite turn as you press the left and right arrow keys.</li>
+              <li>If necessary, smooth out your sprite's turning.</li>
+          </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #1">
+        <aside class="special">
+          <h2>Launcher Game Checkoff #1</h2>
+          <p><b>To receive this checkoff, you must answer the following questions:</b></p>
+          <ul class="checklist">
+            <li>How does the sprite keep moving after you launch it?</li>
+            <li>How does the sprite know to stop at the finish line?</li>
+            <li>How could you speed up or slow down the turning of your sprite?</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Spawning enemies">
+        <p>Now, we are going to add enemies and have them spawn after each win.
+            <br><br>Useful blocks:
+            <br><img style="max-width: 200px" src="img/if_on_edge_bounce_block.png">
+            <br><img style="max-width: 200px" src="img/cloning_blocks.png"></p>
+        <h2>Steps</h2>
+        <ol>
+            <li>Add another sprite as an enemy.</li>
+            <li>Make the enemy sprite bounce around the stage</li>
+            <li>Make the enemy sprite clone itself whenever player 1 reaches the finish line.</li>
+            <li>Have each enemy sprite clone start off pointing in a random direction.</li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #2">
+        <aside class="special">
+          <h2>Launcher Game Checkoff #2</h2>
+          <p><b>To recieve this checkoff, you must answer the following questions:</b></p>
+          <ul class="checklist">
+            <li>How do the enemies move without flying off the screen?</li>
+            <li>How does the game know when to add new enemies?</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Keeping score">
+        <p>Now, we are going to add enemies and have them spawn after each win.</p>
+        <h2>Steps</h2>
+        <ol>
+            <li>Create a "score" variable for the player sprite. Write your choice for the name of your variable where it says "name here".
+                <br><img style="max-width: 200px" src="img/click_make_a_variable.png"> &nbsp; &nbsp; <img style="max-width: 200px" src="img/name_variable.png"></li>
+            <li>Use a conditional to add to the "score" variable when the player reaches the finish line.</li>
+            <li>Have the score reset to 0 when a person restarts the game.</li>
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #3">
+        <aside class="special">
+          <h2>Launcher Game Checkoff #3</h2>
+          <p><b>To recieve this checkoff, you must answer the following questions:</b></p>
+          <ul class="checklist">
+            <li>How does the game know when to increase score?</li>
+            <li>How do you reset the score at the start of the game?</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Bonus Features">
+        If you finish early, implement one or more of the following features for a bonus checkoff.
+        <aside class="special">
+          <h2>Launcher Game Bonus Add Ons</h2>
+          <p><b>Implement one or more of the following, and show it off to your mentor!</b></p>
+          <ul>
+            <li>Program a sound to play if the player touches the finish line.</li>
+            <li>Add a second player to the game.</li>
+            <li>Challenge a friend by having them control the enemy.</li>
+            <li>Create a sprite that, when touched, gives the player extra points.</li>
+            <li>Program the finish line to get smaller as the player scores more points.</li>
+            <li>Program the backdrop to change every time the player scores 5 points.</li>
+          </ul>
+        </aside>
+
+      </google-codelab-step>
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
