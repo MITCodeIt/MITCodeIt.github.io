@@ -24,96 +24,71 @@
 
       <google-codelab-step label="Overview">
         <p>In this codelab, you&#39;ll learn how to make some musical art.
-            <br><br>Move your mouse around the stage. Watch the X follow your mouse and listen to the music when it touches various colors.</p>
+            <br><br>Move your mouse around the stage. Watch the star follow your mouse and listen to the music when it touches different colors.</p>
         <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/83046924/?autostart=false" frameborder="0" allowfullscreen></iframe>
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
           <li>Learn about <b>if/else conditionals</b>.</li>
           <li>Practice using <b>x</b> and <b>y</b> coordinates to control movement.</li>
         </ul>
-
-
       </google-codelab-step>
 
       <google-codelab-step label="Remix the starter project">
-        <p>Open the <a href="https://scratch.mit.edu/projects/19176469/#editor" target="_blank">starter project</a> and click <b>Remix</b>.</p>
-        <img src="img/click_remix.png">
-
+        <p>Open the <a href="https://scratch.mit.edu/projects/335781963" target="_blank">starter project</a> and click <b>Remix</b>.</p>
       </google-codelab-step>
-
+      
+      <google-codelab-step label="Add extensions">
+        <p>Click the blue button in the bottom left, then click <b>Music</b>. Do the same for <b>Pen</b>.</p>
+        <img scr="img/extension.png">
+      </google-codelab-step>
+    
       <google-codelab-step label="Fill the stage with color">
-        <p>First, we are going to create the background art.
+        <p>First, we are going to create the background art. Check out the different costumes for the Shapes sprite! 
            <br><br>Useful blocks:
-           <br><img style="max-width: 200px" src="img/pick_random_block.png">
+           <br><img style="max-width: 200px" src="img/goto_random.png">
            <br><img style="max-width: 200px" src="img/stamp_block.png"></p>
         <h2>Steps</h2>
         <ol>
-          <li>Use the "go to" block to make the sprite go to a specific spot.</li>
-          <li>Make the sprite go to a random spot. (<i>hint: The x-coordinates of the canvas go from -240 to 240, and the y-coordinates go from -180 to 180.</i>)</li>
+          <li>Pick a costume for the Shapes sprite, or make your own.</li>
+          <li>Make the sprite go to a random spot.</li>
           <li>Make the sprite leave a stamp of itself.</li>
           <li>Make the sprite repeat going to a random spot and stamping itself.</li>
           <li>Start with a clear screen when the green flag is clicked.</li>
         </ol>
-
-      </google-codelab-step>
-
-      <google-codelab-step label="Checkoff #1">
-        <aside class="special">
-          <h2>Musical Art Checkoff #1</h2>
-          <p><b>To receive this checkoff, you must answer the following questions:</b></p>
-          <ul class="checklist">
-            <li>How does you move the sprite to random locations?</li>
-            <li>How do you create multiple copies from one sprite?</li>
-          </ul>
-        </aside>
-
       </google-codelab-step>
 
       <google-codelab-step label="Color me musical">
         <p>Now, we are going to add and control the music.
             <br><br>Useful blocks:
-            <br><img style="max-width: 200px" src="img/go_to_mouse_pointer_block.png">
-            <br><img style="max-width: 200px" src="img/touching_color_block.png"></p>
+            <br><img style="max-width: 200px" src="img/goto_mouse.png">
+            <br><img style="max-width: 200px" src="img/touching_block.png">
+            <br><img style="max-width: 200px" src="img/note_block.png"></p>
         <h2>Steps</h2>
         <ol>
-            <li>Make the X sprite go to the mouse.</li>
-            <li>Make the X sprite follow the mouse <b>forever</b>.</li>
-            <li>Add an <b>"if"</b> block.</li>
+            <li>Make the star sprite go to the mouse when the green flag is clicked.</li>
+            <li>Make the star sprite follow the mouse <b>forever</b>.</li>
+            <li>Under a NEW hat block (when green flag clicked), add an <b>"if"</b> block.</li>
             <li>Make the "if" block say "if touching color."</li>
-            <li>Make the X sprite play a note if it is touching green.</li>
+            <li>Make the star sprite play a note if it is touching green.</li>
             <li>Copy the if statement, then change it to make each color in your project play a different note.</li>
-            <li>Add a "when green flag is clicked" event to start the program.</li>
+            <li>Check the colors FOREVER!</li>
         </ol>
-
-      </google-codelab-step>
-
-      <google-codelab-step label="Checkoff #2">
-        <aside class="special">
-          <h2>Musical Art Checkoff #2</h2>
-          <p><b>To recieve this checkoff, you must answer the following questions:</b></p>
-          <ul class="checklist">
-            <li>How does the X follow your mouse pointer?</li>
-            <li>How do you play different music depending on the color the X is touching?</li>
-          </ul>
-        </aside>
-
       </google-codelab-step>
 
       <google-codelab-step label="Bonus Features">
-        If you finish early, implement one or more of the following features for a bonus checkoff.
+        If you finish early, implement one of these features or your own!
         <aside class="special">
           <h2>Musical Art Bonus Add Ons</h2>
           <p><b>Implement one or more of the following, and show it off to your mentor!</b></p>
           <ul>
-            <li>Change instruments and tempo in your musical art piece when the yellow X sprite touches different colors.</li>
-            <li>Make your project play chords, not just individual notes.</li>
+            <li>Change instruments and tempo in your musical art piece when the star sprite touches different colors.</li>
+            <li>Make your project play chords or instrument sounds, not just individual notes.</li>
             <li>Add a surprise color to your art piece that plays an unexpected sound when touched.</li>
-            <li>Add a graphic effect that makes the yellow X sprite leave a color-changing trail across the screen. <i>(hint: use "create clone of myself" and "when I start as a clone" blocks)</i></li>
-            <li>Create another yellow X sprite that moves around your art piece and plays random notes.</li>
-            <li>Make the yellow X sprite change colors, depending on which color it is touching.</li>
+            <li>Add a graphic effect that makes the star sprite leave a color-changing trail across the screen. <i>(hint: use "create clone of myself" and "when I start as a clone" blocks)</i></li>
+            <li>Create another star sprite that moves around your art piece and plays random notes.</li>
+            <li>Make the star sprite change colors, depending on which color it is touching.</li>
           </ul>
         </aside>
-
       </google-codelab-step>
 
   </google-codelab>
