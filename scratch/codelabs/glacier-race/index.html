@@ -1,0 +1,127 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title> Band Codelab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Code It Band" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Overview">
+        <p>In this codelab, you&#39;ll make a cool band.</p>
+        <img src="img/b-example.png">
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Use <b>sound</b> blocks.</li>
+          <li>Use <b>conditional (if) </b> blocks to check if the sprite is touching certain colors and instruments.</li>
+        </ul>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Remix the starter project">
+        <p>Open the <a href="https://scratch.mit.edu/projects/252260087/#editor" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Paint your background">
+        <p>Paint your background with a few different colors. Each color will play a different note. There are lots of good ways to do this, here are a few simple examples: </p>
+        <img style="max-width: 400px" src="img/b-background-1.png">
+        <img style="max-width: 400px" src="img/b-background-2.png">
+      </google-codelab-step>
+
+
+      <google-codelab-step label="Have the microphone follow your mouse around ">
+        <p>The microphone should follow your mouse around the screen so you can play the instruments</p> 
+        <h2>Steps</h2>
+        <ol>
+          <li>Have the microphone go to the mouse pointer <br>
+          <img style="max-width: 200px" src="img/b-go-to-mp.png"><br>
+          <li>It should repeat this forever, starting when the flag is clicked<br>
+          <img style="max-width: 200px" src="img/forever.png"><br>
+          <img style="max-width: 200px" src="img/hat_flag.png"><br>
+        </ol>
+
+      </google-codelab-step>
+
+
+      <google-codelab-step label="Play a different note for each color">
+        <p>Now the microphone should check <b>if</b> it is touching each color, and play a different note for each color.</p> 
+        <img style="max-width: 400px" src="img/if.png">
+        <img style="max-width: 400px" src="img/b-touching-color.png">
+        <img style="max-width: 400px" src="img/b-note.png">
+        <p>Be sure this check is in the forever loop.</p> 
+        <p>Do this for as many colors and notes as you'd like!</p> 
+      </google-codelab-step>
+
+      <google-codelab-step label="Add in Drums">
+        <p>You can add some drum sprites that will play drum beats when the microphone touches them.</p> 
+        <img style="max-width: 400px" src="img/b-drum.png">
+        <img style="max-width: 400px" src="img/b-beat.png">
+        <p>Do this for as many other types of drums as you'd like!</p> 
+      </google-codelab-step>
+
+
+      <google-codelab-step label="Bonus Features">
+        Once you have a working band, there are a lot of other features you can add to make it better!
+        <ol>
+          <li> Scratch lets you change the instrument that plays the notes. Use this to add instruments to your band.
+          <img style="max-width: 400px" src="img/change_instrument.png">
+          <li> Add more colors and sounds
+          <li> Add a drum beat that goes the whole time
+          <li> Think of your own improvement! 
+        
+        </ol>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Finishing Up">
+        When you're finished, be sure to save and share your project, and then add it to the studio <a href="https://scratch.mit.edu/studios/5521131/"> here </a>. 
+      </google-codelab-step>
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
