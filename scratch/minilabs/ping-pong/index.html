@@ -1,0 +1,77 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Ping Pong Minilab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Two Player Ping Pong" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Objective">
+        <p>In this minilab, you&#39;ll complete a two-player game of ping pong. To play: one player will move their bat with the mouse and the other player will move their bat with the up and down arrow keys.</p>
+        <img src="img/b-example.png">
+        <h4 class="summary">Complete the starter code in order to make the ping pong game functional. You&#39;ll need to use variables to increase and decrease the score of a player throughout the game. The code to move the bats and the ball is already programmed. Try to think about when red and blue should earn points and how many points that a player needs to win.</h4>
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Review the use of <b>conditional</b> statements.</li>
+          <li>Use <b>variables</b>.</li>
+        </ul>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Remix the starter project">
+        <p>Open the <a href="https://scratch.mit.edu/projects/414256127/#editor" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Finishing Up">
+        When you're finished, be sure to save and share your project, and then add it to the studio <a href="https://scratch.mit.edu/studios/5521131/"> here </a>.
+      </google-codelab-step>
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
