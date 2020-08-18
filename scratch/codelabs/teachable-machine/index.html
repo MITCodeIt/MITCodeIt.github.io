@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="theme-color" content="#4F7DC9" />
+    <meta charset="UTF-8" />
+    <title>Teachable Machine Codelab</title>
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../../elements/codelab.html" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono"
+    />
+    <link rel="icon" href="../../elements/favicon.png" />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body unresolved class="fullbleed">
+    <google-codelab
+      title="Teachable Machine Codelab"
+      feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2"
+    >
+      <google-codelab-step label="Overview">
+        <p>
+          In this codelab, you'll make your own machine learning model and
+          integrate it into your own Scratch project!
+        </p>
+        <iframe
+          allowtransparency="true"
+          width="485"
+          height="402"
+          src="https://scratch.mit.edu/projects/embed/81582778/?autostart=false"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>
+            Use <b>conditional (if) </b> blocks to check for class
+            identification.
+          </li>
+          <li>
+            Use <b>Teachable Machines</b> to make a machine learning model.
+          </li>
+        </ul>
+      </google-codelab-step>
+
+      <google-codelab-step label="Remix the starter project">
+        <p>
+          Open the
+          <a
+            href="https://scratch.mit.edu/projects/417756813/#editor"
+            target="_blank"
+            >starter project</a
+          >
+          and click <b>Remix</b>.
+        </p>
+        <img src="img/click_remix.png" />
+      </google-codelab-step>
+
+      <google-codelab-step label="Create your Learning Model">
+        <p>
+          First, we are going to make our own machine learning model using
+          Teachable Machines.
+        </p>
+
+        <aside class="callout">
+          <h2>Supervised Learning</h2>
+          <p>
+            <b>Supervised learning</b> is a type of machine learning that
+            "learns" an algorithm for predicting output based on input. The
+            reason it is <b>supervised</b> is because it uses a labelled
+            dataset. An example of a labelled dataset is a collection of images
+            of dogs that have specifically been labelled as "dog". Another
+            example is a collection of text files that have all been labelled as
+            "knock knock jokes".
+          </p>
+          <p>
+            Unfortunately, we will not be able to go in-depth into machine
+            learning, but we hope that Teachable Machines helps you better see
+            what it is.
+          </p>
+        </aside>
+
+        <h2>Steps</h2>
+        <ol>
+          <li>
+            Use Cassy's <b>costumes</b> to make her switch between dance moves.
+          </li>
+          <li>Keep Cassy dancing <b>forever</b>.</li>
+          <li>Control the speed of Cassy's dancing.</li>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Make Cassy move">
+        <p>
+          Next, we are going to make Cassy dance around the screen.
+          <br /><br />Useful block for this section: <br /><img
+            style="max-width: 200px;"
+            src="img/glide_block.png"
+          />
+        </p>
+
+        <h2>Steps</h2>
+        <ol>
+          <li>Make Cassy <b>glide</b> around the screen while dancing.</li>
+          <li>Have the dancing start when the <b>green flag</b> is clicked.</li>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #1">
+        <aside class="special">
+          <h2>Dancy Party Checkoff #1</h2>
+          <p>
+            <b
+              >To recieve this checkoff, you must answer the following
+              questions:</b
+            >
+          </p>
+          <ul class="checklist">
+            <li>How do you keep Cassy dancing without stopping?</li>
+            <li>How does Cassy move around the screen?</li>
+            <li>How would you speed up her dancing?</li>
+          </ul>
+        </aside>
+      </google-codelab-step>
+
+      <google-codelab-step label="Add dance music for Cassy">
+        <p>
+          Finally, we are going to add music and location(s) to the dance party.
+          <br /><br />We are going to write the code for the music on the stage.
+          Click on the stage icon next to the sprites: <br /><img
+            style="max-width: 150px;"
+            src="img/click_on_stage.png"
+          />
+          <br /><br />Useful block for this section: <br /><img
+            style="max-width: 200px;"
+            src="img/play_sound_until_done_block.png"
+          />
+        </p>
+
+        <h2>Steps</h2>
+        <ol>
+          <li>
+            Find backdrops you want to use as locations for the dance party.
+            <br /><img
+              style="max-width: 300px;"
+              src="img/add_new_backdrops.png"
+            />
+          </li>
+
+          <li>
+            Choose music for Cassy to dance to from the sounds tab (next to
+            backdrops).
+          </li>
+          <li>Use the <b>play sound until done</b> block to play the music.</li>
+          <li>Make the music play <b>forever</b>.</li>
+          <li>Have the music start when the <b>green flag</b> is clicked.</li>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Checkoff #2">
+        <aside class="special">
+          <h2>Dancy Party Checkoff #2</h2>
+          <p>
+            <b
+              >To recieve this checkoff, you must answer the following
+              questions:</b
+            >
+          </p>
+          <ul class="checklist">
+            <li>How do you start the music at the same time as the dancing?</li>
+            <li>How do you keep the music playing without stopping?</li>
+          </ul>
+        </aside>
+      </google-codelab-step>
+
+      <google-codelab-step label="Bonus Features">
+        If you finish early, implement one or more of the following features for
+        bonus features. Or, come up with a bonus idea of your own!
+        <aside class="special">
+          <h2>Dancy Party Bonus Features</h2>
+          <p>
+            <b
+              >Implement one or more of the following, and show it off to your
+              mentor!</b
+            >
+          </p>
+          <ul>
+            <li>Add friends to the dance party.</li>
+            <li>Have the backdrop keep changing during the party.</li>
+            <li>
+              Make Cassy do the twist. (hint: use the "change whirl effect by"
+              block)
+            </li>
+            <li>Make Cassy tell a story. (hint: use the "say" block)</li>
+            <li>Use keys to control Cassy's dance moves.</li>
+            <li>
+              <b>Difficult:</b> Use keys to control the music being played.
+            </li>
+            <li>
+              <b>Difficult:</b> Randomize where Cassy moves on the screen.
+            </li>
+          </ul>
+        </aside>
+      </google-codelab-step>
+    </google-codelab>
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-49880327-14", "auto");
+
+      (function () {
+        var gaCodelab = "";
+        if (gaCodelab) {
+          ga("create", gaCodelab, "auto", { name: "codelab" });
+        }
+
+        var gaView;
+        var parts = location.search.substring(1).split("&");
+        for (var i = 0; i < parts.length; i++) {
+          var param = parts[i].split("=");
+          if (param[0] === "viewga") {
+            gaView = param[1];
+            break;
+          }
+        }
+        if (gaView && gaView !== gaCodelab) {
+          ga("create", gaView, "auto", { name: "view" });
+        }
+      })();
+    </script>
+  </body>
+</html>

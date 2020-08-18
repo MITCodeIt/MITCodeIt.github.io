@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Maze Game Codelab</title>
+  <title>Flappy Fish</title>
   <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
   <link rel="import" href="../../elements/codelab.html">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
@@ -20,44 +20,45 @@
 </head>
 <body unresolved class="fullbleed">
 
-  <google-codelab title="Code It Maze" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+  <google-codelab title="Flappy Fish" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
 
       <google-codelab-step label="Overview">
-        <p>In this codelab, you&#39;ll make a maze game.</p>
-        <img src="img/title_photo.png">
+        <p>In this codelab, you&#39;ll make a game where the player guides a fish to swim between pairs of pipes.</p>
+        <iframe src="https://scratch.mit.edu/projects/413084460/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
-          <li>Use <b>arrow keys</b> to move a sprite.</li>
-          <li>Use <b>conditional (if) </b> blocks to check for game over and finishing the maze.</li>
-          <li>Edit <b>costumes and stages</b> to customize the maze.</li>
+          <li>Use the <b>space bar</b> to change the speed of the fish.</li>
+          <li>Use <b> variables </b> to track the fish's score.</li>
+          <li>Use <b>loops</b> to continuously generating pipes until the game ends.</li>
         </ul>
 
       </google-codelab-step>
 
       <google-codelab-step label="Remix the starter project">
-        <p>Open the <a href="https://scratch.mit.edu/projects/333780631/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
-        <img src="img/click_remix.png">
+        <p>Open the <a href="https://scratch.mit.edu/projects/413083283/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+        <img style="max-width: 75px" src="img/remix.png">
 
       </google-codelab-step>
 
-      <google-codelab-step label="Move with Arrow Keys">
-        <p>First, we are going to program the sprite to move when the arrow keys are pressed.</p>
-        <img style="max-width: 400px" src="img/movement_explain.png">
+      <google-codelab-step label="Starting the game">
+        <p>First, we are going to set the fish's starting conditions. We will be using two variables: Score and Speed.</p>
         <aside class="callout">
-          <h2>Hat Blocks</h2>
-          <p><b>Hat blocks</b> are the blocks that start every script. They tell sprite when it is time to do the actions below them. They are shaped with a rounded top and a bump at the bottom — this is so you can only place blocks below them. Here are two examples of hat blocks: </p>
-          <h3>Run code when flag is clicked </h3>
-          <img style="max-width: 200px" src="img/hat_flag.png">
-          <h3>Run code when space bar is clicked </h3>
-          <img style="max-width: 200px" src="img/hat_space.png">
+          <h2>Variables</h2>
+          <p>Just like variables in math, <b>variables</b> in programming are used to store values. You can alter a variable in two ways:</p>
+          <h3>Set variable to a value </h3>
+          <img style="max-width: 200px" src="img/set-variable.png">
+          <h3>Change variable by a value </h3>
+          <img style="max-width: 200px" src="img/change-variable.png">
         </aside>
         <h2>Steps</h2>
         <ol>
-          <li>When the up arrow is pressed...<br>
-            <img style="max-width: 200px" src="img/up-arrow.png"><br>
-          <li>Make the superhero move up by changing the y-position. (The y-axis corresponds to "up" and "down".)<br>
-            <img style="max-width: 200px" src="img/move-up.png"></li>
-          <li>Repeat this for the down direction (decrease y), and for moving right and left (change x) </li>
+          <li>Create new Score and Speed variables.<br>
+            <img style="max-width: 200px" src="img/new-variable-score.png"></li>
+          <li>Set the speed at the beginning of the game to 0.<br>
+            <img style="max-width: 200px" src="img/set-speed-0.png"></li>
+          <li>Set the score at the beginning of the game (What should the score at the beggining of the game be set to?).<br>
+          <li>Start the fish at the center of the stage. </li>
+            <img style="max-width: 200px" src="img/go-to-center.png"></li>
          
         </ol>
 
