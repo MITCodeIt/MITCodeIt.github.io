@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Maze Game Codelab</title>
+  <title>Summation Codelab</title>
   <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
   <link rel="import" href="../../elements/codelab.html">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
@@ -20,104 +20,132 @@
 </head>
 <body unresolved class="fullbleed">
 
-  <google-codelab title="Code It Maze" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+  <google-codelab title="Summation" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
 
-      <google-codelab-step label="Overview">
-        <p>In this codelab, you&#39;ll make a maze game.</p>
-        <img src="img/title_photo.png">
+      <google-codelab-step label="What is Recursion?">
+        <img src="img/escher_recursive_art.jpeg">
+        <p>Some of you may be familiar with the artist who drew the painting above - M.C. Escher. He specialized in art that makes you question reality: repeated patterns, drawings within drawings (as shown above, impossible buildings, and more!</p>
+        <p>The painting above is a prime example of <i>recursion</i> in his art. Recursion is usually seen in math or in computer science, but sometimes it makes its way into other fields. So what exactly does <b>recursion</b> mean?</p>
+        <p>In somewhat complicated terms, <b>recursion</b> is the process of repeating items in a self-similar way. In coding applications, this means creating a <i>function</i> that calls itself within that function.</p>
+        <p>It would probably be easiest to understand if I give you some concrete examples. Have you ever wondered what every number from 1 to 10 added up was? Or what ever number from 1 to 10 multiplied by each other is? Maybe you've wondered about the Fibonacci Sequence (where you add up a number that is the sum of the two numbers before it; 0+1+1+2+3+5+8+13+...)?</p>
+        <p>You can do this rather quickly by using a recursive program. You would create a function that within it, performs some action and then calls itself with a different input.</p>
+        <p>More specifically, if we're thinking about adding every number from 1 to 10, we have to add up 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1. So instead of doing that math ourselves, we create a function that takes in a number and adds it to the number directly below it. Let&#39;s discuss this in steps:</p>
+        <ul>
+          <li>Let's call our function "Sum," and Sum takes in a number "Int" and will give back the sum of 1 + 2 + ... + Int. In our case, Int = 10. We call our function as follows: Sum(10).</li>
+          <li>Sum will do the following: take the input Int and add it to a variable called "Total." It will then call Sum again with the input being the Int - 1. In our case, we would call Sum(10) and within this, it would call Sum(9). When Sum(9) runs, it will call Sum(8), and so on and so forth.</li>
+          <ul>
+            <li>By doing this, we always add the number below it to the Total.</li>
+          </ul>
+          <li>However, there's a small problem with this: we can end up adding every number less than our original input! This means adding 0, -1, -2, -3, ..., until negative infinity!</li>
+          <li>We must tell the program to stop adding numbers when the Int = 1. We can do this using one of the loops in the <b>Controls</b> section in Scratch.</li>
+        </ul>
+        <p>Continue to the next step to remix the Codelab and to work through an example together! This lab will be explained step by step so that you can understand this concept better.</p>
+      </google-codelab-step>
+
+      <google-codelab-step label ="Summation Codelab">
+        <p>In this codelab, you&#39;ll add up all of the numbers from 1 to any number that a user wants.</p>
+        <iframe src="https://scratch.mit.edu/projects/416894171/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
-          <li>Use <b>arrow keys</b> to move a sprite.</li>
-          <li>Use <b>conditional (if) </b> blocks to check for game over and finishing the maze.</li>
-          <li>Edit <b>costumes and stages</b> to customize the maze.</li>
+          <li>Use <b>ask</b> and <b>answer</b> blocks for user input.</li>
+          <li>How to use <b>variables</b> to keep track of the user's answer and the total sum.</li>
+          <li>How to make your own <b>function</b> with <b>My Blocks</b>.</li>
+          <li>What <b>recursion</b> looks like in Scratch and coding in general!</li>
         </ul>
-
       </google-codelab-step>
+
 
       <google-codelab-step label="Remix the starter project">
-        <p>Open the <a href="https://scratch.mit.edu/projects/333780631/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+        <p>Open the <a href="https://scratch.mit.edu/projects/416959539/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
         <img src="img/click_remix.png">
+      </google-codelab-step>
+
+      <google-codelab-step label="Get user input">
+        <p>First, we need the Scratch Cat to explain to the user what this program is doing and ask what number they'd like to sum to.</p>
+        <h2>Steps to explain the program:</h2>
+        <ol>
+          <img style="max-width: 200px" src="img/say_block.png">
+          <li>Use the <b>say</b> block (found under <b>Looks</b>) to have the Scratch Cat say something to the user. Have the cat say something along the lines of: "I can tell you the sum from 1 to any positive integer you want! Press the space key to continue."</li>
+          <li>Make sure that the cat says this <i>repeatedly until the space key is pressed</i>. What kind of loop and sensing blocks can you use to do this?</li>
+        </ol>
+        <h2>Steps to ask the user for input:</h2>
+        <ol>
+          <li><b>Ask</b> the user "What positive integer do you choose?" which is found in the <i>sensing</i> section.<br>
+            <img style="max-width: 200px" src="img/ask_block.png"><br>
+          <li>Create a variable called "int" to hold the user&#39;s response.</li><br>
+            <img style="max-width: 200px"  src="img/create_variable.png"><br>
+          <li>Store the user&#39;s <b>answer</b> in "int." Use the <b>answer</b> block that is under the "ask" block.<br>
+            <img style="max-width: 200px" src="img/answer.png"></li>
+        </ol>
 
       </google-codelab-step>
 
-      <google-codelab-step label="Move with Arrow Keys">
-        <p>First, we are going to program the sprite to move when the arrow keys are pressed.</p>
-        <img style="max-width: 400px" src="img/movement_explain.png">
+
+      <google-codelab-step label="Create the 'Sum' Function">
+        <p>Now we will use the <b>My Block</b> section to create our own function. We&#39;ll call this function "sum" and require an input called "number."</p>
+        <img style="max-width: 400px" src="img/create_function.png">
         <aside class="callout">
-          <h2>Hat Blocks</h2>
-          <p><b>Hat blocks</b> are the blocks that start every script. They tell sprite when it is time to do the actions below them. They are shaped with a rounded top and a bump at the bottom — this is so you can only place blocks below them. Here are two examples of hat blocks: </p>
-          <h3>Run code when flag is clicked </h3>
-          <img style="max-width: 200px" src="img/hat_flag.png">
-          <h3>Run code when space bar is clicked </h3>
-          <img style="max-width: 200px" src="img/hat_space.png">
+          <h2>My Blocks</h2>
+          <p>Use the <b>My Blocks</b> section to create a function that can be called from any script.</p>
+          <p>You can create 3 types of blocks: functions (including adding a label), functions with a variable input, or functions with a boolean (true/false) input/</p>
+          <h3>Create functions with a variable input using this choice:</h3>
+          <img style="max-width: 200px" src="img/add-input.png">
+          <h3>Rename "block name" to say "sum" (the name of our function). Change the "number or text" to say "number" (this is the input to the sum function).</h3>
+          <img style="max-width: 200px" src="img/make-a-block.png">
         </aside>
-        <h2>Steps</h2>
+        <h2>What happens after you create the block?</h2>
         <ol>
-          <li>When the up arrow is pressed...<br>
-            <img style="max-width: 200px" src="img/up-arrow.png"><br>
-          <li>Make the superhero move up by changing the y-position. (The y-axis corresponds to "up" and "down".)<br>
-            <img style="max-width: 200px" src="img/move-up.png"></li>
-          <li>Repeat this for the down direction (decrease y), and for moving right and left (change x) </li>
-         
+          <li>Your "My Blocks" section should look like the following:<br>
+             <img style="max-width: 200px" src="img/updated_my_blocks.png"><br>
+          <li>The block below will show up where your scripts are:<br>
+            <img style="max-width: 200px" src="img/define-sum.png"><br>
         </ol>
-
       </google-codelab-step>
 
 
-      <google-codelab-step label="Check if She's Touching the Wall">
-        <p>Now we will check if the superhero is touching the wall and lose the game if she is</p> 
-        <img style="max-width: 400px" src="img/wall_sensor_explain.png">
-        <aside class="callout">
-          <h2>If blocks</h2>
-          <p> The code inside an <b>If block</b> only runs if the <b> condition </b> at the top of the block is true </p>
-          <h3>If block </h3>
-          <img style="max-width: 200px" src="img/hat_flag.png">
-          <h3>Conditions are always shaped like a hexagon </h3>
-          <img style="max-width: 200px" src="img/condition.png">
-        </aside>
-        <h2>Steps</h2>
+      <google-codelab-step label="What Goes in the Function?">
+        <p>Now we will complete the function so that it will compute the sum from 1 to number (the input in the function).</p>
+        <h2>How can we calculate the sum? Steps:</h2>
         <ol>
-          <li>Have the superhero check if she's touching the black wall, and say "game over" if she is <br>
-          <li>If the game ends, the superhero should also return to the starting position (-190, -115) so the game can restart.<br>
-             <img style="max-width: 200px" src="img/go_to_house.png"><br>
-          <li>This check should happen over and over while you're playing the game (remember the forever loop!) <br>
-            <img style="max-width: 200px" src="img/forever.png"><br>
-          <li>She should start checking if she's touching the wall when the game begins (remember Hat blocks!) </li>
-            <img style="max-width: 200px" src="img/hat_flag.png"><br>
-         
+          <li>Create a variable called "total" that will hold the sum throughout the program.</li>
+          <li>Set total to equal 0 at the beginning of all of the scripts, under the "when green flag clicked" hat block.</li>
+          <li>Add number to total (increase total by the input in the function). You can use the "number" block by dragging it from where it says "number" next to the word "sum" in your script. It should look like the following:</li><br>
+            <img style="max-width: 200px" src="img/add_number_to_total.png"><br>
+          <li><b>Here is the recursive step</b>: after you change the total to increase by the number, call the sum function again, but it&#39;s input should be the current input minus one. Here&#39;s how to do that:</li>
+          <ol>
+            <li>First, you need to decrease number by 1. You can do this with the following <b>operator</b>.</li><br>
+              <img style="max-width: 200px" src="img/minus-operator.png"><br>
+            <li>Call sum with the piece of code created immediately before as the input; it should look like this:</li><br>
+            <img style="max-width: 200px" src="img/recursive-call.png"><br>
+          </ol>
+          <li>Unless you tell the recursive function when to stop, it will continue forever. Let&#39;s fix this. Add an <b>if statement</b> to check if the number is <b>greater than</b> 0. This will make sure that our function will stop when number = 1.</li>
+          <li>Move the other two blocks from before (changing the variable and the recursive call) into this if statement.</li>
         </ol>
-
       </google-codelab-step>
 
 
-      <google-codelab-step label="Check if She Reached the Laptop">
-        <p>Now we will check if the superhero is touching the wall and win the game if she is</p> 
-
-        <img style="max-width: 400px" src="img/win_explain.png">
-        <p> She can check if she's touching the Laptop in a similar way to how she checked if she was touching a black wall. </p>
-        <p> The Laptop is a sprite, not a color, so be sure to use the right block! </p> 
+      <google-codelab-step label="Sum Function">
+        <p>Your sum function should look like this at the end:</p>
+        <img style="max-width: 400px" src="img/completed-sum.png"><br>
       </google-codelab-step>
 
-
-      <google-codelab-step label="Bonus Features">
-        Once you have a working maze game, choose one or more additional features to add!
+      <google-codelab-step label="Putting It All Together">
+        <h2>Finally, let&#39;s finish the entire program. Your script should currently look like this:</h2>
+        <img style="max-width: 400px" src="img/almost-done.png"><br>
         <ol>
-          <li> Draw your own maze background! You can do this by changing the backdrop. If you want to make the superhero smaller, you can do that with a block in the Looks category
-          <li> Change the sprites for the player, home and goal of the maze
-          <li> Make something exciting happen when the game is lost or won
-          <li> Look at other scratch users' mazes <a href="https://scratch.mit.edu/studios/138299/"> here </a> for more inspiration, or think of your own additons!
-
+          <li>In order for the sum function to run at all, we need to call it in the script. Call sum with the input being the variable "int" that we created and defined earlier.</li>
+          <li>Lastly, have the Scratch Cat tell the user the sum. You can <b>join</b> together words and variables with the <b>join operator</b>. It looks like the following:</li><br>
+          <img style="max-width: 200px" src="img/join.png"><br>
         </ol>
-
       </google-codelab-step>
 
-      <google-codelab-step label="Finishing Up">
-        When you're finished, be sure to save and share your project, and then add it to the studio: 
-        <ol>
-          <li> <a href="https://scratch.mit.edu/studios/25249649/"> Giga studio </a>.
-          <li> <a href="https://scratch.mit.edu/studios/25247924/"> Nano studio </a>.
-        </ol>
-         
+      <google-codelab-step label="Final Outcome">
+        <p>Here&#39;s how your script should look at the end:</p><br>
+        <img style="max-width: 400px" src="img/final.png"><br>
+      </google-codelab-step>
+
+      <google-codelab-step label="Challenge">
+        When you're finished, be sure to save your project. If you want a challenge to see if you understand recursion and this codelab, try multiplying all of the numbers from 1 until any positive integer.
       </google-codelab-step>
 
   </google-codelab>
