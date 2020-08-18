@@ -1,154 +1,318 @@
-
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <meta name="theme-color" content="#4F7DC9">
-  <meta charset="UTF-8">
-  <title>Maze Game Codelab</title>
-  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-  <link rel="import" href="../../elements/codelab.html">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
-  <link rel="icon" href="../../elements/favicon.png">
-  <style>
-    body {
-      font-family: "Roboto",sans-serif;
-    }
-  </style>
-
-</head>
-<body unresolved class="fullbleed">
-
-  <google-codelab title="Code It Maze" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
-
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="theme-color" content="#4F7DC9" />
+    <meta charset="UTF-8" />
+    <title>Balloon Pop Codelab</title>
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../../elements/codelab.html" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono"
+    />
+    <link rel="icon" href="../../elements/favicon.png" />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body unresolved class="fullbleed">
+    <google-codelab
+      title="Code It Balloon Pop"
+      feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2"
+    >
       <google-codelab-step label="Overview">
-        <p>In this codelab, you&#39;ll make a maze game.</p>
-        <img src="img/title_photo.png">
+        <p>In this codelab, you&#39;ll make a balloon pop game.</p>
+        <img src="img/title_photo.png" />
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
-          <li>Use <b>arrow keys</b> to move a sprite.</li>
-          <li>Use <b>conditional (if) </b> blocks to check for game over and finishing the maze.</li>
-          <li>Edit <b>costumes and stages</b> to customize the maze.</li>
+          <li>Use <b>cloning</b> to make ten balloons.</li>
+          <li>
+            Float balloons across the screen from left to right using the
+            <b>move</b> block.
+          </li>
+          <li>Edit <b>costumes and stages</b> to customize the game.</li>
+          <li>Use <b>arrow keys</b> to move the arrows.</li>
+          <li>Keep track of the score using <b>variables</b>.</li>
+          <li>Use the <b>timer</b> block to limit each round to 30 seconds.</li>
         </ul>
-
       </google-codelab-step>
 
       <google-codelab-step label="Remix the starter project">
-        <p>Open the <a href="https://scratch.mit.edu/projects/333780631/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
-        <img src="img/click_remix.png">
-
+        <p>
+          Open the
+          <a
+            href="https://scratch.mit.edu/projects/418504188/editor/"
+            target="_blank"
+            >starter project</a
+          >
+          and click <b>Remix</b>.
+        </p>
       </google-codelab-step>
 
-      <google-codelab-step label="Move with Arrow Keys">
-        <p>First, we are going to program the sprite to move when the arrow keys are pressed.</p>
-        <img style="max-width: 400px" src="img/movement_explain.png">
+      <google-codelab-step label="Control the Arrow with Mouse">
+        <p>
+          First, we are going to program the arrow sprite to follow the mouse
+          pointer. We will need to program the arrow sprite so that when the
+          user clicks their mouse (within the game screen), the arrow sprite
+          will move in the direction of the mouse pointer until it reaches the
+          edge of the screen.
+        </p>
         <aside class="callout">
-          <h2>Hat Blocks</h2>
-          <p><b>Hat blocks</b> are the blocks that start every script. They tell sprite when it is time to do the actions below them. They are shaped with a rounded top and a bump at the bottom — this is so you can only place blocks below them. Here are two examples of hat blocks: </p>
-          <h3>Run code when flag is clicked </h3>
-          <img style="max-width: 200px" src="img/hat_flag.png">
-          <h3>Run code when space bar is clicked </h3>
-          <img style="max-width: 200px" src="img/hat_space.png">
+          <h2>Repeat Until Block</h2>
+          <p>
+            We use the <b>Repeat Until block</b>, or while statements, whenever
+            we want the computer to <b>repeatedly</b> do an action (e.g. move 20
+            steps) until a condition is fulfilled (i.e. touching: edge).
+          </p>
+          <img style="max-width: 250px;" src="img/repeat_until.png" />
+        </aside>
+
+        <img style="max-width: 200px;" src="img/arrow.png" />
+        <h2>Things to Accomplish</h2>
+        <ol>
+          <li>
+            Program the arrow end to <b>repeatedly</b> follow (but not go to)
+            the mousepointer.<br />
+            <img style="max-width: 100px;" src="img/mouse_pointer.png" />
+          </li>
+
+          <li>
+            Program the arrow to <b>repeatedly</b> check if the mouse has been
+            clicked.<br />
+            <img style="max-width: 100px;" src="img/mouse_down.png" />
+          </li>
+
+          <li>
+            Program the arrow to <b>repeatedly</b> move until it reaches the
+            edge of the game screen.<br />
+            <img style="max-width: 75px;" src="img/move_arrow.png" />
+          </li>
+
+          <li>
+            Set the starting location of the arrow and have it return to this
+            same spot once the arrow has reached the edge of the screen.<br />
+            <img style="max-width: 100px;" src="img/arrow_location.png" />
+          </li>
+
+          <li>Play a sound effect when the mouse is clicked.</li>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Add Timer and Score">
+        <p>
+          Now we will add a 30 second timer and score to the arrow sprite.
+        </p>
+
+        <aside class="callout">
+          <h2>Variable Blocks</h2>
+          <p>
+            We use the <b>Variable block</b>, or variables, to store the value
+            of something. We can change the values of variables. They are
+            similar to the concept of variables in algebra. For example, in
+            Scratch, we could create a variable to store and change the score of
+            a player.
+          </p>
+          <p>
+            You can create a new variable and edit the value of an existing
+            variable using the blocks from the "Variable" section.
+          </p>
         </aside>
         <h2>Steps</h2>
         <ol>
-          <li>When the up arrow is pressed...<br>
-            <img style="max-width: 200px" src="img/up-arrow.png"><br>
-          <li>Make the superhero move up by changing the y-position. (The y-axis corresponds to "up" and "down".)<br>
-            <img style="max-width: 200px" src="img/move-up.png"></li>
-          <li>Repeat this for the down direction (decrease y), and for moving right and left (change x) </li>
-         
-        </ol>
+          <li>Create a new variable for "Score".<br /></li>
+          <li>
+            When the game begins, initialize the "Score" variable and reset
+            timer (remember Hat blocks!).<br />
+            <img style="max-width: 100px;" src="img/reset_timer.png" /><br />
+          </li>
 
+          <li>
+            This check should happen over and over while you're playing the game
+            (remember the forever loop!) <br />
+            <img style="max-width: 200px;" src="img/forever.png" /><br />
+          </li>
+
+          <li>
+            Shrink the arrow to 15% of its size. (Why do you think we need to do
+            this?) <br />
+          </li>
+
+          <li>Start the arrow at the center bottom of the page. <br /></li>
+          <img style="max-width: 200px;" src="img/arrow_location.png" /><br />
+
+          <li>
+            Repeatedly run the arrow control code from the previous page until
+            30 seconds is up. <br />
+            <img style="max-width: 200px;" src="img/timer.png" /> <br />
+          </li>
+
+          <li>
+            Display the final score. The score at this point should still be
+            zero. Why is that?
+          </li>
+        </ol>
       </google-codelab-step>
 
-
-      <google-codelab-step label="Check if She's Touching the Wall">
-        <p>Now we will check if the superhero is touching the wall and lose the game if she is</p> 
-        <img style="max-width: 400px" src="img/wall_sensor_explain.png">
+      <google-codelab-step label="Create Clones of Balloon Sprite">
+        <p>
+          Next we will create 10 clones of the balloon sprite.
+        </p>
         <aside class="callout">
-          <h2>If blocks</h2>
-          <p> The code inside an <b>If block</b> only runs if the <b> condition </b> at the top of the block is true </p>
-          <h3>If block </h3>
-          <img style="max-width: 200px" src="img/hat_flag.png">
-          <h3>Conditions are always shaped like a hexagon </h3>
-          <img style="max-width: 200px" src="img/condition.png">
+          <h2>Clones</h2>
+          <p>
+            A clone of a sprite is a copy of a sprite. It is "created" with the
+            same costume and code as the original sprite. Clones are useful to
+            programmers so that we do not have to make the same sprites.
+            Managing multiple sprites can get very tedious and easily leads to
+            mistakes.
+          </p>
         </aside>
+        <h2>Things To Accomplish</h2>
+        <ul>
+          <li>
+            When the game begins, hide the original balloon sprite. (Why do we
+            need to do this? What happens when you do not do this?)
+          </li>
+          <li>
+            When the game begins, create 10 clones of the original balloon
+            sprite. <br /><img
+              style="max-width: 200px;"
+              src="img/create_clone.png"
+            />
+          </li>
+        </ul>
+
+        <h2>Challenge</h2>
+        <ul>
+          <li>
+            Make the clone balloons have different colors from each other.<br />
+            <img style="max-width: 75px;" src="img/next_costume.png" />
+          </li>
+          <li>
+            Edit the size of each of the balloons so that they are not so large
+            (making it harder for the user to hit the balloons with the arrow).
+          </li>
+        </ul>
+      </google-codelab-step>
+
+      <google-codelab-step label="Balloon Sprite Clone Code">
+        <p>Now, all you need to do is make the code for each balloon clone.</p>
+        <aside class="callout">
+          <h2>"when I start as a clone" Block</h2>
+          <p>
+            The <b>when I start as a clone</b> block can be thought of as the
+            start of the "lifetime" for a cloned sprite. After a clone is
+            created, the computer will immediately execute the code under the
+            <b>when I start as a clone</b> block.
+          </p>
+          <p>
+            For example, in the following piece of code, each balloon clone will
+            immediately start at a random position.
+          </p>
+          <img style="max-width: 200px;" src="img/clone_example.png" />
+          <p>
+            Note: If we did not use clones, we would have had to create 10 new
+            sprites manually and manually code them to start at a random
+            location. Do you see how clones makes coding more efficient and
+            easier?
+          </p>
+        </aside>
+
         <h2>Steps</h2>
         <ol>
-          <li>Have the superhero check if she's touching the black wall, and say "game over" if she is <br>
-          <li>If the game ends, the superhero should also return to the starting position (-190, -115) so the game can restart.<br>
-             <img style="max-width: 200px" src="img/go_to_house.png"><br>
-          <li>This check should happen over and over while you're playing the game (remember the forever loop!) <br>
-            <img style="max-width: 200px" src="img/forever.png"><br>
-          <li>She should start checking if she's touching the wall when the game begins (remember Hat blocks!) </li>
-            <img style="max-width: 200px" src="img/hat_flag.png"><br>
-         
+          <li>
+            When a balloon clone starts, position the balloon clone within the
+            top half of the screen and make the balloon visible.
+          </li>
+          <li>
+            Repeat this code forever for the cloned balloon: (Why forever? Why
+            not "repeat until"?)
+            <ol>
+              <li>
+                Move balloon slowly to the right.<br />
+                <img style="max-width: 100px;" src="img/move_slowly.png" />
+              </li>
+              <li>
+                If the balloon is hit by an arrow, increase the value of the
+                score variable, play a sound effect, and pick a new random
+                position for the clone.<br />
+                <img style="max-width: 100px;" src="img/touching_arrow.png" />
+              </li>
+              <li>
+                If the balloon reaches the right edge of the stage, pick a
+                random position on the left side of the stage and change
+                costume.
+                <img style="max-width: 100px;" src="img/right_edge.png" />
+              </li>
+            </ol>
+          </li>
         </ol>
-
-      </google-codelab-step>
-
-
-      <google-codelab-step label="Check if She Reached the Laptop">
-        <p>Now we will check if the superhero is touching the wall and win the game if she is</p> 
-
-        <img style="max-width: 400px" src="img/win_explain.png">
-        <p> She can check if she's touching the Laptop in a similar way to how she checked if she was touching a black wall. </p>
-        <p> The Laptop is a sprite, not a color, so be sure to use the right block! </p> 
-      </google-codelab-step>
-
-
-      <google-codelab-step label="Bonus Features">
-        Once you have a working maze game, choose one or more additional features to add!
-        <ol>
-          <li> Draw your own maze background! You can do this by changing the backdrop. If you want to make the superhero smaller, you can do that with a block in the Looks category
-          <li> Change the sprites for the player, home and goal of the maze
-          <li> Make something exciting happen when the game is lost or won
-          <li> Look at other scratch users' mazes <a href="https://scratch.mit.edu/studios/138299/"> here </a> for more inspiration, or think of your own additons!
-
-        </ol>
-
       </google-codelab-step>
 
       <google-codelab-step label="Finishing Up">
-        When you're finished, be sure to save and share your project, and then add it to the studio: 
+        When you're finished, be sure to save and share your project, and then
+        add it to the studio:
         <ol>
-          <li> <a href="https://scratch.mit.edu/studios/25249649/"> Giga studio </a>.
-          <li> <a href="https://scratch.mit.edu/studios/25247924/"> Nano studio </a>.
+          <li>
+            <a href="https://scratch.mit.edu/studios/25249649/"> Giga studio </a
+            >.
+          </li>
+          <li>
+            <a href="https://scratch.mit.edu/studios/25247924/"> Nano studio </a
+            >.
+          </li>
         </ol>
-         
       </google-codelab-step>
+    </google-codelab>
 
-  </google-codelab>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-49880327-14", "auto");
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-49880327-14', 'auto');
-
-    (function() {
-      var gaCodelab = '';
-      if (gaCodelab) {
-        ga('create', gaCodelab, 'auto', {name: 'codelab'});
-      }
-
-      var gaView;
-      var parts = location.search.substring(1).split('&');
-      for (var i = 0; i < parts.length; i++) {
-        var param = parts[i].split('=');
-        if (param[0] === 'viewga') {
-          gaView = param[1];
-          break;
+      (function () {
+        var gaCodelab = "";
+        if (gaCodelab) {
+          ga("create", gaCodelab, "auto", { name: "codelab" });
         }
-      }
-      if (gaView && gaView !== gaCodelab) {
-        ga('create', gaView, 'auto', {name: 'view'});
-      }
-    })();
-  </script>
 
-</body>
+        var gaView;
+        var parts = location.search.substring(1).split("&");
+        for (var i = 0; i < parts.length; i++) {
+          var param = parts[i].split("=");
+          if (param[0] === "viewga") {
+            gaView = param[1];
+            break;
+          }
+        }
+        if (gaView && gaView !== gaCodelab) {
+          ga("create", gaView, "auto", { name: "view" });
+        }
+      })();
+    </script>
+  </body>
 </html>
