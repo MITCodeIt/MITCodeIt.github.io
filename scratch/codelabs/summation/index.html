@@ -24,15 +24,21 @@
 
       <google-codelab-step label="What is Recursion?">
         <img src="img/escher_recursive_art.jpeg">
-        <p>Some of you may be familiar with the artist who drew the painting above - M.C. Escher. He specialized in art that makes you question reality: repeated patterns, drawings within drawings (as shown above, impossible buildings, and more!</p>
+        <p>Some of you may be familiar with the artist who drew the painting above: M.C. Escher. He specialized in art that makes you question reality: repeated patterns, drawings within drawings (as shown above), impossible buildings, and more!</p>
         <p>The painting above is a prime example of <i>recursion</i> in his art. Recursion is usually seen in math or in computer science, but sometimes it makes its way into other fields. So what exactly does <b>recursion</b> mean?</p>
         <p>In somewhat complicated terms, <b>recursion</b> is the process of repeating items in a self-similar way. In coding applications, this means creating a <i>function</i> that calls itself within that function.</p>
-        <p>It would probably be easiest to understand if I give you some concrete examples. Have you ever wondered what every number from 1 to 10 added up was? Or what ever number from 1 to 10 multiplied by each other is? Maybe you've wondered about the Fibonacci Sequence (where you add up a number that is the sum of the two numbers before it; 0+1+1+2+3+5+8+13+...)?</p>
+        <aside class="callout">
+          <h2>Functions</h2>
+          <p>In programming, a fuction is a named section of that program that performs a specific task. In this sense, a function is a type of procedure or routine.</p>
+        </aside>
         <p>You can do this rather quickly by using a recursive program. You would create a function that within it, performs some action and then calls itself with a different input.</p>
-        <p>More specifically, if we're thinking about adding every number from 1 to 10, we have to add up 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1. So instead of doing that math ourselves, we create a function that takes in a number and adds it to the number directly below it. Let&#39;s discuss this in steps:</p>
+      </google-codelab-step>
+
+      <google-codelab-step label="Recursion Example">
+        <p>If we're thinking about adding every number from 1 to 10, we have to add up 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1. So instead of doing that math ourselves, we can speed it up by creating a function that takes in a number and adds it to the number directly below it. Let&#39;s discuss this in steps:</p>
         <ul>
-          <li>Let's call our function "Sum," and Sum takes in a number "Int" and will give back the sum of 1 + 2 + ... + Int. In our case, Int = 10. We call our function as follows: Sum(10).</li>
-          <li>Sum will do the following: take the input Int and add it to a variable called "Total." It will then call Sum again with the input being the Int - 1. In our case, we would call Sum(10) and within this, it would call Sum(9). When Sum(9) runs, it will call Sum(8), and so on and so forth.</li>
+          <li>Let's tell "Sum" to run (call "Sum"). Sum takes in a number "Int" and will give back the sum of 1 + 2 + ... + Int. In our case, Int = 10. We call our function as follows: Sum(10).</li>
+          <li>Sum will do the following: take the input Int and add it to a variable called "Total." <b>It will then call Sum again with the input being the Int - 1.</b> In our case, we would call Sum(10) and within this, it would call Sum(9). When Sum(9) runs, it will call Sum(8), and so on and so forth.</li>
           <ul>
             <li>By doing this, we always add the number below it to the Total.</li>
           </ul>
@@ -87,7 +93,7 @@
         <aside class="callout">
           <h2>My Blocks</h2>
           <p>Use the <b>My Blocks</b> section to create a function that can be called from any script.</p>
-          <p>You can create 3 types of blocks: functions (including adding a label), functions with a variable input, or functions with a boolean (true/false) input/</p>
+          <p>You can create 3 types of blocks: functions (including adding a label), functions with a variable input, or functions with a boolean (true/false) input.</p>
           <h3>Create functions with a variable input using this choice:</h3>
           <img style="max-width: 175px" src="img/add-input.png">
           <h3>Rename "block name" to say "sum" (the name of our function). Change the "number or text" to say "number" (this is the input to the sum function).</h3>
@@ -145,7 +151,8 @@
       </google-codelab-step>
 
       <google-codelab-step label="Challenge">
-        <p>When you're finished, be sure to save your project.</p>
+        <p>Congratulations you're finished! Be sure to save your project.</p>
+        <p><b>Do you know why computer scientists use recursion?</b></p>
         <p>If you want a <b>challenge</b> to see if you understand recursion and this codelab, try <i>multiplying all of the numbers from 1 until any positive integer</i>.</p>
       </google-codelab-step>
 
