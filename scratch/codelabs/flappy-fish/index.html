@@ -27,16 +27,16 @@
         <iframe src="https://scratch.mit.edu/projects/413084460/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
-          <li>Use the <b>space bar</b> to change the speed of the fish.</li>
+          <li>Use the <b>space bar</b> to help the fish "jump".</li>
           <li>Use <b> variables </b> to track the fish's score.</li>
-          <li>Use <b>loops</b> to continuously generating pipes until the game ends.</li>
+          <li>Use <b>loops</b> to move the pipes across the screen until the game ends.</li>
         </ul>
 
       </google-codelab-step>
 
       <google-codelab-step label="Remix the starter project">
         <p>Open the <a href="https://scratch.mit.edu/projects/413083283/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
-        <img style="max-width: 75px" src="img/remix.png">
+        <img style="max-width: 150px" src="img/remix.png">
 
       </google-codelab-step>
 
@@ -53,7 +53,7 @@
         <h2>Steps</h2>
         <ol>
           <li>Create new Score and Speed variables.<br>
-            <img style="max-width: 200px" src="img/new-variable-score.png"></li>
+            <img style="max-width: 300px" src="img/new-variable-score.png"></li>
           <li>Set the speed at the beginning of the game to 0.<br>
             <img style="max-width: 200px" src="img/set-speed-0.png"></li>
           <li>Set the score at the beginning of the game (What should the score at the beggining of the game be set to?).<br>
@@ -65,38 +65,50 @@
       </google-codelab-step>
 
 
-      <google-codelab-step label="Check if She's Touching the Wall">
-        <p>Now we will check if the superhero is touching the wall and lose the game if she is</p> 
+      <google-codelab-step label="Making the fish fall">
+        <p>The fish will naturally fall towards the bottom of the screen (due to gravity!) The fish will fall until he reaches the floor. </p>
         <img style="max-width: 400px" src="img/wall_sensor_explain.png">
-        <aside class="callout">
-          <h2>If blocks</h2>
-          <p> The code inside an <b>If block</b> only runs if the <b> condition </b> at the top of the block is true </p>
-          <h3>If block </h3>
-          <img style="max-width: 200px" src="img/hat_flag.png">
-          <h3>Conditions are always shaped like a hexagon </h3>
-          <img style="max-width: 200px" src="img/condition.png">
+         <aside class="callout">
+          <h2>Repeat Until Block</h2>
+          <p>
+            We use the <b>Repeat Until block</b>, or while statements, whenever
+            we want the computer to <b>repeatedly</b> do an action (e.g. move 20
+            steps) until a condition is fulfilled (i.e. touching: edge).
+          </p>
+          <img style="max-width: 250px;" src="img/repeat-until-touching-edge.png" />
         </aside>
         <h2>Steps</h2>
         <ol>
-          <li>Have the superhero check if she's touching the black wall, and say "game over" if she is <br>
-          <li>If the game ends, the superhero should also return to the starting position (-190, -115) so the game can restart.<br>
-             <img style="max-width: 200px" src="img/go_to_house.png"><br>
-          <li>This check should happen over and over while you're playing the game (remember the forever loop!) <br>
-            <img style="max-width: 200px" src="img/forever.png"><br>
-          <li>She should start checking if she's touching the wall when the game begins (remember Hat blocks!) </li>
-            <img style="max-width: 200px" src="img/hat_flag.png"><br>
+          <li>First, have the fish move down the screen by the amount stored in <b> Speed </b>. <br>
+             <img style="max-width: 200px" src="img/change-y-by-speed.png"><br>
+          <li>Change <b> Speed </b> so that the fish falls faster and faster as he continues to fall.<br>
+             <img style="max-width: 200px" src="img/change-speed-by.png"><br>
+          <li>The above two actions should happen until the fish touches either a pipe or the floor. <b> Hint: </b> What color are both the pipe and the floor?<br>
+            <img style="max-width: 200px" src="img/repeat-until.png"><br>
+          <li>When the fish hits a pipe or the floor, play a sound to show that the game has ended. You can choose which sound to play!</li>
+            <img style="max-width: 200px" src="img/start-sound.png"><br>
          
         </ol>
 
       </google-codelab-step>
 
 
-      <google-codelab-step label="Check if She Reached the Laptop">
-        <p>Now we will check if the superhero is touching the wall and win the game if she is</p> 
-
-        <img style="max-width: 400px" src="img/win_explain.png">
-        <p> She can check if she's touching the Laptop in a similar way to how she checked if she was touching a black wall. </p>
-        <p> The Laptop is a sprite, not a color, so be sure to use the right block! </p> 
+      <google-codelab-step label="Making the fish jump">
+        <p>Now, we'll move on to the pipes. Even though it seems like the fish is moving to the right, the pipes will actually start on the right of the screen, then move to the left of the screen.</p> 
+        <h2>Steps</h2>
+        <ol>
+          <li>Make the pipes start in a random place towards the right of the screen.<br>
+          <li>Make the fish's speed go up by 6.<br>
+        </ol>
+      </google-codelab-step>
+  
+      <google-codelab-step label="Making the fish jump">
+        <p>Now, we will program the fish to jump whenever the player presses the space bar.</p> 
+        <h2>Steps</h2>
+        <ol>
+          <li>The sprite should only jump when the space bar is pressed. <b> Hint: </b> Which Event block should we use? <br>
+          <li>Make the fish's speed go up by 6.<br>
+        </ol>
       </google-codelab-step>
 
 
