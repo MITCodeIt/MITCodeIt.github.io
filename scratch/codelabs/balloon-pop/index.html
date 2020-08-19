@@ -21,6 +21,7 @@
         font-family: "Roboto", sans-serif;
       }
     </style>
+    c
   </head>
   <body unresolved class="fullbleed">
     <google-codelab
@@ -29,7 +30,15 @@
     >
       <google-codelab-step label="Overview">
         <p>In this codelab, you&#39;ll make a balloon pop game.</p>
-        <img style="max-width: 400px;" src="img/title_page.png" />
+        <iframe
+          src="https://scratch.mit.edu/projects/415609011/embed"
+          allowtransparency="true"
+          width="485"
+          height="402"
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen
+        ></iframe>
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
           <li>Use <b>cloning</b> to make ten balloons.</li>
@@ -37,22 +46,12 @@
             Float balloons across the screen from left to right using the
             <b>move</b> block.
           </li>
-          <li>Edit <b>costumes and stages</b> to customize the game.</li>
-          <li>Use <b>arrow keys</b> to move the arrows.</li>
-          <li>Keep track of the score using <b>variables</b>.</li>
+          <li>
+            How to move a sprite so that it follows the <b>mouse pointer</b>.
+          </li>
+          <li>Keep track of the score using a <b>variable</b>.</li>
           <li>Use the <b>timer</b> block to limit each round to 30 seconds.</li>
         </ul>
-      </google-codelab-step>
-
-      <google-codelab-step label="Remix the starter project">
-        <p>
-          Open the
-          <a
-            href="https://scratch.mit.edu/projects/418504188/#editor"
-            target="_blank"
-            >starter project</a
-          >.
-        </p>
       </google-codelab-step>
 
       <google-codelab-step label="Control the Arrow with Mouse">
@@ -112,15 +111,9 @@
         <aside class="callout">
           <h2>Variable Blocks</h2>
           <p>
-            We use the <b>Variable block</b>, or variables, to store the value
-            of something. We can change the values of variables. They are
-            similar to the concept of variables in algebra. For example, in
-            Scratch, we could create a variable to store and change the score of
-            a player.
-          </p>
-          <p>
-            You can create a new variable and edit the value of an existing
-            variable using the blocks from the "Variable" section.
+            Remember from last week that you can create a new variable and edit
+            the value of an existing variable using the blocks from the
+            "Variable" section.
           </p>
         </aside>
         <h2>Steps</h2>
@@ -222,7 +215,11 @@
         <ol>
           <li>
             When a balloon clone starts, position the balloon clone within the
-            top half of the screen and make the balloon visible.
+            top half of the screen and make the balloon visible.<br />
+            <img
+              style="max-width: 200px;"
+              src="img/balloon_clone_location.png"
+            />
           </li>
           <li>
             Repeat this code forever for the cloned balloon: (Why forever? Why
@@ -235,8 +232,7 @@
               <li>
                 If the balloon is hit by an arrow, increase the value of the
                 score variable, play a sound effect, and pick a new random
-                position for the clone.<br />
-                <img style="max-width: 250px;" src="img/touching_arrow.png" />
+                position for the clone.
               </li>
               <li>
                 If the balloon reaches the right edge of the stage, pick a
