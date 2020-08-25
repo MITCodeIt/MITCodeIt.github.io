@@ -32,7 +32,7 @@
           In this codelab, you'll make your own machine learning model and
           integrate it into your own Scratch project!
         </p>
-        <img src="img/demo-project.gif" style="max-width: 500px;"/>
+        <img src="img/demo-project.gif" style="max-width: 500px;" />
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
           <li>
@@ -122,10 +122,7 @@
         </p>
         <p>
           In the following steps, we'll be explaining how to train your model to
-          detect when you have your hand raised and when you do not. This is
-          just an example of two classes you could make. Feel free to make your
-          own classes and as many classes as you want! (Note: Having many
-          classes might confuse your model, so do be wary of this.)
+          detect when you have your hand raised and when you do not.
         </p>
         <aside class="callout">
           Hi emily and shelly -- would a callout about what data is be too much
@@ -268,6 +265,7 @@
       </google-codelab-step>
 
       <google-codelab-step label="How to Train your Model">
+        <h2>Steps:</h2>
         <ol>
           <li>
             Now that you've collected all your training data (whether that be
@@ -282,7 +280,123 @@
             only recognizes the classes you've provided.<br />
             <img src="img/dog-cat-prediction.png" style="max-width: 300px;" />
           </li>
-        </ul>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Your Turn!">
+        <p>
+          So far, this tutorial has shown you how to make a model that predicts
+          whether or not you have your hand raised. Now, it's your turn. If you
+          want to, create a classifier for yourself that detects something else
+          (i.e. whether you have your thumbs up or down, different colors,
+          etc.). You can use the same one, but try to be creative with what your
+          model can predict!
+        </p>
+      </google-codelab-step>
+
+      <google-codelab-step label="Exporting your Model">
+        <p>
+          Next, you're going to learn how to export your model so you can use it
+          in your Scratch project.
+        </p>
+        <h2>Steps:</h2>
+        <ol>
+          <li>
+            After training and testing your model, click the "Export Model"
+            button.<br />
+            <img src="img/export-model-btn.png" style="max-width: 200px;" />
+          </li>
+          <li>
+            Make sure you're in the "Tensorflow.js" tab and that "Upload
+            (shareable link)" is selected. This should be the default setting so
+            you shouldn't have to change anything.<br />
+            <img src="img/tensorflow.png" style="max-width: 300px;" />
+          </li>
+          <li>
+            Click the "Upload my model" button to get a shareable link of your
+            model. You need to press the "Update my cloud model" button if you
+            make changes to your model after this export.
+          </li>
+          <li>
+            Copy the shareable link by clicking the "Copy" button under the
+            "Your sharable link" section.<br />
+            <img src="img/export-model.png" style="max-width: 600px;" />
+          </li>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Adding your Model to Scratch">
+        <p>
+          It's finally time to add the model you've made and integrate it into
+          Scratch!
+        </p>
+        <h2>Steps:</h2>
+        <ol>
+          <li>
+            Navigate to this
+            <a
+              href="https://mitmedialab.github.io/prg-extension-boilerplate/create/"
+              target="_blank"
+              >link</a
+            >.
+          </li>
+          <li>
+            On the bottom left corner, click the Extensions button.<br />
+            <img src="img/extensions-btn.png" style="max-width: 50px;" />
+          </li>
+          <li>
+            Click the first extension "Teachable Machine", which should
+            automatically add the extension for you and bring you back to the
+            original Scratch page. (Make sure to allow camera access if
+            possible!) <br />
+            <img src="img/tm-extension.png" style="max-width: 200px;" />
+          </li>
+          <li>
+            Click into the "Teachable Machine" section.<br />
+            <img src="img/tm-scratch.png" style="max-width: 60px;" />
+          </li>
+          <li>
+            Paste the link for the shareable link for your learning model into
+            the "use model" block.
+            <b
+              >You do NOT need to drag the block into your workspace. Pasting
+              the link into this block will "load" the model into your whole
+              Scratch project.</b
+            >
+          </li>
+          <li>
+            Wait for a green arrow to appear next to the "Teachable Machine"
+            title. <br />
+            <img src="img/tm-block.png" style="max-width: 200px;" />
+          </li>
+          <li>
+            To test your model out, check the "model prediction" block. A box
+            labeled "Teachable Machine: model prediction" will pop in the
+            landing area and indicate what your model predicts.<br />
+            <img src="img/model-prediction.png" style="max-width: 400px;" />
+          </li>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Making a Sprite Move">
+        <p>
+          Next, we're going to program your "Sprite1" to move depending on
+          whether you're raising your hand or not.
+        </p>
+
+        <aside class="callout">
+          <h2>Explaining the Teachable Machine Blocks</h2>
+        </aside>
+
+        <h2>Steps:</h2>
+        <ol>
+          <li>Keep the sprite moving forever</li>
+          <li>
+            Use the prediction outcome of your model to move the sprite 2 steps
+            at a time. <br />
+            <img src="img/move.png" style="max-width: 60px;" />
+          </li>
+        </ol>
       </google-codelab-step>
     </google-codelab>
 
