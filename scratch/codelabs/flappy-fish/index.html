@@ -81,7 +81,7 @@
         <ol>
           <li>First, have the fish move down the screen by the amount stored in <b> Speed </b>. <br>
              <img style="max-width: 200px" src="img/change-y-by-speed.png"><br>
-          <li>Change <b> Speed </b> so that the fish falls faster and faster as he continues to fall.<br>
+          <li>Change <b> Speed </b> by -0.3 so that the fish accelerates (falls faster as time goes on).<br>
              <img style="max-width: 200px" src="img/change-speed-by.png"><br>
           <li>The above two actions should happen until the fish touches either a pipe or the floor. <b> Hint: </b> What color are both the pipe and the floor?<br>
             <img style="max-width: 200px" src="img/repeat-until.png"><br>
@@ -91,23 +91,28 @@
         </ol>
 
       </google-codelab-step>
-
-
-      <google-codelab-step label="Making the fish jump">
-        <p>Now, we'll move on to the pipes. Even though it seems like the fish is moving to the right, the pipes will actually start on the right of the screen, then move to the left of the screen.</p> 
-        <h2>Steps</h2>
-        <ol>
-          <li>Make the pipes start in a random place towards the right of the screen.<br>
-          <li>Make the fish's speed go up by 6.<br>
-        </ol>
-      </google-codelab-step>
   
       <google-codelab-step label="Making the fish jump">
         <p>Now, we will program the fish to jump whenever the player presses the space bar.</p> 
         <h2>Steps</h2>
         <ol>
-          <li>The sprite should only jump when the space bar is pressed. <b> Hint: </b> Which Event block should we use? <br>
+          <li>The sprite should only jump when the space bar is pressed. <b> Hint: </b> Which Hat block/Event block should we use? <br>
           <li>Make the fish's speed go up by 6.<br>
+        </ol>
+      </google-codelab-step>
+  
+      </google-codelab-step>
+  
+      <google-codelab-step label="Moving the pipes">
+        <p>Now, we'll move on to the pipes. Even though it seems like the fish is moving to the right, the pipes will actually start on the right of the screen, then move to the left of the screen.</p> 
+        <h2>Steps</h2>
+        <ol>
+          <li>Set the size of the pipes to 200%. This makes the pipes (and the opening between the pipes) bigger, so the game is a little easier to play!<br>
+          <li>Start the pipe at a random position near the right of the screen. You can do this by setting the x position to 240 and the y position to a random number between -20 and 60. <b> Hint: </b> What special operator do you need for choosing random numbers?<br>
+          <li>Make the pipes move 2 steps towards the left of the stage. 
+          <li>If the pipes get to an x position of -230, that means the fish has passed it! When this happens, the pipe should <b> go back to a random position on the right of the screen </b>, and the score should <b> increase by 1 </b>. <br>
+          <li>Steps 3-4 should only happen until the pipe is touching the fish - if the pipe and fish are touching, the player has lost the game! <b> Hint: </b> How can you use the "repeat until" block to do this? <br>
+            
         </ol>
       </google-codelab-step>
 
