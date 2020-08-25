@@ -32,14 +32,7 @@
           In this codelab, you'll make your own machine learning model and
           integrate it into your own Scratch project!
         </p>
-        <iframe
-          allowtransparency="true"
-          width="485"
-          height="402"
-          src="https://scratch.mit.edu/projects/embed/81582778/?autostart=false"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+        <img src="img/demo-project.gif" />
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
           <li>
@@ -52,17 +45,16 @@
         </ul>
       </google-codelab-step>
 
-      <google-codelab-step label="Remix the starter project">
+      <google-codelab-step label="Note about Project Format">
         <p>
-          Open the
-          <a
-            href="https://scratch.mit.edu/projects/417756813/#editor"
-            target="_blank"
-            >starter project</a
-          >
-          and click <b>Remix</b>.
+          There will be no remixable Scratch workspace for this project because
+          it involves technology that is not yet compatible with Scratch. You
+          currently are unable to immediately save to your workspace.
         </p>
-        <img src="img/click_remix.png" />
+        <p>
+          That being said, there is a way to still save your project, which will
+          be explained later on.
+        </p>
       </google-codelab-step>
 
       <google-codelab-step label="Create your Learning Model">
@@ -76,11 +68,11 @@
           <p>
             <b>Supervised learning</b> is a type of machine learning that
             "learns" an algorithm for predicting output based on input. The
-            reason it is <b>supervised</b> is because it uses a labelled
-            dataset. An example of a labelled dataset is a collection of images
-            of dogs that have specifically been labelled as "dog". Another
-            example is a collection of text files that have all been labelled as
-            "knock knock jokes".
+            reason it is <b>supervised</b> is because it uses a labeled dataset.
+            An example of a labeled dataset is a collection of images of dogs
+            that have specifically been labeled as "dog". Another example is a
+            collection of text files that have all been labeled as "knock knock
+            jokes".
           </p>
           <p>
             Unfortunately, we will not be able to go in-depth into machine
@@ -92,94 +84,136 @@
         <h2>Steps</h2>
         <ol>
           <li>
-            Use Cassy's <b>costumes</b> to make her switch between dance moves.
+            Navigate to
+            <a href="https://teachablemachine.withgoogle.com/" target="_blank"
+              >this link</a
+            >.
           </li>
-          <li>Keep Cassy dancing <b>forever</b>.</li>
-          <li>Control the speed of Cassy's dancing.</li>
+          <li>
+            Go the menu bar in the top left corner of your screen, and click on
+            "New Project".
+          </li>
+          <li>Click on "Image Project".</li>
+          <li>
+            There are two types of image inputs you can use for this project:
+            <ul>
+              <li>Images from your webcam</li>
+              <li>Images that are files on your computer</li>
+            </ul>
+            Feel free to choose the image input type that appeals more to you.
+            If you run into any issues with your webcam, we recommend you use
+            image files rather than your webcam.
+          </li>
         </ol>
       </google-codelab-step>
 
-      <google-codelab-step label="Make Cassy move">
+      <google-codelab-step label="Webcam Data Collection">
         <p>
-          Next, we are going to make Cassy dance around the screen.
-          <br /><br />Useful block for this section: <br /><img
-            style="max-width: 200px;"
-            src="img/glide_block.png"
-          />
+          In this section, you're going to import data from your webcam to train
+          your very own learning model with!
         </p>
-
-        <h2>Steps</h2>
-        <ol>
-          <li>Make Cassy <b>glide</b> around the screen while dancing.</li>
-          <li>Have the dancing start when the <b>green flag</b> is clicked.</li>
-        </ol>
-      </google-codelab-step>
-
-      <google-codelab-step label="Checkoff #1">
-        <aside class="special">
-          <h2>Dancy Party Checkoff #1</h2>
-          <p>
-            <b
-              >To recieve this checkoff, you must answer the following
-              questions:</b
-            >
-          </p>
-          <ul class="checklist">
-            <li>How do you keep Cassy dancing without stopping?</li>
-            <li>How does Cassy move around the screen?</li>
-            <li>How would you speed up her dancing?</li>
-          </ul>
+        <p>
+          If your webcam is not working, please move to the next page to learn
+          about how to import image files as your data.
+        </p>
+        <p>
+          In the following steps, we'll be explaining how to train your model to
+          detect when you have your hand raised and when you do not. This is
+          just an example of two classes you could make. Feel free to make your
+          own classes and as many classes as you want! (Note: Having many
+          classes might confuse your model, so do be wary of this.)
+        </p>
+        <aside class="callout">
+          Hi emily and shelly -- would a callout about what data is be too much
+          extra content? idk if this will be too much and stray from the mission
+          of codeit
         </aside>
-      </google-codelab-step>
-
-      <google-codelab-step label="Add dance music for Cassy">
-        <p>
-          Finally, we are going to add music and location(s) to the dance party.
-          <br /><br />We are going to write the code for the music on the stage.
-          Click on the stage icon next to the sprites: <br /><img
-            style="max-width: 150px;"
-            src="img/click_on_stage.png"
-          />
-          <br /><br />Useful block for this section: <br /><img
-            style="max-width: 200px;"
-            src="img/play_sound_until_done_block.png"
-          />
-        </p>
 
         <h2>Steps</h2>
         <ol>
           <li>
-            Find backdrops you want to use as locations for the dance party.
-            <br /><img
-              style="max-width: 300px;"
-              src="img/add_new_backdrops.png"
-            />
+            You should be at a page that looks like this:<br />
+            <img src="img/start_page.png" style="max-width: 200px;" />
           </li>
-
           <li>
-            Choose music for Cassy to dance to from the sounds tab (next to
-            backdrops).
+            We'll start with you <b>not</b> raising your hand. Under Class 1,
+            click "Webcam" and hold down on "Hold to Record" to take images.<br />
+            <img src="img/webcam.png" style="max-width: 50px;" />
+            <img src="img/hold_to_record.png" style="max-width: 150px;" /><br />
+            <img src="img/hand-down-class.png" style="max-width: 200px;" />
           </li>
-          <li>Use the <b>play sound until done</b> block to play the music.</li>
-          <li>Make the music play <b>forever</b>.</li>
-          <li>Have the music start when the <b>green flag</b> is clicked.</li>
+          <li>
+            Repeat the previous step, but this time with your hand raised and
+            under Class 2. It should look something like this: <br />
+            <img src="img/hand-up-class.png" style="max-width: 200px;" />
+          </li>
+          <li>
+            Finally, label your two classes to be appropriately descriptive
+            (i.e. "Normal" and "Hand Raised") by clicking on the pencil icon by
+            the class name. <br />
+            <img src="img/pencil-icon.png" style="max-width: 150px;" />
+          </li>
         </ol>
+
+        <aside class="callout">
+          <h2>Is your data fair and representative?</h2>
+          <p>
+            In order for your learning model to be as accurate as possible, you
+            should make sure that your data fits the following qualifications:
+          </p>
+          <ul>
+            <li>
+              Take images from all angles (like rotating your head and/or body)
+            </li>
+            <li>Collect at least <b>100 images</b> for each class</li>
+            <li>
+              Take similar numbers of images for each class
+            </li>
+          </ul>
+          Why do you think we need representative and diverse data? If you have
+          the time, try training a model with very flawed and unbalanced data
+          (i.e. 100 images for one class and 300 images for the other). What do
+          you think will happen, and what did you observe happening?
+        </aside>
       </google-codelab-step>
 
-      <google-codelab-step label="Checkoff #2">
-        <aside class="special">
-          <h2>Dancy Party Checkoff #2</h2>
-          <p>
-            <b
-              >To recieve this checkoff, you must answer the following
-              questions:</b
+      <google-codelab-step label="Image File Data Collegction">
+        <p>
+          In this section, we're going to go over how to use image files as your
+          data to train your model.
+        </p>
+        <p>
+          If you already have collected data through your webcam, please move
+          onto the next page.
+        </p>
+        <p>
+          In the following steps, we'll be explaining how to train your model to
+          detect when you have your hand raised and when you do not. This is
+          just an example of two classes you could make. Feel free to make your
+          own classes and as many classes as you want! (Note: Having many
+          classes might confuse your model, so do be wary of this.)
+        </p>
+
+        <h2>Steps:</h2>
+        <ol>
+          <li>
+            Before you start the data collection, you're going to need to move
+            the image files to your Google Drive. Go to this
+            <a
+              href="https://drive.google.com/drive/folders/1uCNnUd0xm6Hv9h_90iw79P95vH6MNIS3?usp=sharing"
+              target="_blank"
+              >link</a
             >
-          </p>
-          <ul class="checklist">
-            <li>How do you start the music at the same time as the dancing?</li>
-            <li>How do you keep the music playing without stopping?</li>
-          </ul>
-        </aside>
+          </li>
+          <li>
+            Right click on "CodeIt Teachable Machines Image Files".<br />
+            <img src="img/img-folder.png" style="max-width: 400px;" />
+          </li>
+          <li>
+            Click on "Add shortcut to Drive" in the popup menu.<br />
+            <img src="img/add-shortcut.png" style="max-width: 200px;" />
+          </li>
+        </ol>
       </google-codelab-step>
 
       <google-codelab-step label="Bonus Features">
