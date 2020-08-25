@@ -213,37 +213,70 @@
             Click on "Add shortcut to Drive" in the popup menu.<br />
             <img src="img/add-shortcut.png" style="max-width: 200px;" />
           </li>
+          <li>
+            Go back to the Teachable Machines tab. You should be at a page that
+            looks like this:<br />
+            <img src="img/start_page.png" style="max-width: 200px;" />
+          </li>
+          <li>
+            For Class 1, click on the "Upload" button. <br />
+            <img src="img/upload-btn.png" style="max-width: 100px;" />
+          </li>
+          <li>
+            Next, click "Import images from Google Drive". <br />
+            <img src="img/import-imgs-btn.png" style="max-width: 200px;" />
+          </li>
+          <li>
+            Double click into "CodeIt Teachable Machines Image Files". If it
+            doesn't appear at the top, search for it in the search bar.<br />
+            <img src="img/google-drive-search.png" style="max-width: 300px;" />
+          </li>
+          <li>
+            Select the "Class 1 Training Dataset" folder.
+          </li>
+          <li>
+            Repeat the last four steps but for Class 2 and using the "Class 2
+            Training Dataset" folder. By this point, your two classes should
+            look something like this: <br />
+            <img
+              src="img/both-classes.png"
+              style="max-width: 300px;"
+              alt="screenshot of 2 classes with images"
+            />
+          </li>
+          <li>
+            Finally, label your two classes to be appropriately descriptive
+            (i.e. "Normal" and "Hand Raised") by clicking on the pencil icon by
+            the class name. <br />
+            <img src="img/pencil-icon.png" style="max-width: 150px;" />
+          </li>
         </ol>
+
+        <aside class="callout">
+          <h2>Is your data fair and representative?</h2>
+          What did you notice about the distribution of the image files? Were
+          they equally represented? Did both classes have similar amounts of
+          image files?
+        </aside>
       </google-codelab-step>
 
-      <google-codelab-step label="Bonus Features">
-        If you finish early, implement one or more of the following features for
-        bonus features. Or, come up with a bonus idea of your own!
-        <aside class="special">
-          <h2>Dancy Party Bonus Features</h2>
-          <p>
-            <b
-              >Implement one or more of the following, and show it off to your
-              mentor!</b
-            >
-          </p>
-          <ul>
-            <li>Add friends to the dance party.</li>
-            <li>Have the backdrop keep changing during the party.</li>
-            <li>
-              Make Cassy do the twist. (hint: use the "change whirl effect by"
-              block)
-            </li>
-            <li>Make Cassy tell a story. (hint: use the "say" block)</li>
-            <li>Use keys to control Cassy's dance moves.</li>
-            <li>
-              <b>Difficult:</b> Use keys to control the music being played.
-            </li>
-            <li>
-              <b>Difficult:</b> Randomize where Cassy moves on the screen.
-            </li>
-          </ul>
-        </aside>
+      <google-codelab-step label="Training your Model">
+        <h2>How to Train your Model :)</h2>
+        <ul>
+          <li>
+            Now that you've collected all your training data (whether that be
+            through your webcam or with image files), click the "Train Model"
+            button. Make sure to <b>not switch tabs</b> while you're doing
+            this!<br />
+            <img src="img/train-model-btn.png" style="max-width: 200px;" />
+          </li>
+          <li>
+            Now it's time to test the model you've created! The output shows how
+            confident your model is in its prediction. Notice that the model
+            only recognizes the classes you've provided.<br />
+            <img src="img/dog-cat-prediction.png" style="max-width: 200px;" />
+          </li>
+        </ul>
       </google-codelab-step>
     </google-codelab>
 
