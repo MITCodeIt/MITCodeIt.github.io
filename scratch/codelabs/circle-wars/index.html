@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Maze Game Codelab</title>
+  <title>Circle Wars Codelab</title>
   <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
   <link rel="import" href="../../elements/codelab.html">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
@@ -20,82 +20,73 @@
 </head>
 <body unresolved class="fullbleed">
 
-  <google-codelab title="Code It Maze" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+  <google-codelab title="Circle Wars" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
 
       <google-codelab-step label="Overview">
-        <p>In this codelab, you&#39;ll make a maze game.</p>
-        <img src="img/title_photo.png">
+        <p>In this codelab, you&#39;ll make a cloning game.</p>
+        <aside class="callout">
+          <h2>How to play</h2>
+          <p>The player is the blue circle, the green circles are friendly, and the red circles are the enemies. Move the blue circle around with your mouse, collect the green circles and avoid the red ones. Touching a friend will win you a point and touching an enemy will take away 3 points. If you score more than 20 points, you win! But score less than -20 and you lose...</p>
+        </aside>
+        <iframe src="https://scratch.mit.edu/projects/413070992/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
-          <li>Use <b>arrow keys</b> to move a sprite.</li>
-          <li>Use <b>conditional (if) </b> blocks to check for game over and finishing the maze.</li>
-          <li>Edit <b>costumes and stages</b> to customize the maze.</li>
+          <li><b>Clone</b> multiple sprites.</li>
+          <li>Use <b>variables</b> to keep track of the score to know when a player wins or loses.</li>
+          <li>Edit <b>costumes</b> to explore clone properties.</li>
         </ul>
 
       </google-codelab-step>
 
       <google-codelab-step label="Remix the starter project">
-        <p>Open the <a href="https://scratch.mit.edu/projects/333780631/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
-        <img src="img/click_remix.png">
-
+        <p>Open the <a href="https://scratch.mit.edu/projects/413069975/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
       </google-codelab-step>
 
-      <google-codelab-step label="Move with Arrow Keys">
-        <p>First, we are going to program the sprite to move when the arrow keys are pressed.</p>
-        <img style="max-width: 400px" src="img/movement_explain.png">
-        <aside class="callout">
-          <h2>Hat Blocks</h2>
-          <p><b>Hat blocks</b> are the blocks that start every script. They tell sprite when it is time to do the actions below them. They are shaped with a rounded top and a bump at the bottom — this is so you can only place blocks below them. Here are two examples of hat blocks: </p>
-          <h3>Run code when flag is clicked </h3>
-          <img style="max-width: 200px" src="img/hat_flag.png">
-          <h3>Run code when space bar is clicked </h3>
-          <img style="max-width: 200px" src="img/hat_space.png">
-        </aside>
+      <google-codelab-step label="Setting the Score">
+        <p>First, we are going to create the score variable to keep track during the game.</p>
+        <img style="max-width: 400px" src="img/make-score.png">
         <h2>Steps</h2>
         <ol>
-          <li>When the up arrow is pressed...<br>
-            <img style="max-width: 200px" src="img/up-arrow.png"><br>
-          <li>Make the superhero move up by changing the y-position. (The y-axis corresponds to "up" and "down".)<br>
-            <img style="max-width: 200px" src="img/move-up.png"></li>
-          <li>Repeat this for the down direction (decrease y), and for moving right and left (change x) </li>
-         
+          <li>Create a new variable and name it "Score."<br>
+          <li>In the Player's code, make sure that the score <i>is set to zero</i> at the beginning of the game.<br>
+          <li>Have the Player follow the mouse for the entire game.</li>
         </ol>
 
       </google-codelab-step>
 
 
-      <google-codelab-step label="Check if She's Touching the Wall">
-        <p>Now we will check if the superhero is touching the wall and lose the game if she is</p> 
-        <img style="max-width: 400px" src="img/wall_sensor_explain.png">
-        <aside class="callout">
-          <h2>If blocks</h2>
-          <p> The code inside an <b>If block</b> only runs if the <b> condition </b> at the top of the block is true </p>
-          <h3>If block </h3>
-          <img style="max-width: 200px" src="img/hat_flag.png">
-          <h3>Conditions are always shaped like a hexagon </h3>
-          <img style="max-width: 200px" src="img/condition.png">
-        </aside>
+      <google-codelab-step label="Creating an Army of Friends">
+        <p>Before we can make more friends, we have to make our current one move.</p>
         <h2>Steps</h2>
         <ol>
-          <li>Have the superhero check if she's touching the black wall, and say "game over" if she is <br>
-          <li>If the game ends, the superhero should also return to the starting position (-190, -115) so the game can restart.<br>
-             <img style="max-width: 200px" src="img/go_to_house.png"><br>
-          <li>This check should happen over and over while you're playing the game (remember the forever loop!) <br>
-            <img style="max-width: 200px" src="img/forever.png"><br>
-          <li>She should start checking if she's touching the wall when the game begins (remember Hat blocks!) </li>
-            <img style="max-width: 200px" src="img/hat_flag.png"><br>
-         
+          <li>For the entire game, we want the <b>Friends</b> to move around the screen. Choose a <b>random direction</b> for the sprite to <b>point</b>; your bounds should be -180 and 180 (a full circle).</li>
+          <li>For the entire game, change directions every 250 steps. But have the sprite only move 10 steps at a time. How many times do you need to <i>repeat</i> this until you get to 250?</li>
+          <li>Continuously check to make sure that the sprite isn't on the edge of the screen... if it is, have it bounce.</li>
+        </ol>
+        <p>Now we will make sure that we have enough friends to help us win the game. Let&#39;s get to cloning!</p>
+        <img style="max-width: 400px" src="img/green-clones.png">
+        <h2>Steps</h2>
+        <ol>
+          <li>Every time after moving 250 steps, the green circle should <b>clone itself</b>.<br>
+          <li>Currently, every time we make a clone, it'll look exactly the same as the original - let's change this. Begin editing code for when the <i>clone begins</i>. What type of block is this?<br>
+             <img style="max-width: 200px" src="img/clone-hat-block.png"><br>
+          <li>In order to make the clones look different, <i>set the ghost effect to 50</i> at the beginning of the clone's life.<br>
+          <li>Have the clones slowly approach the Player. How do we get the clones to move towards the Player? How many steps should each clone move at once (think about whether moving 10 steps is slower or faster than moving 1 step)?</li>
+          <li>Each clone should move only 300 steps before it <b>deletes itself</b>.</li>
         </ol>
 
       </google-codelab-step>
 
 
-      <google-codelab-step label="Check if She Reached the Laptop">
-        <p>Now we will check if the superhero is touching the wall and win the game if she is</p> 
-
-        <img style="max-width: 400px" src="img/win_explain.png">
-        <p> She can check if she's touching the Laptop in a similar way to how she checked if she was touching a black wall. </p>
-        <p> The Laptop is a sprite, not a color, so be sure to use the right block! </p> 
+      <google-codelab-step label="Scoring Points">
+        <p>How will the Player earn points? By reaching its friends.</p>
+        <img style="max-width: 400px" src="img/increase-score.png">
+        <p>Attempt this by yourself, here are some questions to consider:</p>
+        <ul>
+          <li>How does the <i>clone</i> know if it's touching the Player?</li>
+          <li>How can we show that the score changes when the Players earns a point?</li>
+          <li>Should the clone still exist after the Player reaches it or should it delete?</li>
+        </ul>
       </google-codelab-step>
 
 
@@ -112,12 +103,12 @@
       </google-codelab-step>
 
       <google-codelab-step label="Finishing Up">
-        When you're finished, be sure to save and share your project, and then add it to the studio: 
+        When you're finished, be sure to save and share your project, and then add it to the studio:
         <ol>
           <li> <a href="https://scratch.mit.edu/studios/25249649/"> Giga studio </a>.
           <li> <a href="https://scratch.mit.edu/studios/25247924/"> Nano studio </a>.
         </ol>
-         
+
       </google-codelab-step>
 
   </google-codelab>
