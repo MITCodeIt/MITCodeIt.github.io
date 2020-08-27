@@ -32,7 +32,7 @@
           In this codelab, you'll make your own machine learning model and
           integrate it into your own Scratch project!
         </p>
-        <img src="img/demo-project.gif" style="max-width: 500px;" />
+        <img src="img/demo-project.gif" style="max-width: 500px" />
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
           <li>
@@ -92,9 +92,16 @@
           </li>
           <li>
             Go the menu bar in the top left corner of your screen, and click on
-            "New Project".
+            "New Project".<br />
+            <img src="img/menu-icon.png" style="max-width: 60px" /><br />
+            <img src="img/new-project-btn.png" style="max-width: 200px" />
           </li>
-          <li>Click on "Image Project".</li>
+          <li>
+            Click on "Image Project". <br /><img
+              src="img/image-project-btn.png"
+              style="max-width: 200px"
+            />
+          </li>
           <li>
             There are two types of image inputs you can use for this project:
             <ul>
@@ -119,44 +126,22 @@
             learn about how to import image files as your data.</b
           >
         </p>
-        <p>
-          In the following steps, we'll be explaining how to train your model to
-          detect when you have your hand raised and when you do not.
-        </p>
+
         <aside class="callout">
-          Hi emily and shelly -- would a callout about what data is be too much
-          extra content? idk if this will be too much and stray from the mission
-          of codeit
+          <h2>Data</h2>
+          <p>
+            You probably already know what data is. <b>Data</b> is just
+            information that is used for some purpose. In Teachable Machines,
+            data is used to <b>train your model</b>.
+          </p>
         </aside>
 
-        <h2>Steps</h2>
-        <ol>
-          <li>
-            You should be at a page that looks like this:<br />
-            <img src="img/start_page.png" style="max-width: 500px;" />
-          </li>
-          <li>
-            We'll start with you <b>not</b> raising your hand. Under Class 1,
-            click "Webcam" and hold down on "Hold to Record" to take images.<br />
-            <img src="img/webcam.png" style="max-width: 60px;" /><br />
-            <img src="img/hold_to_record.png" style="max-width: 170px;" /><br />
-            <img src="img/hand-down-class.png" style="max-width: 230px;" />
-          </li>
-          <li>
-            Repeat the previous step, but this time with your hand raised and
-            under Class 2. It should look something like this: <br />
-            <img src="img/hand-up-class.png" style="max-width: 230px;" />
-          </li>
-          <li>
-            Finally, label your two classes to be appropriately descriptive
-            (i.e. "Normal" and "Hand Raised") by clicking on the pencil icon by
-            the class name. <br />
-            <img src="img/pencil-icon.png" style="max-width: 100px;" />
-          </li>
-        </ol>
-
         <aside class="callout">
-          <h2>Is your data fair and representative?</h2>
+          <h2>Note about Data Collection</h2>
+          <p>
+            In the following steps, we'll be explaining how to train your model
+            to detect when you have your hand raised and when you do not.
+          </p>
           <p>
             In order for your learning model to be as accurate as possible, you
             should make sure that your data fits the following qualifications:
@@ -167,15 +152,35 @@
               body)
             </li>
             <li>Collect at least <b>100 images</b> for each class</li>
-            <li>
-              Take similar numbers of images for each class
-            </li>
+            <li>Take similar numbers of images for each class</li>
           </ul>
-          Why do you think we need representative and diverse data? If you have
-          the time, try training a model with very flawed and unbalanced data
-          (i.e. 100 images for one class and 300 images for the other). What do
-          you think will happen, and what did you observe happening?
         </aside>
+
+        <h2>Steps</h2>
+        <ol>
+          <li>
+            You should be at a page that looks like this:<br />
+            <img src="img/start_page.png" style="max-width: 500px" />
+          </li>
+          <li>
+            We'll start with you <b>not</b> raising your hand. Under Class 1,
+            click "Webcam" and hold down on "Hold to Record" to take images.<br />
+            <img src="img/webcam.png" style="max-width: 60px" /><br />
+            <img src="img/hold_to_record.png" style="max-width: 170px" /><br />
+            <img src="img/hand-down-class.png" style="max-width: 350px" />
+          </li>
+          <li>
+            Repeat the previous step, but this time with your hand raised and
+            under Class 2. It should look something like this: <br />
+            <img src="img/hand-up-class.png" style="max-width: 350px" />
+          </li>
+          <li>
+            Finally, label your two classes to be appropriately descriptive
+            (i.e. "Normal" and "Hand Raised") by clicking on the pencil icon by
+            the class name. <br />
+            <img src="img/pencil-icon.png" style="max-width: 100px" />
+          </li>
+        </ol>
       </google-codelab-step>
 
       <google-codelab-step label="Image File Data Collection">
@@ -208,40 +213,38 @@
           </li>
           <li>
             Right click on "CodeIt Teachable Machines Image Files".<br />
-            <img src="img/img-folder.png" style="max-width: 500px;" />
+            <img src="img/img-folder.png" style="max-width: 500px" />
           </li>
           <li>
             Click on "Add shortcut to Drive" in the popup menu.<br />
-            <img src="img/add-shortcut.png" style="max-width: 200px;" />
+            <img src="img/add-shortcut.png" style="max-width: 200px" />
           </li>
           <li>
             Go back to the Teachable Machines tab. You should be at a page that
             looks like this:<br />
-            <img src="img/start_page.png" style="max-width: 500px;" />
+            <img src="img/start_page.png" style="max-width: 500px" />
           </li>
           <li>
             For Class 1, click on the "Upload" button. <br />
-            <img src="img/upload-btn.png" style="max-width: 90px;" />
+            <img src="img/upload-btn.png" style="max-width: 90px" />
           </li>
           <li>
             Next, click "Import images from Google Drive". <br />
-            <img src="img/import-imgs-btn.png" style="max-width: 200px;" />
+            <img src="img/import-imgs-btn.png" style="max-width: 200px" />
           </li>
           <li>
             Double click into "CodeIt Teachable Machines Image Files". If it
             doesn't appear at the top, search for it in the search bar.<br />
-            <img src="img/google-drive-search.png" style="max-width: 400px;" />
+            <img src="img/google-drive-search.png" style="max-width: 400px" />
           </li>
-          <li>
-            Select the "Class 1 Training Dataset" folder.
-          </li>
+          <li>Select the "Class 1 Training Dataset" folder.</li>
           <li>
             Repeat steps 5 - 8 but for Class 2 and using the "Class 2 Training
             Dataset" folder. By this point, your two classes should look
             something like this: <br />
             <img
               src="img/both-classes.png"
-              style="max-width: 200px;"
+              style="max-width: 200px"
               alt="screenshot of 2 classes with images"
             />
           </li>
@@ -249,7 +252,7 @@
             Finally, label your two classes to be appropriately descriptive
             (i.e. "Normal" and "Hand Raised") by clicking on the pencil icon by
             the class name. <br />
-            <img src="img/pencil-icon.png" style="max-width: 100px;" />
+            <img src="img/pencil-icon.png" style="max-width: 100px" />
           </li>
         </ol>
 
@@ -269,13 +272,13 @@
             through your webcam or with image files), click the "Train Model"
             button. Make sure to <b>not switch tabs</b> while you're doing
             this!<br />
-            <img src="img/train-model-btn.png" style="max-width: 200px;" />
+            <img src="img/train-model-btn.png" style="max-width: 200px" />
           </li>
           <li>
             Now it's time to test the model you've created! The output shows how
             confident your model is in its prediction. Notice that the model
             only recognizes the classes you've provided.<br />
-            <img src="img/dog-cat-prediction.png" style="max-width: 300px;" />
+            <img src="img/output-demo.png" style="max-width: 300px" />
           </li>
         </ol>
       </google-codelab-step>
@@ -290,13 +293,13 @@
           <li>
             After training and testing your model, click the "Export Model"
             button.<br />
-            <img src="img/export-model-btn.png" style="max-width: 200px;" />
+            <img src="img/export-model-btn.png" style="max-width: 200px" />
           </li>
           <li>
             Make sure you're in the "Tensorflow.js" tab and that "Upload
             (shareable link)" is selected. This should be the default setting so
             you shouldn't have to change anything.<br />
-            <img src="img/tensorflow.png" style="max-width: 300px;" />
+            <img src="img/tensorflow.png" style="max-width: 300px" />
           </li>
           <li>
             Click the "Upload my model" button to get a shareable link of your
@@ -306,7 +309,7 @@
           <li>
             Copy the shareable link by clicking the "Copy" button under the
             "Your sharable link" section.<br />
-            <img src="img/export-model.png" style="max-width: 600px;" />
+            <img src="img/export-model.png" style="max-width: 600px" />
           </li>
         </ol>
       </google-codelab-step>
@@ -324,22 +327,26 @@
               href="https://mitmedialab.github.io/prg-extension-boilerplate/create/"
               target="_blank"
               >link</a
-            >.
+            >. The web tool you are working with is not optimized for the
+            traditional Scratch experience. Consequentially, you will not be
+            able to remix this project or save it to your account immediately.
+            There's a separate process for saving this project, which you'll go
+            over later on.
           </li>
           <li>
             On the bottom left corner, click the Extensions button.<br />
-            <img src="img/extensions-btn.png" style="max-width: 50px;" />
+            <img src="img/extensions-btn.png" style="max-width: 50px" />
           </li>
           <li>
             Click the first extension "Teachable Machine", which should
             automatically add the extension for you and bring you back to the
             original Scratch page. (Make sure to allow camera access if
             possible!) <br />
-            <img src="img/tm-extension.png" style="max-width: 200px;" />
+            <img src="img/tm-extension.png" style="max-width: 200px" />
           </li>
           <li>
             Click into the "Teachable Machine" section.<br />
-            <img src="img/tm-scratch.png" style="max-width: 60px;" />
+            <img src="img/tm-scratch.png" style="max-width: 60px" />
           </li>
           <li>
             Paste the link for the shareable link for your learning model into
@@ -353,13 +360,17 @@
           <li>
             Wait for a green arrow to appear next to the "Teachable Machine"
             title. <br />
-            <img src="img/tm-block.png" style="max-width: 200px;" />
+            <img src="img/tm-block.png" style="max-width: 200px" />
           </li>
           <li>
             To test your model out, check the "model prediction" block. A box
             labeled "Teachable Machine: model prediction" will pop in the
             landing area and indicate what your model predicts.<br />
-            <img src="img/model-prediction.png" style="max-width: 400px;" />
+            <img
+              src="img/model-prediction-scratch.png"
+              style="max-width: 300px"
+            /><br />
+            <img src="img/model-prediction.png" style="max-width: 400px" />
           </li>
         </ol>
       </google-codelab-step>
@@ -380,7 +391,7 @@
           <li>
             Use the prediction outcome of your model to move the sprite 2 steps
             at a time. <br />
-            <img src="img/move.png" style="max-width: 60px;" />
+            <img src="img/move.png" style="max-width: 60px" />
           </li>
         </ol>
       </google-codelab-step>
