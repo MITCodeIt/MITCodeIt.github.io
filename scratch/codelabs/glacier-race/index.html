@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title> Band Codelab</title>
+  <title>Glacier Race Codelab</title>
   <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
   <link rel="import" href="../../elements/codelab.html">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
@@ -20,33 +20,47 @@
 </head>
 <body unresolved class="fullbleed">
 
-  <google-codelab title="Code It Band" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+  <google-codelab title="Glacier Race" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
 
       <google-codelab-step label="Overview">
-        <p>In this codelab, you&#39;ll make a cool band.</p>
-        <img src="img/b-example.png">
+        <p>In this codelab, you&#39;ll make a two-player game in which you race up the screen, swerve around obstacles, and collect gems. There&#39;s no finish line so the winner is the player with the most gems when time runs out.</p>
+        <iframe src="https://scratch.mit.edu/projects/413124020/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
         <h3 class="checklist">What you&#39;ll learn</h3>
         <ul class="checklist">
-          <li>Use <b>sound</b> blocks.</li>
-          <li>Use <b>conditional (if) </b> blocks to check if the sprite is touching certain colors and instruments.</li>
+          <li>Create a <b>game loop</b> on which the cars drive.</li>
+          <li>Use <b>broadcasting</b> <i>many</i> times.</li>
+          <li>Create <b>My Blocks</b> for functions that multiple sprites use.</li>
+          <li>Practice <b>cloning</b>.</li>
+          <li>Use <b>variables</b> to show the game timer, keep track of scores, store player names, and move the game track.</li>
         </ul>
 
       </google-codelab-step>
 
       <google-codelab-step label="Remix the starter project">
-        <p>Open the <a href="https://scratch.mit.edu/projects/252260087/#editor" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+        <p>Open the <a href="https://scratch.mit.edu/projects/413114785/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
 
       </google-codelab-step>
 
-      <google-codelab-step label="Paint your background">
-        <p>Paint your background with a few different colors. Each color will play a different note. There are lots of good ways to do this, here are a few simple examples: </p>
-        <img style="max-width: 400px" src="img/b-background-1.png">
-        <img style="max-width: 400px" src="img/b-background-2.png">
+      <google-codelab-step label="Setting Up the Sprites">
+        <p>How can we have the Game Loop sprite tell multiple sprites that we want to begin the game and set up the sprites to begin? <b>Hint:</b> it's what we learned about in class this week.</p>
+        <h2>Steps</h2>
+        <ol>
+          <li>In the Game Loop sprite, have the script begin <i>when the green flag is clicked</i>.</li>
+          <li>Have this sprite <i>[answer to the above question] a message called "setup" and wait</i> (this is one block).</li>
+          <li>In the same sprite's code, begin a script for <i>when this sprite recieves the setup message</i>. What kind of block is this?</li>
+          <ol>
+            <li>As you saw in the example project, we want our road and cars to both move, and we have a timer counting down how much time remains in the game. Create the following three <b>variables</b>: "RoadY," "CarSpeed," and "Countdown."</li>
+            <li>Uncheck the RoadY and CarSpeed variables so that they don't show on our stage.</li>
+            <li><i>Initialize</i> (set) the variables to the following values: RoadY to 0, CarSpeed to 5, and Countdown to 20.</li>
+            <li>We want the Countdown to keep track of the time in the game, so let's <b>reset the timer</b> immediately after we initialize the Countdown variable.</li>
+          </ol>
+          <li></li>
+        </ol>
       </google-codelab-step>
 
 
       <google-codelab-step label="Have the microphone follow your mouse around ">
-        <p>The microphone should follow your mouse around the screen so you can play the instruments</p> 
+        <p>The microphone should follow your mouse around the screen so you can play the instruments</p>
         <h2>Steps</h2>
         <ol>
           <li>Have the microphone go to the mouse pointer <br>
@@ -60,19 +74,19 @@
 
 
       <google-codelab-step label="Play a different note for each color">
-        <p>Now the microphone should check <b>if</b> it is touching each color, and play a different note for each color.</p> 
+        <p>Now the microphone should check <b>if</b> it is touching each color, and play a different note for each color.</p>
         <img style="max-width: 400px" src="img/if.png">
         <img style="max-width: 400px" src="img/b-touching-color.png">
         <img style="max-width: 400px" src="img/b-note.png">
-        <p>Be sure this check is in the forever loop.</p> 
-        <p>Do this for as many colors and notes as you'd like!</p> 
+        <p>Be sure this check is in the forever loop.</p>
+        <p>Do this for as many colors and notes as you'd like!</p>
       </google-codelab-step>
 
       <google-codelab-step label="Add in Drums">
-        <p>You can add some drum sprites that will play drum beats when the microphone touches them.</p> 
+        <p>You can add some drum sprites that will play drum beats when the microphone touches them.</p>
         <img style="max-width: 400px" src="img/b-drum.png">
         <img style="max-width: 400px" src="img/b-beat.png">
-        <p>Do this for as many other types of drums as you'd like!</p> 
+        <p>Do this for as many other types of drums as you'd like!</p>
       </google-codelab-step>
 
 
@@ -83,14 +97,14 @@
           <img style="max-width: 400px" src="img/change_instrument.png">
           <li> Add more colors and sounds
           <li> Add a drum beat that goes the whole time
-          <li> Think of your own improvement! 
-        
+          <li> Think of your own improvement!
+
         </ol>
 
       </google-codelab-step>
 
       <google-codelab-step label="Finishing Up">
-        When you're finished, be sure to save and share your project, and then add it to the studio <a href="https://scratch.mit.edu/studios/5521131/"> here </a>. 
+        When you're finished, be sure to save and share your project, and then add it to the studio <a href="https://scratch.mit.edu/studios/5521131/"> here </a>.
       </google-codelab-step>
 
   </google-codelab>

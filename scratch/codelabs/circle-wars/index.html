@@ -26,7 +26,7 @@
         <p>In this codelab, you&#39;ll make a cloning game.</p>
         <aside class="callout">
           <h2>How to play</h2>
-          <p>The player is the blue circle, the green circles are friendly, and the red circles are the enemies. Move the blue circle around with your mouse, collect the green circles and avoid the red ones. Touching a friend will win you a point and touching an enemy will take away 3 points. If you score more than 20 points, you win! But score less than -20 and you lose...</p>
+          <p>The Player is the blue circle, the green circles are friendly, and the red circles are the enemies. Move the blue circle around with your mouse, collect the green circles and avoid the red ones. Touching a friend will win you a point and touching an enemy will take away 3 points. If you score more than 20 points, you win! But score less than -20 and you lose...</p>
         </aside>
         <iframe src="https://scratch.mit.edu/projects/413070992/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
         <h3 class="checklist">What you&#39;ll learn</h3>
@@ -87,6 +87,23 @@
           <li>How can we show that the score changes when the Players earns a point?</li>
           <li>Should the clone still exist after the Player reaches it or should it delete?</li>
         </ul>
+      </google-codelab-step>
+
+
+      <google-codelab-step label="Enemies">
+        <img style="max-width: 400px" src="img/enemy-clones.png">
+        <p>Repeat the process of creating clones to the Enemy sprite.</p>
+        <p>However, the enemies make the Player lose 3 points. Reflect this in the score variable.</p>
+      </google-codelab-step>
+
+      <google-codelab-step label="Win or Lose?">
+        <p>We need to be able to stop the game when the Player either wins or loses.</p>
+        <h2>Steps (in the same section of code already written for the Player sprite)</h2>
+        <ol>
+          <li>Throughout the entire game, <i>forever</i>, check the value of the score. If the score is <b>greater</b> than 20, the Player should win. How can the Player tell the user that they won?</li>
+          <li>Similarly to the step before, if the score is <b>less</b> than -20, the Player sprite should tell the user that they lost.</li>
+          <li>In both cases 1 and 2, the <b>script should stop</b> to end the game.</li>
+        </ol>
       </google-codelab-step>
 
 
