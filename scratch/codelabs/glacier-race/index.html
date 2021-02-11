@@ -41,7 +41,7 @@
 
       </google-codelab-step>
 
-      <google-codelab-step label="Setting Up the Sprites">
+      <google-codelab-step label="Putting Together the Game Loop">
         <p>How can we have the Game Loop sprite tell multiple sprites that we want to begin the game and set up the sprites to begin? <b>Hint:</b> it's what we learned about in class this week.</p>
         <h2>Steps</h2>
         <ol>
@@ -50,26 +50,50 @@
           <li>In the same sprite's code, begin a script for <i>when this sprite recieves the setup message</i>. What kind of block is this?</li>
           <ol>
             <li>As you saw in the example project, we want our road and cars to both move, and we have a timer counting down how much time remains in the game. Create the following three <b>variables</b>: "RoadY," "CarSpeed," and "Countdown."</li>
+            <ul>
+              <li><b>RoadY</b> will keep track of the y coordinate used to position the moving scenery.</li>
+              <li><b>CarSpeed</b> will set how quickly the cars move around the stage.</li>
+              <li><b>Countdown</b> will keep track of how many seconds are remaining in the game.</li>
+            </ul>
             <li>Uncheck the RoadY and CarSpeed variables so that they don't show on our stage.</li>
             <li><i>Initialize</i> (set) the variables to the following values: RoadY to 0, CarSpeed to 5, and Countdown to 20.</li>
             <li>We want the Countdown to keep track of the time in the game, so let's <b>reset the timer</b> immediately after we initialize the Countdown variable.</li>
           </ol>
-          <li></li>
+          <li>Add two blocks in this step: the first one should be a loop that <i>repeats</i> until the Countdown variable is <b>less than 1</b>; the second should be a <i>message</i> that says "game over" so we can tell all of the sprites when the game ends. The "game over" message should only <i>broadcast</i> after the Countdown reaches 1 or less.</li>
+          <li>Create a <b>message called "calculate" and wait</b>.</li>
+          <li>Still in the Game Loop sprite, add a segment of code for when it <b>receives "calculate"</b>. Add the following elements in this section. Here we will calculate the position of the road each time that the game loop runs.</li>
+          <ol>
+            <li>Create a variable called "RoadSpeed" that will store the speed of the moving scenery. Make sure this is not visible on the stage (uncheck it). Set this variable to the value of <b>-5</b> in the script.</li>
+            <li>You will need to <i>change the RoadY variable by the new RoadSpeed</i>.</li>
+            <li>Check to see if the value of RoadY is less than <b>-360</b>, and if it is, change the value of that variable by <b>720</b> so that it goes up to 360 and repeats itself. (You will see this later, but this is because the road is split into two sections, which are at a distance of 360 from each other along the y axis.)</li>
+          </ol>
+          <li>Before we move on to other sprites, create a <b>message called "move" and wait</b>. This is the last time we will touch this sprite for a bit.</li>
         </ol>
       </google-codelab-step>
 
 
-      <google-codelab-step label="Have the microphone follow your mouse around ">
-        <p>The microphone should follow your mouse around the screen so you can play the instruments</p>
-        <h2>Steps</h2>
+      <google-codelab-step label="Get the Roads Moving">
+        <p>On this page, we will get the roads to move the way that we set up in the Game Loop sprite.</p>
+        <h2>Steps (in the Road1 sprite)</h2>
         <ol>
-          <li>Have the microphone go to the mouse pointer <br>
-          <img style="max-width: 200px" src="img/b-go-to-mp.png"><br>
-          <li>It should repeat this forever, starting when the flag is clicked<br>
-          <img style="max-width: 200px" src="img/forever.png"><br>
-          <img style="max-width: 200px" src="img/hat_flag.png"><br>
+          <li>When this sprite <i>receives the setup message</i>, have it prepare for the game with the following code:</li>
+          <ul>
+            <li>This sprite should <b>go to</b> the position (0, 0) (where the first number is the x coordinate and the second is the y coordinate).</li>
+            <li>This sprite should <b>go backwards 10 layers</b> so that it fills the stage.</li>
+          </ul>
+          <li>When it <i>receives the move message</i>, it should <b>go to</b> (0, RoadY), where RoadY is the variable we made when we were working on the Game Loop sprite.</li>
         </ol>
-
+        <p>At this point, if you press the green flag, you'll see that only half the road moves down the screen. Let's do the other half now.</p>
+        <h2>Steps (in the Road2 sprite)</h2>
+        <ol>
+          <li>Repeat step 1 from the Road1 sprite, except set the <b>y coordinate</b> to be <b>360</b> instead of 0.</li>
+          <li>Now we'll work on the code to make Road2 start to move. When it <i>receives the move message</i>, we need to figure out at what position it should be. This position is <i>conditional</i>.</li>
+          <ul>
+            <li>If the value of RoadY is less than 0, then Road2 should <b>go to (0, RoadY + 360)</b>.</li>
+            <li>Otherwise, Road2 should <b>go to (0, RoadY - 360)</b>.</li>
+          </ul>
+        </ol>
+        <p>Now if you run the script, you should see the road scrolling smoothly.</p>
       </google-codelab-step>
 
 
