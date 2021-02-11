@@ -97,20 +97,58 @@
       </google-codelab-step>
 
 
-      <google-codelab-step label="Play a different note for each color">
-        <p>Now the microphone should check <b>if</b> it is touching each color, and play a different note for each color.</p>
-        <img style="max-width: 400px" src="img/if.png">
-        <img style="max-width: 400px" src="img/b-touching-color.png">
-        <img style="max-width: 400px" src="img/b-note.png">
-        <p>Be sure this check is in the forever loop.</p>
-        <p>Do this for as many colors and notes as you'd like!</p>
+      <google-codelab-step label="Prepare and Move the RedCar">
+        <p>Let's make this game a bit more interesting - we're going to make the RedCar work.</p>
+        <h2>Set Up the Car</h2>
+        <p>This sprite will also <i>receive the setup message</i> that was broadcasted by the Game Loop sprite. When it does, the following will happen:</p>
+          <ol>
+            <li>The sprite will <b>show</b> itself and it will <b>go to the front layer</b>.</li>
+            <li>It will position itself (go to) the coordinates <b>(-40, 0)</b> and <b>point in direction 0</b>.</li>
+            <li>You will need to create a variable <u>for this sprite only</u> called "spinning" that will keep track of how much the RedCar is spinning at a given time. Set "spinning" to be 0 (this means that the car is not moving).</li>
+          </ol>
+
+        <h2>Functions</h2>
+        <p>In programming, a fuction is a named section of that program that performs a specific task. In this sense, a function is a type of procedure or routine.</p>
+        <aside class="callout">
+          <h2>My Blocks</h2>
+          <p>Use the <b>My Blocks</b> section to create a function that can be called from any script.</p>
+          <p>You can create 3 types of blocks: functions (including adding a label), functions with a variable input, or functions with a boolean (true/false) input.</p>
+          <h3>Create functions with a variable input using this choice:</h3>
+          <img style="max-width: 175px" src="img/add-input.png">
+          <h3>Rename "block name" to say "sum" (the name of our function). Change the "number or text" to say "number" (this is the input to the sum function).</h3>
+          <img style="max-width: 300px" src="img/make-a-block.png">
+        </aside>
+
+        <h2>Car Controls</h2>
+        <p>You will need to create a few functions for this game, all of which are for the cars.</p>
+        <ol>
+          <li>Create a function using <b>My Blocks</b> called "car controls" which will be used to add keyboard controls for the cars to move.</li>
+          <li>To make the car drive straight, make sure that it's pointing in direction 0.</li>
+          <li>Let's make the car controlled by the W, A, S, and D keys where A and D rotate the car and W and S speed up and slow down the car (touching nothing will make it drive straight):</li>
+          <ul>
+            <li>If the D key is pressed, the car should point in direction 30 (turns to the right) and change its x coordinate by the CarSpeed (makes the car move sideways).</li>
+            <li>If the A key is pressed, the car should point in direction -30 (turns left) and change its x coordinate by -CarSpeed (you can make it negative by using the subtraction block in the <i>Operators</i> section and doing 0 - CarSpeed).</li>
+            <li>If the W key is pressed, the car should change its y coordinate by CarSpeed (it will move faster up the screen).</li>
+            <li>If the S key is pressed, the car should change its y coordinate by the RoadSpeed (it will look like it's stopping because it will move down at the same speed as the scenery).</li>
+          </ul>
+          <li>Make the RedCar perform the actions of this function by calling the <b>"car controls"</b> block after the RedCar <i>receives the "move" message</i>. If you run the program, you can see how the car moves with the W, A, S, and D keys.</li>
+        </ol>
       </google-codelab-step>
 
-      <google-codelab-step label="Add in Drums">
-        <p>You can add some drum sprites that will play drum beats when the microphone touches them.</p>
-        <img style="max-width: 400px" src="img/b-drum.png">
-        <img style="max-width: 400px" src="img/b-beat.png">
-        <p>Do this for as many other types of drums as you'd like!</p>
+      <google-codelab-step label="What Happens If You Run Into the Snow?">
+        <p>Like in real life, the cars in this game will drive inconsistently when they hit snow... more specifically, they will <b>spin</b>!</p>
+        <h2>Steps</h2>
+        <ol>
+          <li>Let's use what we learned on the last page to make a "check collisions" function. This function should <b>check if the car is touching either Road1 or Road2</b> and <b>set the spinning variable to 30</b> if it is. Setting "spinning" to a value tells the car how long to spin for. This step detects if the car has run into snow.</li>
+          <li>Now to make the car spin: make a "spin" function. In this function, we want the car to both spin and to stop; here's how we'll approach it:</li>
+          <ol>
+            <li>The car should turn 30 degrees on each "spin," so every time that it turns, the spinning variable should decrease by 1 (go down by 1). It should change its y position by the RoadSpeed so it looks like it is stopped on the road.</li>
+            <li>To stop the car, we need to check that the value of spinning is 0 and then have it go to the position (-40, -180) and point in direction 0. This makes it go to the bottom of the stage and point forward.</li>
+          </ol>
+        </ol>
+
+        <h2>Put It All Together</h2>
+        <p>Let's go back and modify the script for when the RedCar receives "move" to reflect the unfortunate consequence of hitting snow. We will make it so that you can only control the car if the spinning variable is zero. Instead of running only the "car controls" block, check if the "spinning" variable is 0, and if so, run the "car controls" and the "check collisions" block... if not, "spin"!</p>
       </google-codelab-step>
 
 
