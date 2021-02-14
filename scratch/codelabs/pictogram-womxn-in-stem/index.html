@@ -1,1 +1,149 @@
-code code code
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Pictogram Codelab</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Pictogram Codelab" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Overview">
+        <p>In this codelab, you&#39;ll learn how to make an instagram-like app.</p>
+        <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/294127617/embed" frameborder="0" allowfullscreen></iframe>
+        <h3 class="checklist">What you&#39;ll learn</h3>
+        <ul class="checklist">
+          <li>Use <b>effects</b> to change an image.</li>
+          <li>Use <b>broadcasting</b> to communicate between sprites.</li>
+          <li>Review <b>conditional (if/else)</b> blocks.</li>
+          <li>Review <b>variables</b>.</li>
+        </ul>
+      </google-codelab-step>
+
+      <google-codelab-step label="Remix the starter project">
+        <p>Open the <a href="https://scratch.mit.edu/projects/31557332/#editor" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+      </google-codelab-step>
+
+      <google-codelab-step label="Color and Reset">
+        <p>First, we are going to program the color and reset functionalities.</p>
+        <img style="max-width: 400px" src="img/color_and_reset.png">
+        <aside class="callout">
+          <h2>Broadcasting</h2>
+          <p>The stage and sprites can <b>broadcast</b> messages to each other. An example where this might be used is if the user clicks on Sprite A, you want Sprite B to move 10 steps.</p>
+          <h3>Send a message</h3>
+          <img style="max-width: 200px" src="img/broadcast_send.png">
+          <h3>Receive a message</h3>
+          <img style="max-width: 200px" src="img/broadcast_receive.png">
+        </aside>
+        <h2>Steps</h2>
+        <ol>
+          <li>Make the color sprite broadcast a "color" message.<br>
+            <img style="max-width: 200px" src="img/broadcast_send.png"></li>
+          <li>Make the nature sprite change colors when it receives the message.<br>
+            <img style="max-width: 200px" src="img/broadcast_receive.png"><br>
+            <img style="max-width: 200px" src="img/color_effect.png"></li>
+          <li>Make the reset sprite broadcast a reset message.</li>
+          <li>Make the nature sprite clear graphic effects when it receives the reset message.<br>
+            <img style="max-width: 200px" src="img/clear.png">
+          </li>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Effects">
+        <p>Next, we are going to add the rest of the effects</p>
+        <h2>Steps</h2>
+          <ol>
+              <li>Program the ghost, pixelate, mosaic, and fisheye sprites to broadcast messages.</li>
+              <li>Program the nature sprite to change ghost, pixelate, mosaic, and fisheye effects when it receives those messages.</li>
+              <li>Add one or more other effect buttons you want.<br>
+                Examples:<br>
+                <img style="max-width: 100px" src="img/whirl_button.png">&nbsp;&nbsp;&nbsp;&nbsp;<img style="max-width: 200px" src="img/whirl_effect.png"><br><br>
+                <img style="max-width: 100px" src="img/size_button.png">&nbsp;&nbsp;&nbsp;&nbsp;<img style="max-width: 200px" src="img/size_effect.png"></li>
+          </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Keep track of changes">
+        <p>Now, we are going to keep track of the number of changes made to the image</p>
+        <h2>Steps</h2>
+        <ol>
+          <li>Create a new variable. Have it start with a value of zero.<br>
+          <li>Each time a button is clicked, add one to your variable.<br>
+          <li>Reset the variable to zero everytime the reset button is clicked.</li>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="New Images">
+        <p>Now, we are going to add the abilitiy to switch pictures</p>
+        <h2>Switch between costumes</h2>
+        <ol>
+          <li>Add a button to switch between nature costumes when clicked.<br>
+          <li>Program the nature sprite to switch costumes when clicked.<br>
+        </ol>
+        <h2>Switch between image sprites</h2>
+        <ol>
+            <li>Program the category buttons to switch between image sprites.<br>
+                <img style="max-width: 200px" src="img/category_buttons.png"><br><br>
+                <img style="max-width: 200px" src="img/category_sprites.png"></li>
+            <li>Add code to the "people" and "things" sprites to change their graphic effects.<br><i>Tip: Drag the code from the nature sprite to the people or things sprite.</i></li>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Bonus Features">
+        If you finish early, implement one or more of the following features!
+        <aside class="special">
+          <h2>Pictogram Bonus Features</h2>
+          <p><b>Implement one or more of the following, and show it off to your mentor!</b></p>
+          <ul>
+            <li>Enable the user to scroll through different images using a keypress event.</li>
+            <li>Add sound to your project.</li>
+            <li>Add a surprise feature to your program.</li>
+            <li>Add your own images.</li>
+          </ul>
+        </aside>
+      </google-codelab-step>
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
