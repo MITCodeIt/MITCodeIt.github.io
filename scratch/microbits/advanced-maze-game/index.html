@@ -51,45 +51,38 @@
         <p>If your screen doesn't look like this/your micro:bit doesn't show up on the screen, check the following things:</p>
         <ul>
           <li>Is your micro:bit on? Check that it is either connected to your computer <b>and/or</b> to the battery pack.</li>
-          <li>Is your ScratchLink activated?</li>
+          <li>Is your ScratchLink activated? Scratch cannot connect if ScratchLink is not on and running.</li>
         </ul>
+        <p>Once you see your micro:bit on the screen, click the blue <b>Connect</b> button followed by the blue<b>Go to editor</b> button to keep working on your project. Both of them are in the lower right-hand corner of this pop-up box. This is how your screen should look before you click the "Go to editor" button.</p>
+        <img style="max-width: 600px" src="img/connected.png">
       </google-codelab-step>
 
-      <google-codelab-step label="Move with Arrow Keys">
-        <p>First, we are going to program the sprite to move when the arrow keys are pressed.</p>
-        <img style="max-width: 400px" src="img/movement_explain.png">
+      <google-codelab-step label="The micro:bit Blocks">
+        <p>After you add the micro:bit extension, you should see a micro:bit section in your Code list. This will show these blocks:</p>
+        <img style="max-width: 300px" src="img/microbit_blocks.png">
+        <p>All of these block <i>shapes</i> should look familiar because they're all similar to blocks that we've worked with in the past. We can see <i>hat blocks</i> that trigger events, namely starting sections of code. We also see <i>hexagonal</i> blocks, which are used for sensing and conditional statements. Finally we see <i>rounded</i> blocks which can be used as variables and our typical action blocks that can be used for actions, motions, looks, and more!</p>
+      </google-codelab-step>
+
+      <google-codelab-step label="Move with the micro:bit">
+        <p>Now, we are going to program the Coder sprite to move according to how the micro:bit moves.</p>
         <aside class="callout">
-          <h2>Hat Blocks</h2>
-          <p><b>Hat blocks</b> are the blocks that start every script. They tell sprite when it is time to do the actions below them. They are shaped with a rounded top and a bump at the bottom — this is so you can only place blocks below them. Here are two examples of hat blocks: </p>
-          <h3>Run code when flag is clicked </h3>
-          <img style="max-width: 200px" src="img/hat_flag.png">
-          <h3>Run code when space bar is clicked </h3>
-          <img style="max-width: 200px" src="img/hat_space.png">
+          <h2>Reminder</h2>
+          <p><b>Recall</b> that to start a program, we need a <b>hat block</b>. These can be found both in the "Events" or "micro:bit" sections in the Code list. In this program, let's opt for the program to start when the green flag is clicked.</p>
+          <img src="img/hat_flag.png">
         </aside>
         <h2>Steps</h2>
         <ol>
-          <li>When the up arrow is pressed...<br>
-            <img style="max-width: 200px" src="img/up-arrow.png"><br>
-          <li>Make the superhero move up by changing the y-position. (The y-axis corresponds to "up" and "down".)<br>
-            <img style="max-width: 200px" src="img/move-up.png"></li>
-          <li>Repeat this for the down direction (decrease y), and for moving right and left (change x) </li>
-
+          <li>When the micro:bit is tilted right and left, make the Coder girl move inn that direction along the x (the x-axis corresponds to "right" and "left"). We recommend using some of these blocks, combined with other blocks that you've already used in the past.<br>
+            <img style="max-width: 200px" src="img/tilt_blocks.png.png"></li>
+          <li>Repeat this for the vertical direction (change y). It might take some experimenting with what Scratch considers "front" and "back" tilt to be.</li>
         </ol>
-
+        <p><b>Check yourself:</b> If you run the program with the green flag, does your Coder girl move how you want her to?</p>
       </google-codelab-step>
 
 
       <google-codelab-step label="Check if She's Touching the Wall">
         <p>Now we will check if the superhero is touching the wall and lose the game if she is</p>
         <img style="max-width: 400px" src="img/wall_sensor_explain.png">
-        <aside class="callout">
-          <h2>If blocks</h2>
-          <p> The code inside an <b>If block</b> only runs if the <b> condition </b> at the top of the block is true </p>
-          <h3>If block </h3>
-          <img style="max-width: 200px" src="img/hat_flag.png">
-          <h3>Conditions are always shaped like a hexagon </h3>
-          <img style="max-width: 200px" src="img/condition.png">
-        </aside>
         <h2>Steps</h2>
         <ol>
           <li>Have the superhero check if she's touching the black wall, and say "game over" if she is <br>
@@ -99,15 +92,13 @@
             <img style="max-width: 200px" src="img/forever.png"><br>
           <li>She should start checking if she's touching the wall when the game begins (remember Hat blocks!) </li>
             <img style="max-width: 200px" src="img/hat_flag.png"><br>
-
         </ol>
-
+        <p>Scratch is very sensitive to the micro:bit tilts, so it might be <i>very</i> difficult to make this sprite go through the maze without touching the walls. Try to think of creative solutions to make the game more do-able! It can be anything you want (even if it means replacing the step you just did with something else).</p>
       </google-codelab-step>
 
 
       <google-codelab-step label="Check if She Reached the Laptop">
-        <p>Now we will check if the superhero is touching the wall and win the game if she is</p>
-
+        <p>Now we will check if the Coder girl is touching the laptop and win the game if she is</p>
         <img style="max-width: 400px" src="img/win_explain.png">
         <p> She can check if she's touching the Laptop in a similar way to how she checked if she was touching a black wall. </p>
         <p> The Laptop is a sprite, not a color, so be sure to use the right block! </p>
