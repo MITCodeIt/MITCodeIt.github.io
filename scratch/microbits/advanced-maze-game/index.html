@@ -20,7 +20,7 @@
 </head>
 <body unresolved class="fullbleed">
 
-  <google-codelab title="Code It Maze" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+  <google-codelab title="CodeIt Advanced Maze" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
 
       <google-codelab-step label="Overview">
         <p>In this codelab, you&#39;ll make a maze game.</p>
@@ -34,7 +34,7 @@
       </google-codelab-step>
 
       <google-codelab-step label="Remix the starter project">
-        <p>Open the <a href="https://scratch.mit.edu/projects/490517530/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
+        <p>Open the <a href="https://scratch.mit.edu/projects/552373291/editor/" target="_blank">starter project</a> and click <b>Remix</b>.</p>
         <img src="img/click_remix.png">
 
       </google-codelab-step>
@@ -63,20 +63,25 @@
         <p>All of these block <i>shapes</i> should look familiar because they're all similar to blocks that we've worked with in the past. We can see <i>hat blocks</i> that trigger events, namely starting sections of code. We also see <i>hexagonal</i> blocks, which are used for sensing and conditional statements. Finally we see <i>rounded</i> blocks which can be used as variables and our typical action blocks that can be used for actions, motions, looks, and more!</p>
       </google-codelab-step>
 
-      <google-codelab-step label="Move with the micro:bit">
-        <p>Now, we are going to program the Coder sprite to move according to how the micro:bit moves.</p>
+      <google-codelab-step label="Move the Coder Sprite">
+        <p>Wouldn't it be awesome if we could use the micro:bit as a controller? Let's try it out. We are going to program the Coder sprite to move according to how the micro:bit moves.</p>
+
         <aside class="callout">
           <h2>Reminder</h2>
           <p><b>Recall</b> that to start a program, we need a <b>hat block</b>. These can be found both in the "Events" or "micro:bit" sections in the Code list. In this program, let's opt for the program to start when the green flag is clicked.</p>
           <img src="img/hat_flag.png">
         </aside>
+
         <h2>Steps</h2>
         <ol>
           <li>When the micro:bit is tilted right and left, make the Coder girl move inn that direction along the x (the x-axis corresponds to "right" and "left"). We recommend using some of these blocks, combined with other blocks that you've already used in the past.<br>
             <img style="max-width: 200px" src="img/tilt_blocks.png.png"></li>
           <li>Repeat this for the vertical direction (change y). It might take some experimenting with what Scratch considers "front" and "back" tilt to be.</li>
         </ol>
+
         <p><b>Check yourself:</b> If you run the program with the green flag, does your Coder girl move how you want her to?</p>
+
+        <p><b>Challenge:</b> Can you change the Coder sprite to point in the direction that she's moving? Make her face right if she's moving right and make her face left if she's moving left. This will help you in a later step!</p>
       </google-codelab-step>
 
 
@@ -93,7 +98,7 @@
           <li>She should start checking if she's touching the wall when the game begins (remember Hat blocks!) </li>
             <img style="max-width: 200px" src="img/hat_flag.png"><br>
         </ol>
-        <p>Scratch is very sensitive to the micro:bit tilts, so it might be <i>very</i> difficult to make this sprite go through the maze without touching the walls. Try to think of creative solutions to make the game more do-able! It can be anything you want (even if it means replacing the step you just did with something else).</p>
+        <p>Scratch is very sensitive to the micro:bit tilts, so it might be <i>very</i> difficult to make this sprite go through the maze without touching the walls. Try to think of creative solutions to make the game more do-able! It can be anything you want (even if it means replacing the step you just did with something else or making the sprite smaller).</p>
       </google-codelab-step>
 
 
@@ -105,24 +110,73 @@
       </google-codelab-step>
 
 
+      <google-codelab-step label="Use More micro:bit!">
+        <h2>What else can you do with the micro:bit?</h2>
+        <p>We hope you didn't think that the micro:bit could <i>only</i> be used to move the sprites! If you look at the micro:bit itself, you can see a 5x5 grid of lights and 2 buttons labeled "A" and "B." Let's make use of those!</p>
+
+        <h2>Cleaner start</h2>
+        <p>Have you tested your game yet? If you haven't, go take a look now!</p>
+        <p>Did you notice that after you pressed the green flag, your Coder girl sprite moved (almost) randomly around a little bit until you got control with the micro:bit? Instead of starting the game right when the green flag is pressed, can you make the game start <b>only when the player presses both the "A" and "B" buttons at the same time</b>? This will help show that the player is ready to play. Make sure to add these instructions on the screen so the player knows how to begin.</p>
+        <img src="img/start_instructions.png">
+        <p>Also make sure you mention how to play the game! Here are sample instructions:</p>
+        <img src="img/instructions_1.png">
+        <img src="img/instructions_2.png">
+        <img src="img/instructions_3.png">
+        <p><b>Challenge:</b> Try to change the instructions using a Block made from MyBlock. The instructions above were made with a Block called "instructions", which took a variable called "step" to decide which text block to display. If you don't know how to use MyBlocks, ask your mentor for help!</p>
+
+        <h2>Frank: the not-so-friendly monster</h2>
+        <img src="img/frank.png">
+        <p>In this game, Frank is a not-so-nice monster who can make you lose the game! Right now, he doesn't move around and just blocks the maze.</p>
+        <ol>
+          <li>Let's make him a bit more threatening.<br>
+            <ul>
+              <li>Make Frank move around in the top, horizontal stretch of the maze. Try this on your own and ask your mentor if you need help!</li>
+              <li>Now we just have a sprite moving around on the screen. Make the game end if the Coder sprite runs into Frank. Look at the "Check if She's Touching the Wall" step if you need help with this part. <b>Challenge:</b> Try to make this check from the perspective of Frank instead of the Coder (using the code in Frank's sprite).</li>
+              <li><b>Optional:</b> You can make Frank more entertaining when he moves by changing his costume!</li>
+            </ul>
+          <li>Make a way to get rid of the threat. If Frank is in our way and can make us restart the game, we should find a way to get rid of him. How about we use the Ball sprite to shoot and get rid of him? </li>
+            <ul>
+              <li>The ball should follow the Coder. Can you find any way for the ball to <i>go to the same place</i> as the Coder sprite? <i>Hint:</i> If you're stuck, maybe explore the "Motion" blocks.</li>
+              <li>If the player presses <i>only</i> the "B" button, the ball should move <b>horizontally</b>.</li>
+              <img src="img/shoot_frank.png">
+              <li>Check if the ball hit Frank - if it did, make Frank disappear and get rid of the threat! <b>Bonus:</b> Use Frank's "boom" costume to make him blow up!</li>
+              <img src="img/boom.png">
+              <li>What happens if you shoot at Frank but miss? Will you run out of balls or can you make more? Try to remember a concept we learned in CodeIt called <i>cloning</i>.</li>
+            </ul>
+        </ol>
+
+        <aside class="callout">
+          <h2>The Ball Sprite</h2>
+          <p>We're using the ball sprite to shoot at other sprites to get rid of them as obstacles. It shouldn't be <b>shown</b> until it is used (the "B" button is pressed), so keep it <b>hidden</b> until then. It will help you out to make the ball follow the Coder sprite!</p>
+        </aside>
+
+        <h2>Barrier</h2>
+        <p>There's a vertical barrier about halfway through the maze and it's in your way! Try to get rid of the barrier (for inspiration, use the instructions for getting rid of Frank!). Make sure you consider a few things:</p>
+        <ul>
+          <li>Which direction does the ball need to go? One of the challenges you had earlier will help you with this.</li>
+          <li>If you used the ball to shoot Frank, how can you use the ball again? </li>
+        </ul>
+
+        <h2>CodeIt Heart</h2>
+        <p>At this point, we've only had obstacles that make it harder for us to complete the maze, so now we have some positivity! Use the "A" button to collect the CodeIt heart. Once you collect the heart, make it disappear so you can't collect it again.</p>
+        <p><b>Creative opportunity:</b> You choose what happens once the Coder gets the CodeIt Heart. What happens? Is something displayed with the lights? Does the computer move a little closer to the Coder sprite?</p>
+
+      </google-codelab-step>
+
       <google-codelab-step label="Bonus Features">
         Once you have a working maze game, choose one or more additional features to add!
         <ol>
           <li> Draw your own maze background! You can do this by changing the backdrop. If you want to make the superhero smaller, you can do that with a block in the Looks category
           <li> Change the sprites for the player, home and goal of the maze
           <li> Make something exciting happen when the game is lost or won
-          <li> Look at other scratch users' mazes <a href="https://scratch.mit.edu/studios/138299/"> here </a> for more inspiration, or think of your own additons!
-
+          <li> Explore the micro:bit code blocks and add a new feature to the game using them! </li>
         </ol>
 
       </google-codelab-step>
 
       <google-codelab-step label="Finishing Up">
         When you're finished, be sure to save and share your project, and then add it to the studio:
-        <ol>
-          <li> <a href="https://scratch.mit.edu/studios/25249649/"> Giga studio </a>.
-          <li> <a href="https://scratch.mit.edu/studios/25247924/"> Nano studio </a>.
-        </ol>
+        <a href="https://scratch.mit.edu/studios/30071537/"> CodeIt 2 studio</a>.
 
       </google-codelab-step>
 
