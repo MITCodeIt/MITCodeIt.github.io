@@ -7,10 +7,10 @@
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
   <title>Micro:bit Maze Game Codelab</title>
-  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-  <link rel="import" href="../../elements/codelab.html">
+  <script src="../../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../../elements/codelab.html">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
-  <link rel="icon" href="../../elements/favicon.png">
+  <link rel="icon" href="../../../elements/favicon.png">
   <style>
     body {
       font-family: "Roboto",sans-serif;
@@ -77,6 +77,7 @@
           <li>When the micro:bit is tilted right and left, make the Coder girl move inn that direction along the x (the x-axis corresponds to "right" and "left"). We recommend using some of these blocks, combined with other blocks that you've already used in the past.<br>
             <img style="max-width: 200px" src="img/tilt_blocks.png.png"></li>
           <li>Repeat this for the vertical direction (change y). It might take some experimenting with what Scratch considers "front" and "back" tilt to be.</li>
+          <li>The Coder might not be moving at the speed you want her to; you can change her speed by changing the amount of steps in each move. She'll move slower when there are fewer steps in the "move" block and she'll move faster when there are more steps.</li>
         </ol>
 
         <p><b>Check yourself:</b> If you run the program with the green flag, does your Coder girl move how you want her to?</p>
@@ -132,7 +133,7 @@
           <li>Let's make him a bit more threatening.<br>
             <ul>
               <li>Make Frank move around in the top, horizontal stretch of the maze. Try this on your own and ask your mentor if you need help!</li>
-              <li>Now we just have a sprite moving around on the screen. Make the game end if the Coder sprite runs into Frank. Look at the "Check if She's Touching the Wall" step if you need help with this part. <b>Challenge:</b> Try to make this check from the perspective of Frank instead of the Coder (using the code in Frank's sprite).</li>
+              <li>Now we just have a sprite moving around on the screen. Make the game end if the Coder sprite runs into Frank. Look at the "Check if She's Touching the Wall" step if you need help with this part. <b>Challenge:</b> Try to make this check from the perspective of Frank instead of the Coder but change the Coder's sprite as a response (think about <i>broadcasting</i>!).</li>
               <li><b>Optional:</b> You can make Frank more entertaining when he moves by changing his costume!</li>
             </ul>
           <li>Make a way to get rid of the threat. If Frank is in our way and can make us restart the game, we should find a way to get rid of him. How about we use the Ball sprite to shoot and get rid of him? </li>
@@ -140,7 +141,7 @@
               <li>The ball should follow the Coder. Can you find any way for the ball to <i>go to the same place</i> as the Coder sprite? <i>Hint:</i> If you're stuck, maybe explore the "Motion" blocks.</li>
               <li>If the player presses <i>only</i> the "B" button, the ball should move <b>horizontally</b>.</li>
               <img src="img/shoot_frank.png">
-              <li>Check if the ball hit Frank - if it did, make Frank disappear and get rid of the threat! <b>Bonus:</b> Use Frank's "boom" costume to make him blow up!</li>
+              <li>Check if the ball hit Frank - if it did, make Frank disappear and get rid of the threat! Sense Frank from the Ball sprite and broadcast if the ball hits him. <b>Bonus:</b> Use Frank's "boom" costume to make him blow up!</li>
               <img src="img/boom.png">
               <li>What happens if you shoot at Frank but miss? Will you run out of balls or can you make more? Try to remember a concept we learned in CodeIt called <i>cloning</i>.</li>
             </ul>
@@ -170,6 +171,8 @@
           <li> Draw your own maze background! You can do this by changing the backdrop. If you want to make the superhero smaller, you can do that with a block in the Looks category
           <li> Change the sprites for the player, home and goal of the maze
           <li> Make something exciting happen when the game is lost or won
+          <li> Add scoring that you can display at the end of the game </li>
+          <li> Time how long it takes for the player to make it to the laptop </li>
           <li> Explore the micro:bit code blocks and add a new feature to the game using them! </li>
         </ol>
 
