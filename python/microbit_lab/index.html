@@ -1,0 +1,96 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Micro:bit Maze Game Codelab</title>
+  <script src="../../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../../elements/codelab.html">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="icon" href="../../../elements/favicon.png">
+  <style>
+    body {
+      font-family: "Roboto",sans-serif;
+    }
+  </style>
+
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Micro:bit with Python!" feedback-link="https://goo.gl/forms/9zDi1V3arg167lIY2">
+
+      <google-codelab-step label="Overview">
+        <p>In today's class, we'll learn how to use Python to control our micro:bits. This is super awesome because it lets us do a few things:</p>
+        <ul class="checklist">
+          <li>Learn basic Python.</li>
+          <li>Practice the algorithmic thinking we used in Scratch by applying it to a different language.</li>
+          <li>Explore more possibilities of the micro:bit.</li>
+        </ul>
+
+      </google-codelab-step>
+
+      <google-codelab-step label="Join the CodeIt Classroom">
+        <h2>Steps to access the CodeIt micro:bit Python classroom:</h2>
+        <ol>
+          <li>Open the micro:bit classroom website <a href="https://microbit.org/join">here</a>. You should arrive at a page that looks like:<br>
+          <img style="max-width: 600px" src="img/classroom_page.png">
+          <li>Select our classroom name elements from the list. Our classroom name is<br>
+          <img style="max-width: 600px" src="img/classroom_name.png">
+          <li>The "Classroom Name" section on your website should look like the image below.<br>
+          <img style="max-width: 600px" src="img/classroom_dropdown.png">
+          <li>Enter the classroom PIN in the "PIN" section. Our PIN is <b>538143</b>.</li>
+          <li>Move onto the next page by pressing "Continue" and enter your name.</li>
+        </ol>
+
+        <h2>Set up your Python editor</h2>
+        <ol>
+          <li>Press the "connect" tab and choose your micro:bit to connect it to the Python editor. <i>You must be connected to the computer using a USB cord.</i><br>
+          <img style="max-width: 200px" src="img/connect_microbit.png">
+          <li><b>Flash</b> the code onto your micro:bit to connect it. Do this by pressing the "flash" tab in the top left. <i>This will only show up if your micro:bit is connected to the editor (from the step above).</i><br>
+          <img style="max-width: 200px" src="img/flash_code.png">
+          <li>Now, you should be ready to code!</li>
+        </ol>
+      </google-codelab-step>
+
+      <google-codelab-step label="Start coding">
+        <p>Remember how we had to import the micro:bit extension in Scratch in order to control it in our program? We have to do something similar in Python. <b>At the top of every program that works with the micro:bit, you must include this line:</b> <code>from microbit import *</code>.<br>
+          Let's dissect what each part of this line means. In general, in Python, <code>import</code> tells the script to add a <i>package</i>; this is comparable to adding an extension in Scratch. Sometimes we use the line <code>import [package]</code>, but in this case, we're using <code>from [package] import</code>. This is because we want to specify <i>what</i> we want to import from the package. In Python, using the asterisk in the import line, <code>*</code>, means "all." So what we're telling the program with <code>from microbit import *</code>, we're really saying, "take the microbit package and add all of its functions to my code."</cdoe></p>
+      </google-codelab-step>
+
+
+
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
