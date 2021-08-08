@@ -7,10 +7,10 @@
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
   <title>Micro:bit Python Codelab</title>
-  <script src="../../scratch/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-  <link rel="import" href="../../scratch/elements/codelab.html">
+  <script src="../scratch/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../scratch/elements/codelab.html">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
-  <link rel="icon" href="../../scratch/elements/favicon.png">
+  <link rel="icon" href="../scratch/elements/favicon.png">
   <style>
     body {
       font-family: "Roboto",sans-serif;
@@ -48,19 +48,182 @@
         <h2>Set up your Python editor</h2>
         <ol>
           <li>Press the "connect" tab and choose your micro:bit to connect it to the Python editor. <i>You must be connected to the computer using a USB cord.</i><br>
-          <img style="max-width: 200px" src="img/connect_microbit.png">
+          <img style="max-width: 400px" src="img/connect_microbit.png">
           <li><b>Flash</b> the code onto your micro:bit to connect it. Do this by pressing the "flash" tab in the top left. <i>This will only show up if your micro:bit is connected to the editor (from the step above).</i><br>
-          <img style="max-width: 200px" src="img/flash_code.png">
+          <img style="max-width: 400px" src="img/flash_code.png">
           <li>Now, you should be ready to code!</li>
         </ol>
       </google-codelab-step>
 
       <google-codelab-step label="Start coding">
-        <p>Remember how we had to import the micro:bit extension in Scratch in order to control it in our program? We have to do something similar in Python. <b>At the top of every program that works with the micro:bit, you must include this line:</b> <code>from microbit import *</code>.<br>
+        <p>Remember how we had to import the micro:bit extension in Scratch in order to control it in our program? We have to do something similar in Python. <b>At the top of every program that works with the micro:bit, you must include this line:</b><br> <code>from microbit import *</code>.<br>
           Let's dissect what each part of this line means. In general, in Python, <code>import</code> tells the script to add a <i>package</i>; this is comparable to adding an extension in Scratch. Sometimes we use the line <code>import [package]</code>, but in this case, we're using <code>from [package] import</code>. This is because we want to specify <i>what</i> we want to import from the package. In Python, using the asterisk in the import line, <code>*</code>, means "all." So what we're telling the program with <code>from microbit import *</code>, we're really saying, "take the microbit package and add all of its functions to my code."</cdoe></p>
+
+        <p>We can now move onto the fun codelabs! Here are a few things to note before we dive in:</p>
+        <ul>
+          <li>Update your code/download it to your micro:bit by pressing the "Flash" tab in the upper-left-hand corner.</li>
+          <li>Python is sensitive to leading white space. This means that if you want to add code within a loop or a conditional statement, you <b>must</b> indent it once further than the declaration of the loop or conditional statement.</li>
+          <li>You can add <b>comments</b> in Python to explain what a piece of code is doing or to make notes for yourself. You can do this by adding a pound sign <code>#</code> in front of a line of code.<br>
+          <img style="max-width: 400px" src="img/import_code_segment.png">
+          <li>Check your micro:bit LEDs after flashing a piece of code to check for errors. It will flash words like "NameError" or "SyntaxError" if you have problems in your code. This means that you have some issue with what you've written. Try to find it and fix it, but if you're having trouble, ask your mentor.</li>
+          <li>In Python, to create a variable, all you need to do is choose some name and then set it equal to a value (can be a number, a string/text surrounded by "" or '', or a function). For example if I wanted to keep track of the score, I could begin the program with <code>score = 0</code> and then increase it later in the program with <code>score += 1</code>. This would add one point to the score.</li>
+        </ul>
+
+        <h2>The functions you can use in Python with the micro:bit</h2>
+        <p>You can go to this website, <a href="https://microbit-micropython.readthedocs.io/en/latest/microbit_micropython_api.html">the micro:bit Micropython API</a>, to find a list of functions that you can use and a description of what it does and examples of how to use them. On the side bar, you can click on which part of the micro:bit you want to operate and under "Functions," you'll find a webpage with all of the functions/actions that part can use.</p>
+
+        <h3>Have fun!</h3>
+        <p>Start with the Clapping Lights project with your breakout room. Afterwards, choose any of the other projects that sound interesting by pressing the slide from the list on the left side of this website.</p>
       </google-codelab-step>
 
+    <google-codelab-step label="Clapping lights">
+      <h2>Goal of this lab</h2>
+      <p>Turn on all of the LEDs/some image on the LEDs when you clap once. The next time you clap, the lights should turn off.</p>
 
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following functions in your code:</p>
+      <ul>
+        <li><code>display.show()</code> - this tells the LEDs to make a shape.</li>
+        <li><code>Image()</code> - this tells the LEDs what shape to make. You control the brightness by the number in each spot (0 is off, 9 is the brightest). You must add 5 <i>strings</i> to specify the image.</li>
+        <li><code>display.clear()</code> - turn all of the LEDs in the display off.</li>
+        <li><code>microphone.was_event()</code> - listen to hear if the microphone detected a noise.</li>
+        <li><code>SoundEvent.LOUD</code> - the microphone heard a LOUD sound.</li>
+      </ul>
+
+      <h3>Useful example</h3>
+      <p>This image shows how to display three vertical lines on the micro:bit, where the first and third are brightest and the middle is at half-brightness.</p>
+      <img style="max-width: 500px" src="img/display_image.png">
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Like in Scratch, Python only runs the code once unless otherwise specified. We used the <b>forever</b> loop a lot in Python. We can create the same "forever" loop in Python with the line <code>while True:</code>, which means that it will execute as long as <code>True</code> is true, which is always.</li>
+        <li>Consider both the cases when the microphone hears a loud noise and when it doesn't.</li>
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+          <li>What the LEDs display once there's a clap.</li>
+          <li>Display different shapes during the on and off periods (instead of just turing the lights on and off completely).</li>
+          <li>Require two claps to change the light status.</li>
+      </ul>
+
+    </google-codelab-step>
+
+    <google-codelab-step label="Name tag">
+      <h2>Goal of this lab</h2>
+      <p>Introduce yourself with the micro:bit. Have it flash your name.</p>
+
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following functions in your code:</p>
+      <ul>
+        <li><code>display.scroll()</code> - this tells the LEDs write something in scrolling letters. This takes a <i>string</i>, or text that is surrounded by quotation marks.</li>
+        <li><code>display.clear()</code> - turn off all of the LEDs.</li>
+        <li><code>sleep(int)</code> - stop the micro:bit function for <i>int</i> amount of time (<code>int</code> should be a number) in milliseconds. 1000 milliseconds = 1 second. </li>
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+          <li>Choose to write a message other than your name.</li>
+          <li>Display your name only after pressing a button. Try doing a specific button. You can also try to display it when pressing either button A OR B.</li>
+    </google-codelab-step>
+
+    <google-codelab-step label="Flashing your emotions">
+      <h2>Goal of this lab</h2>
+      <p>Flash a happy face on the display 5 times when the A button is pressed. Flash a sad face on the display when the B button is pressed.</p>
+
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following functions in your code:</p>
+      <ul>
+        <li><code>display.show()</code> - this tells the LEDs to make a shape.</li>
+        <li><code>Image.HAPPY</code> - tells the LEDs to show a smiley face.</li>
+        <li><code>Image.SAD</code> - tells the LEDs to show a sade face.</li>
+        <li><code>display.clear()</code> - turn all of the LEDs in the display off.</li>
+        <li><code>button_a.is_pressed()</code> and <code>button_b.is_pressed()</code> - detect whether button A or B (respectively) have been pressed.</li>
+        <li><code>sleep(int)</code> - stop the micro:bit function for <i>int</i> amount of time (<code>int</code> should be a number) in milliseconds. 1000 milliseconds = 1 second. </li>
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+          <li>Choose to display something other than the happy and sad faces. <code>Image()</code> might be a useful function for this.</li>
+          <li>Flash quicker.</li>
+          <li>Flash more than 5 times.</li>
+    </google-codelab-step>
+
+    <google-codelab-step label="Stopwatch">
+      <h2>Goal of this lab</h2>
+      <p>Create a stopwatch with your micro:bit. Start the timer when you touch the pin logo and stop it once it's pressed once more. After the clock is stopped, display how long it ran with scrolling text on the LEDs.</p>
+      <img style="max-width: 300px" src="img/pin_logo.png">
+
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following functions in your code:</p>
+      <ul>
+        <li><code>display.scroll()</code> - this tells the LEDs write something in scrolling letters. This takes a <i>string</i>, or text that is surrounded by quotation marks.</li>
+        <li><code>pin_logo.is_touched()</code> - detects if the pin logo on the micro:bit was touched. Returns <code>True</code> if it was.</li>
+        <li><code>running_time()</code> - reports how long the micro:bit has been running at the instant that it is called. In milliseconds.</li>
+      </ul>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Not all of the functions that you'll need are shown above. Use some of the functions from previous projects (other tabs) to complete your project.</li>
+        <li><code>running_time()</code> does not change automatically. To check how much it has been updated, it needs to be called again.</li>
+        <li><code>running_time()</code> is in <b>milliseconds</b>. To get the time in seconds, divide by 1000.</li>
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+        <li>Start the timer by pressing one button and stop the timer by pressing another. Show the time it ran for by pressing the pin logo.</li>
+        <li>Display something on the LEDs while the timer is running to indicate that it is.</li>
+    </google-codelab-step>
+
+    <google-codelab-step label="Report the temperature">
+      <h2>Goal of this lab</h2>
+      <p>Display the current temperature that the micro:bit is sensing with the LEDs.</p>
+
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following function in your code:</p>
+      <ul>
+        <li><code>temperature()</code> - returns the current temperature, in Celsius.</li>
+      </ul>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Not all of the functions that you'll need are shown above. Use some of the functions from previous projects (other tabs) to complete your project.</li>
+        <li>Check if the temperature changes reliably by putting the micro:bit in front of a fan or near a hot place.</li>
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+        <li>Keep track of the highest and lowest temperatures you've seen so far. Display the lowest when the A button is pressed and the highest when the B button is pressed.</li>
+        <li>Change the temperature to Fahrenheit. Look up the conversion online.</li>
+    </google-codelab-step>
+
+    <google-codelab-step label="Nightlight">
+      <h2>Goal of this lab</h2>
+      <p>Turn on all of the LEDs when the micro:bit is in a dark room.</p>
+
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following function in your code:</p>
+      <ul>
+        <li><code>display.read_light_level()</code> - returns the light exposure it detects; the lower the number, the darker the room.</li>
+      </ul>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Not all of the functions that you'll need are shown above. Use some of the functions from previous projects (other tabs) to complete your project.</li>
+        <li>Try using 100 as a baseline light level for a dark room, but this might need to be changed depending on where you are.</li>
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+        <li>Display something other than turning all of the LEDs on as bright as possible. Maybe a moon or flashing all the lights?</li>
+        <li>Try to add a noise to accompany the lights, to act like a real alarm.</li>
+    </google-codelab-step>
 
   </google-codelab>
 
