@@ -84,7 +84,7 @@
       <p>You will likely want to use the following functions in your code:</p>
       <ul>
         <li><code>display.show()</code> - this tells the LEDs to make a shape.</li>
-        <li><code>Image()</code> - this tells the LEDs what shape to make. You control the brightness by the number in each spot (0 is off, 9 is the brightest). You must add 5 <i>strings</i> to specify the image.</li>
+        <li><code>Image()</code> - this tells the LEDs what shape to make. You control the brightness by the number in each spot (0 is off, 9 is the brightest). You must add 5 <i>strings</i> to specify the image, each one ending with a colon <code>:</code>.</li>
         <li><code>display.clear()</code> - turn all of the LEDs in the display off.</li>
         <li><code>microphone.was_event()</code> - listen to hear if the microphone detected a noise.</li>
         <li><code>SoundEvent.LOUD</code> - the microphone heard a LOUD sound.</li>
@@ -127,6 +127,7 @@
       <ul class="checklist">
           <li>Choose to write a message other than your name.</li>
           <li>Display your name only after pressing a button. Try doing a specific button. You can also try to display it when pressing either button A OR B.</li>
+      </ul>
     </google-codelab-step>
 
     <google-codelab-step label="Flashing your emotions">
@@ -150,6 +151,26 @@
           <li>Choose to display something other than the happy and sad faces. <code>Image()</code> might be a useful function for this.</li>
           <li>Flash quicker.</li>
           <li>Flash more than 5 times.</li>
+      </ul>
+    </google-codelab-step>
+
+    <google-codelab-step label="Step counter">
+      <h2>Goal of this lab</h2>
+      <p>Have the micro:bit track how many steps you take. Create a steps variable and add to it every time a step was taken. Display the current steps.</p>
+
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following functions in your code:</p>
+      <ul>
+        <li><code>display.show()</code> - this tells the LEDs to make a shape.</li>
+        <li><code>accelerometer.was_gesture('shake')</code> - check if the micro:bit was shaken.</li>
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+          <li>Allow the user to reset the step counter.</li>
+          <li>Show some kind of symbol for every 10 steps taken.</li>
+      </ul>
     </google-codelab-step>
 
     <google-codelab-step label="Stopwatch">
@@ -177,6 +198,7 @@
       <ul class="checklist">
         <li>Start the timer by pressing one button and stop the timer by pressing another. Show the time it ran for by pressing the pin logo.</li>
         <li>Display something on the LEDs while the timer is running to indicate that it is.</li>
+      </ul>
     </google-codelab-step>
 
     <google-codelab-step label="Report the temperature">
@@ -200,11 +222,12 @@
       <ul class="checklist">
         <li>Keep track of the highest and lowest temperatures you've seen so far. Display the lowest when the A button is pressed and the highest when the B button is pressed.</li>
         <li>Change the temperature to Fahrenheit. Look up the conversion online.</li>
+      </ul>
     </google-codelab-step>
 
     <google-codelab-step label="Nightlight">
       <h2>Goal of this lab</h2>
-      <p>Turn on all of the LEDs when the micro:bit is in a dark room.</p>
+      <p>Turn on all of the LEDs when the micro:bit is in a dark room. Turn off all of the LEDs when the room is bright again.</p>
 
       <h3>Relevant functions</h3>
       <p>You will likely want to use the following function in your code:</p>
@@ -222,7 +245,148 @@
       <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
       <ul class="checklist">
         <li>Display something other than turning all of the LEDs on as bright as possible. Maybe a moon or flashing all the lights?</li>
-        <li>Try to add a noise to accompany the lights, to act like a real alarm.</li>
+      </ul>
+    </google-codelab-step>
+
+    <google-codelab-step label="Compass">
+      <h2>Goal of this lab</h2>
+      <p>Use the <i>compass</i> element of the micro:bit to display the direction that it is pointed towards on the LEDs.</p>
+
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following function in your code:</p>
+      <ul>
+        <li><code>compass.calibrate()</code> - calibrates/tunes the internal compass of the micro:bit to make sure the readings are accurate.</li>
+        <li><code>compass.heading()</code> - returns the degree that the micro:bit is pointed toward. There are 360 degrees total.</li>
+      </ul>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Not all of the functions that you'll need are shown above. Use some of the functions from previous projects (other tabs) to complete your project.</li>
+        <li>Use the following degree ranges to correlate to directions (assume that <i>x</i> is the reading from the compass):<br>
+        <ul>
+          <li>North: x < 45 or x > 315</li>
+          <li>East: 45 < x < 135</li>
+          <li>South: 135 < x < 225</li>
+          <li>West: 225 < x < 315</li>
+        </ul>
+        <img style="max-width: 500px" src="img/compass.png">
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+        <li>Add more specific directions, such as NE, SE, SW, NW, according to the degrees in the image of the compass above. Determine the new ranges you need.</li>
+        <li>Add symbols to represent directions.</li>
+      </ul>
+    </google-codelab-step>
+
+    <google-codelab-step label="Sound-o-meter">
+      <h2>Goal of this lab</h2>
+      <p>Display how loud the noise around the micro:bit is with a bar on the LEDs. If the sound is the loudest it could possibly be, all of the LEDs should be lit up. If it is in the mid-range of noise, then the bottom three horizontal lines of lights should be on. If it is dead silent, none of the LEDs should be on.</p>
+
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following function in your code:</p>
+      <ul>
+        <li><code>microphone.sound_level()</code> - returns a number representing how loud the current sound is. 0 is dead silent, 255 is the loudest possible reading.</li>
+        <li><code>Image()</code> - tell the LEDs what to display with 5 strings of numbers, each ending with a colon <code>:</code>.</li>
+      </ul>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Not all of the functions that you'll need are shown above. Use some of the functions from previous projects (other tabs) to complete your project.</li>
+        <li>You will want to create 5 possible images to use:<br>
+        <ul>
+          <li>One for the quietest sound level, no sound. No LEDs should be on.</li>
+          <li>One for the second quietest sound level. The bottom 5 LEDs should be on.</li>
+          <li>One for each of the increments of noise increasing from the one above. Each increment should turn on one line of LEDs.</li>
+          <li>The loudest sound increment should have all of the LEDs on.</li>
+        </ul>
+        <li>(It is recommended to do this with your breakout room) Because we can only display 5 lines of LEDs, not 256, you should make a separate function to correlate the sound level to the correct interval. You can scale the sound with the following algorithm:</li>
+        <ol>
+          <li>Determine how many possibilities there are for sound levels read by the <code>microphone.sound_level()</code>. Store this in some variable.</li>
+          <li>Determine how many graph possibilities there are (how many configurations you want there to be with displaying the LEDs). Store this in a different variable.</li>
+          <li>Take the current reading and scale it. This is done by subtracting the minimum sound reading possible from this reading. Then divide by all of the possible values that the microphone could have read in (value from step 1).</li>
+          <li>Multiply this scaled value from step 3 by the whole range we want it to be on (number from step 2). Add this to the minimum number of rows of LEDs we want lit.</li>
+          <li>This process will give you how many rows of LEDs should be lit.</li>
+        </ol>
+        <li>You can make a <i>list</i> of all of the graphs by setting the <code>Image()</code> configurations to variables, such as <code>graph0</code>, <code>graph1</code>, etc. and setting them all as follows:<br>
+          <code>all_graphs = [graph0, graph1, graph2, graph3, graph4, graph5]</code>.</li>
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+        <li>Try to make the sound-o-meter a horizontal graph rather than a vertical graph.</li>
+        <li>Add smaller increments and instead of using straight lines, expand a few LEDs at a time from the corner or center. This would be like a "growing circle" or something similar.</li>
+      </ul>
+    </google-codelab-step>
+
+    <google-codelab-step label="Metronome">
+      <h2>Goal of this lab</h2>
+      <p>Have your micro:bit act as a metronome to help you practice your music. It should make a sound once a measure at whatever tempo you want.</p>
+
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following function in your code:</p>
+      <ul>
+        <li><code>music.set_tempo(bpm=int)</code> - defines the music class with a certain BPM (beats per minute) at the desired tempo (<code>int</code>).</li>
+        <li><code>music.play([])</code> - have the micro:bit make noise at a certain pitch for a given duration. For example, to play the note C for one beat and then to rest for 3, this function would be <code>music.play(["C4:1", "r:3"])</code> where "C4" is the note "C" and it plays for one beat (":1"), and "r" means rest for 3 beats (":3").</li>
+      </ul>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Not all of the functions that you'll need are shown above. Use some of the functions from previous projects (other tabs) to complete your project.</li>
+        <li>You will need to import the music package. You can do this by including this line at the top of your code: <code>import music</code>.</li>
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+        <li>Have the metronome tick for more than one beat per measure.</li>
+        <li>Allow someone with the micro:bit to change the tempo. Make sure that your tempo is a variable.</li>
+        <li>Display the current tempo with the LEDs.</li>
+      </ul>
+    </google-codelab-step>
+
+    <google-codelab-step label="micro:bit Pet">
+      <h2>Goal of this lab</h2>
+      <p>Create your own little micro:bit pet. Have your micro:bit smile when you give it attention (by touching the pin logo). It should giggle when you shake the micro:bit. It should be sad if you don't play with it for 10 seconds. It should get tired and yawn if you don't play for 15 seconds. It should die if you don't play with it for 20 seconds. It should wake back up and smile if you touch it again!</p>
+
+      <h3>Relevant functions</h3>
+      <p>You will likely want to use the following function in your code:</p>
+      <ul>
+        <li><code>display.show()</code> - makes the LEDs turn on in the configuration you add.</li>
+        <ul>
+          <li><code>Image.HAPPY</code> - turn the LEDs on to a smiley face.</li>
+          <li><code>Image.SAD</code> - turn the LEDs on to a sad face.</li>
+          <li><code>Image.SURPRISED</code> - turn the LEDs on to a surprised face.</li>
+          <li><code>Image.ASLEEP</code> - turn the LEDs on to a sleeping face.</li>
+          <li><code>Image.SKULL</code> - turn the LEDs on to a skull.</li>
+        </ul>
+        <li><code>accelerometer.was_gesture('shake')</code> - detects if the micro:bit was shaken.</li>
+        <li><code>audio.play()</code> - make the given noise.</li>
+        <ul>
+          <li><code>Sound.HAPPY</code> - make a noise showing that the micro:bit pet is happy.</li>
+          <li><code>Sound.GIGGLE</code> - make a noise showing that the micro:bit pet is giggling.</li>
+          <li><code>Sound.SAD</code> - make a noise showing that the micro:bit pet is upset.</li>
+          <li><code>Sound.YAWN</code> - make a noise showing that the micro:bit pet is tired.</li>
+          <li><code>Sound.MYSTERIOUS</code> - make a scary noise to show that the micro:bit pet died.</li>
+        </ul>
+      </ul>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Not all of the functions that you'll need are shown above. Use some of the functions from previous projects (other tabs) to complete your project.</li>
+        <li>You will need to import the audio package to make noise. You can do this by including this line at the top of your code: <code>import audio</code>.</li>
+        <li>Make sure to keep track of time, either with <code>running_time()</code> or <code>sleep(int)</code> and <code>timer += int</code>.</li>
+      </ul>
+
+      <h3>Add your own spin to it</h3>
+      <p>You can make this project your own by customizing different elements of the program. For example, you can change:</p>
+      <ul class="checklist">
+        <li>Mess around with other possibilities for how to play with your pet.</li>
+        <li>Explore what other sounds exist in the audio.Sound library.</li>
+        <li>Try adding different gestures to the code.</li>
+      </ul>
     </google-codelab-step>
 
   </google-codelab>
