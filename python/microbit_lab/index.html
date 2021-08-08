@@ -301,7 +301,7 @@
           <li>One for each of the increments of noise increasing from the one above. Each increment should turn on one line of LEDs.</li>
           <li>The loudest sound increment should have all of the LEDs on.</li>
         </ul>
-        <li>(It is recommended to do this with your breakout room) Because we can only display 5 lines of LEDs, not 256, you should make a separate function to correlate the sound level to the correct interval. You can scale the sound with the following algorithm:</li>
+        <li>(It is recommended to do this with your breakout room) Because we can only display 5 lines of LEDs, not 256, you should make a separate function to correlate the sound level to the correct interval. You can scale the sound with the following algorithm:<br>
         <ol>
           <li>Determine how many possibilities there are for sound levels read by the <code>microphone.sound_level()</code>. Store this in some variable.</li>
           <li>Determine how many graph possibilities there are (how many configurations you want there to be with displaying the LEDs). Store this in a different variable.</li>
@@ -354,7 +354,7 @@
       <h3>Relevant functions</h3>
       <p>You will likely want to use the following function in your code:</p>
       <ul>
-        <li><code>display.show()</code> - makes the LEDs turn on in the configuration you add.</li>
+        <li><code>display.show()</code> - makes the LEDs turn on in the configuration you add.<br>
         <ul>
           <li><code>Image.HAPPY</code> - turn the LEDs on to a smiley face.</li>
           <li><code>Image.SAD</code> - turn the LEDs on to a sad face.</li>
@@ -363,7 +363,7 @@
           <li><code>Image.SKULL</code> - turn the LEDs on to a skull.</li>
         </ul>
         <li><code>accelerometer.was_gesture('shake')</code> - detects if the micro:bit was shaken.</li>
-        <li><code>audio.play()</code> - make the given noise.</li>
+        <li><code>audio.play()</code> - make the given noise.<br>
         <ul>
           <li><code>Sound.HAPPY</code> - make a noise showing that the micro:bit pet is happy.</li>
           <li><code>Sound.GIGGLE</code> - make a noise showing that the micro:bit pet is giggling.</li>
